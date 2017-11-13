@@ -65,37 +65,37 @@ class Home extends Component {
               
               <form>
               <Input
-                value={this.state.title}
+                value={this.state.crew}
                 onChange={this.handleInputChange}
                 name="crew"
                 placeholder="Crew (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.jonName}
                 onChange={this.handleInputChange}
                 name="jobName"
                 placeholder="Name of Job (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.phoneNumber}
                 onChange={this.handleInputChange}
                 name="phoneNumber"
                 placeholder="Phone Number (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.address}
                 onChange={this.handleInputChange}
                 name="address"
                 placeholder="Adress (required)"
               />
               <Input
-                value={this.state.author}
+                value={this.state.estimatedJobTime}
                 onChange={this.handleInputChange}
                 name="estimatedJobTime"
                 placeholder="Estimated Job Time (required)"
               />
               <TextArea
-                value={this.state.synopsis}
+                value={this.state.jobDescription}
                 onChange={this.handleInputChange}
                 name="jobDescription"
                 placeholder="Description of Job (Optional)"
