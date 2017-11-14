@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateJob.css";
 import API from "../../utils/API";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class CreateJob extends Component {
   state = {
@@ -12,6 +13,17 @@ class CreateJob extends Component {
     custAddress: "",
     jobDescription: "",
     estimatedJobTime: ""
+  };
+    componentDidMount() {
+    this.loadJobs();
+  }
+
+  loadJobs = () => {
+    API.getJobs()
+      .then(res =>
+        this.setState({ jobs: res.data, crewName: "", jobName: "", custNumber: "", custAddress: "", estimatedJobTime: "", jobDescription: "" })
+      )
+      .catch(err => console.log(err));
   };
 
   handleInputChange = event => {
@@ -27,22 +39,24 @@ class CreateJob extends Component {
 
   handleFormSubmit = () => {
     event.preventDefault();
-    if (
-      this.state.crewName &&
-      this.state.jobName &&
-      this.state.custPhone &&
-      this.state.custAddress &&
-      this.state.estimatedJobTime &&
-      this.state.jobDescription
-    ) {
+    // if (
+    //   this.state.crewName &&
+    //   this.state.jobName &&
+    //   this.state.custPhone &&
+    //   this.state.custAddress &&
+    //   this.state.estimatedJobTime &&
+    //   this.state.jobDescription
+    // ) 
+    {
     let newJob = {
-        crew: this.state.crewName,
+        crewName: this.state.crewName,
         jobName: this.state.jobName,
-        phoneNumber: this.state.custPhone,
-        address: this.state.custAddress,
+        custNumber: this.state.custPhone,
+        custAddress: this.state.custAddress,
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
     }
+    console.log(newJob)
 
       API.saveJob(newJob)
         .then(res => this.loadJobs())
@@ -75,7 +89,7 @@ class CreateJob extends Component {
             <select
               className="form-control"
               id="crew-dropdown"
-              name="crew"
+              name="crewName"
               value={this.state.crewName}
               onChange={this.handleInputChange}
             >
@@ -178,13 +192,13 @@ class CreateJob extends Component {
           />
         </div>
 
-        <button
-          onClick={this.handleFormSubmit}
-          type="button"
-          className="btn btn-lg btn-primary"
-        >
-          Create Job
-        </button>
+         <FormBtn
+        
+                onClick={this.handleFormSubmit}
+              >
+                Submit Job
+              </FormBtn>
+        
       </div>
     ); // end return
   } // end render
