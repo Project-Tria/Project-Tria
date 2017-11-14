@@ -14,6 +14,7 @@ class CreateJob extends Component {
     jobDescription: "",
     estimatedJobTime: ""
   };
+  
   componentDidMount() {
     this.loadJobs();
   }
