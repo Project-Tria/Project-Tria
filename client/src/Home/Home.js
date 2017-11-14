@@ -52,7 +52,7 @@ class Home extends Component {
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadJobs())
         .catch(err => console.log(err));
     }
   };
@@ -104,7 +104,7 @@ class Home extends Component {
                 disabled={!(this.state.crew && this.state.jobName && this.state.phoneNumber && this.state.address && this.state.estimatedJobTime && this.state.jobDescription)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Book
+                Submit Job
               </FormBtn>
             </form>
             )
