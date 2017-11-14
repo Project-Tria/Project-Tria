@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchInput from "../../components/Search/SearchInput"
 
 class Search extends Component {
   render() {
@@ -8,7 +9,8 @@ class Search extends Component {
         <br />
         <a href="/manager/" className="btn btn-info">Back</a>
         <br />
-      </div>
+        <SearchInput />
+        </div>
     );
   }
 } //end class
