@@ -36,10 +36,10 @@ class CreateJob extends Component {
       this.state.jobDescription
     ) {
     let newJob = {
-        crew: this.state.crewName,
+        crewName: this.state.crewName,
         jobName: this.state.jobName,
-        phoneNumber: this.state.custPhone,
-        address: this.state.custAddress,
+        custPhone: this.state.custPhone,
+        custAddress: this.state.custAddress,
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
     }
