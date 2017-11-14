@@ -4,14 +4,15 @@ const Schema = mongoose.Schema;
 
 //Need to change values back to true and or add default values
 const jobSchema = new Schema({
-  crew: { type: String, required: true, },
-  date: { type: Date, required: true, },
-  jobName: { type: String, required: true },
-  phoneNumber: { type: String, required: true },
-  address: { type: String, required: true },
-  estimatedJobTime: { type: String, required: true },
+  crewMembers: { type: String, required: false, },
+  crewName: { type: String, required: false, },
+  jobDate: { type: Date, required: false, },
+  jobName: { type: String, required: false },
+  custPhone: { type: String, required: false },
+  custAddress: { type: String, required: false },
+  estimatedJobTime: { type: String, required: false },
   actualJobTime: { type: String, default: "" },
-  jobDescription: { type: String, required: true },
+  jobDescription: { type: String, required: false },
   jobNotes: { type: String, default: "" },
   completed: { type: Boolean, default: false }
 });

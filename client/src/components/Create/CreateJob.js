@@ -1,17 +1,30 @@
 import React, { Component } from "react";
 import "./CreateJob.css";
+import API from "../../utils/API";
+import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class CreateJob extends Component {
   state = {
     jobDate: "",
-    jobCrew: "",
+    crewName: "",
+    crewMembers: "",
     jobName: "",
     custPhone: "",
     custAddress: "",
-    jobNotes: "",
-    estTime: ""
+    jobDescription: "",
+    estimatedJobTime: ""
   };
+    componentDidMount() {
+    this.loadJobs();
+  }
 
+  loadJobs = () => {
+    API.getJobs()
+      .then(res =>
+        this.setState({ jobs: res.data, crewName: "", jobName: "", custNumber: "", custAddress: "", estimatedJobTime: "", jobDescription: "" })
+      )
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -24,16 +37,39 @@ class CreateJob extends Component {
     });
   };
 
+  handleFormSubmit = () => {
+    event.preventDefault();
+    // if (
+    //   this.state.crewName &&
+    //   this.state.jobName &&
+    //   this.state.custPhone &&
+    //   this.state.custAddress &&
+    //   this.state.estimatedJobTime &&
+    //   this.state.jobDescription
+    // ) 
+    {
+    let newJob = {
+        crewName: this.state.crewName,
+        crewMembers: this.state.crewMembers,
+        jobName: this.state.jobName,
+        custNumber: this.state.custPhone,
+        custAddress: this.state.custAddress,
+        estimatedJobTime: this.state.estimatedJobTime,
+        jobDescription: this.state.jobDescription
+    }
+    console.log(newJob)
 
-
-
-
+      API.saveJob(newJob)
+        .then(res => this.loadJobs())
+        .catch(err => console.log(err));
+    }
+  };
 
   render() {
     return (
       <div className="container text-center border">
         <div className="form-group row">
-          <label for="date-input" className=" col-form-label text-right">
+          <label htmlFor="date-input" className=" col-form-label text-right">
             Job Date:
           </label>
           <input
@@ -47,16 +83,16 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-          <label for="crew-dropdown" className=" col-form-label text-right">
+          <label htmlFor="crew-dropdown" className=" col-form-label text-right">
             Select Crew:
           </label>
           <div className="form-group">
             <select
               className="form-control"
               id="crew-dropdown"
-              name="jobDate"
-                value={this.state.jobCrew}
-                onChange={this.handleInputChange}
+              name="crewName"
+              value={this.state.crewName}
+              onChange={this.handleInputChange}
             >
               <option>Cleaning - Peter</option>
               <option>Cleaning - Paul</option>
@@ -72,76 +108,98 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-          <label for="job-crew" className="col-form-label">
+          <label htmlFor="job-crew" className="col-form-label">
             Job Crew:{" "}
           </label>
           <input
             className="col-3 form-control"
             type="text"
-            value=""
             placeholder="Enter Crew Members"
+            name="crewMembers"
+            value={this.state.crewMembers}
+            onChange={this.handleInputChange}
             id="job-crew"
           />
         </div>
 
         <div className="form-group row">
-          <label for="job-name" className="col-form-label">
+          <label htmlFor="job-name" className="col-form-label">
             Job Name:{" "}
           </label>
           <input
             className="col-3 form-control"
             type="text"
-            value=""
+            name="jobName"
+            value={this.state.jobName}
+            onChange={this.handleInputChange}
             placeholder="[job type] - [customer-name]"
             id="job-name"
           />
         </div>
 
         <div className="form-group row">
-          <label for="example-tel-input" class="col-2 col-form-label">
+          <label htmlFor="cust-phone" className="col-2 col-form-label">
             Telephone:{" "}
           </label>
           <input
-            class="form-control"
+            className="form-control"
             type="tel"
-            value="1-(555)-555-5555"
-            id="example-tel-input"
+            name="custPhone"
+            value={this.state.custPhone}
+            onChange={this.handleInputChange}
+            placeholder="123-456-7890"
+            id="cust-phone"
           />
         </div>
 
         <div className="form-group row">
-          <label for="job-address" className="col-form-label">
+          <label htmlFor="cust-address" className="col-form-label">
             Job Address:{" "}
           </label>
           <input
             className="col-3 form-control"
             type="text"
-            value=""
+            name="custAddress"
+            value={this.state.custAddress}
+            onChange={this.handleInputChange}
             placeholder="Customer Address"
-            id="job-address"
+            id="cust-address"
           />
         </div>
 
         <div className="form-group row">
-          <label for="job-notes">Job Notes</label>
-          <textarea className="form-control" id="job-notes" rows="3" />
+          <label htmlFor="job-descrip">Job Notes</label>
+          <textarea
+            className="form-control"
+            name="jobDescription"
+            value={this.state.jobDescription}
+            onChange={this.handleInputChange}
+            id="job-descrip"
+            rows="3"
+          />
         </div>
 
         <div className="form-group row">
-          <label for="example-number-input" className="col-2 col-form-label">
-            Number
+          <label htmlFor="est-hours" className="col-2 col-form-label">
+            Est. Hours
           </label>
           <input
             className="form-control"
             type="number"
-            value="42"
-            id="example-number-input"
+            name="estimatedJobTime"
+            value={this.state.estimatedJobTime}
+            onChange={this.handleInputChange}
+            id="est-hours"
           />
         </div>
 
-        <button onClick={this._handleFormSubmit} type="button" className="btn btn-lg btn-primary">Create Job</button>
-
-
+         <FormBtn
+        
+                onClick={this.handleFormSubmit}
+              >
+                Submit Job
+              </FormBtn>
+        
       </div>
     ); // end return
   } // end render
