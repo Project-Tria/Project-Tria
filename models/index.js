@@ -1,3 +1,4 @@
 module.exports = {
-  Job: require("./job")
+  Job: require("./job"),
+  Crew: require("./crew")
 };
