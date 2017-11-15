@@ -44,7 +44,7 @@ class Search extends Component {
         <a href="/manager/" className="btn btn-info">Back</a>
         <br />
         <SearchInput />
-        <Results />
+        <Results jobs={this.state.jobs}/>
         </div>
     );
   }
