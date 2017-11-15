@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateJob.css";
 import API from "../../utils/API";
+// import FormBtn from "../../components/Form";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class CreateJob extends Component {
@@ -14,18 +15,7 @@ class CreateJob extends Component {
     jobDescription: "",
     estimatedJobTime: ""
   };
-    componentDidMount() {
-    this.loadJobs();
-  }
-
-  loadJobs = () => {
-    API.getJobs()
-      .then(res =>
-        this.setState({ jobs: res.data, crewName: "", jobName: "", custNumber: "", custAddress: "", estimatedJobTime: "", jobDescription: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
+  
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
@@ -46,9 +36,9 @@ class CreateJob extends Component {
     //   this.state.custAddress &&
     //   this.state.estimatedJobTime &&
     //   this.state.jobDescription
-    // ) 
+    // )
     {
-    let newJob = {
+      let newJob = {
         crewName: this.state.crewName,
         crewMembers: this.state.crewMembers,
         jobName: this.state.jobName,
@@ -56,11 +46,12 @@ class CreateJob extends Component {
         custAddress: this.state.custAddress,
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
-    }
-    console.log(newJob)
+      };
+    //   console.log(newJob);
 
       API.saveJob(newJob)
-        .then(res => this.loadJobs())
+        // .then(res => this.loadJobs())
+        .then(res => console.log(res))
         .catch(err => console.log(err));
     }
   };
@@ -193,13 +184,7 @@ class CreateJob extends Component {
           />
         </div>
 
-         <FormBtn
-        
-                onClick={this.handleFormSubmit}
-              >
-                Submit Job
-              </FormBtn>
-        
+        <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn>
       </div>
     ); // end return
   } // end render
