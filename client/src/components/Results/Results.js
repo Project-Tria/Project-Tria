@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { JobList, JobListItem } from "../JobList/"
+// import { JobList, JobListItem } from "../JobList/"
+import { JobList } from "../JobList/"
 class Results extends Component {
 
     renderJobs = (props) => {
@@ -11,9 +12,13 @@ class Results extends Component {
           <JobList>
             {
               this.props.jobs.map(job => (
-            <JobListItem 
     
-            />
+            
+                <li>
+                <p>{job.jobName} {job.crewName}{job.custAddress}{job.jobDate}</p>
+
+                </li>
+          
             ))
             }
           </JobList>
@@ -22,8 +27,11 @@ class Results extends Component {
 
     render(){
         return(
+            <div className="text-center">
+            <h3>Search Results</h3>
             <div className="container text-center border">
                 {this.renderJobs()}
+            </div>
             </div>
         )//end return
     } //end render
