@@ -4,6 +4,8 @@ import API from "../../utils/API";
 // import FormBtn from "../../components/Form";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
+
+
 class CreateJob extends Component {
   state = {
     jobDate: "",
@@ -39,6 +41,7 @@ class CreateJob extends Component {
     // )
     {
       let newJob = {
+        jobDate: this.state.jobDate,
         crewName: this.state.crewName,
         crewMembers: this.state.crewMembers,
         jobName: this.state.jobName,
