@@ -18,7 +18,7 @@ class Search extends Component {
       // .then(res => console.log(res.data))
       .then(res => {
         this.setState({ jobs: res.data }, ()=> {
-          console.log("This.state.jobs", this.state.jobs)
+          console.log("This.state.jobs from Results.js", this.state.jobs)
         });
       })
       .catch(err => console.log(err));
@@ -39,12 +39,14 @@ class Search extends Component {
   render() {
     return (
       <div className="container text-center">
-        <h1>Welcome to Manager - Search</h1>
+        <h1>Search Jobs</h1>
         <br />
         <a href="/manager/" className="btn btn-info">Back</a>
         <br />
         <SearchInput />
-        <Results />
+        <br />
+        <br />
+        <Results jobs={this.state.jobs}/>
         </div>
     );
   }
