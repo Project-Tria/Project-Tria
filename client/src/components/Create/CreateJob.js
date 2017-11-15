@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./CreateJob.css";
 import API from "../../utils/API";
+// import FormBtn from "../../components/Form";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class CreateJob extends Component {
@@ -15,26 +16,6 @@ class CreateJob extends Component {
     estimatedJobTime: ""
   };
   
-  componentDidMount() {
-    this.loadJobs();
-  }
-
-  loadJobs = () => {
-    API.getJobs()
-      .then(res =>
-        this.setState({
-          jobs: res.data,
-          crewName: "",
-          jobName: "",
-          custNumber: "",
-          custAddress: "",
-          estimatedJobTime: "",
-          jobDescription: ""
-        })
-      )
-      .catch(err => console.log(err));
-  };
-
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
@@ -66,10 +47,11 @@ class CreateJob extends Component {
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
       };
-      console.log(newJob);
+    //   console.log(newJob);
 
       API.saveJob(newJob)
-        .then(res => this.loadJobs())
+        // .then(res => this.loadJobs())
+        .then(res => console.log(res))
         .catch(err => console.log(err));
     }
   };
