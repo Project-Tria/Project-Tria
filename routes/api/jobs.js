@@ -14,6 +14,13 @@ router
   .put(jobsController.update)
   .delete(jobsController.remove);
 
+  // Matches with "/api/jobs/:crewName"
+router
+  .route("/jobs/:crewName")
+  .get(jobsController.findByCrew)
+  // .put(jobsController.update)
+  // .delete(jobsController.remove);
+
   // Matches with "/api/crews"
 router.route("/crews")
   .get(crewsController.findAll)

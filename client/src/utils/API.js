@@ -9,6 +9,10 @@ export default {
   getJob: function(id) {
     return axios.get("/api/jobs/" + id);
   },
+  // Gets the job with the given crew name
+  getJobByCrew: function(id) {
+    return axios.get("/api/jobs/" + crewName);
+  },
   // Deletes the job with the given id
   deleteJob: function(id) {
     return axios.delete("/api/jobs/" + id);
