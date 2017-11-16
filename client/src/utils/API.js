@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 export default {
   // Gets all jobs
   getJobs: function() {
@@ -9,9 +10,9 @@ export default {
   getJob: function(id) {
     return axios.get("/api/jobs/" + id);
   },
-  // Gets the job with the given crew name
-  getJobByCrew: function(id) {
-    return axios.get("/api/jobs/" + crewName);
+  // Gets the job with the given job name
+  getJobByName: function(jobName) {
+    return axios.get("/api/jobs/" + jobName);
   },
   // Deletes the job with the given id
   deleteJob: function(id) {

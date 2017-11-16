@@ -9,7 +9,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-    findByJobName: function(req, res) {
+    findJobByName: function(req, res) {
     db.Job
       .find({ jobName: req.params.jobName }, req.body)
       // .sort({ date: -1 })
