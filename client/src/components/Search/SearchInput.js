@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./SearchInput.css";
+import API from "../../utils/API";
 
 class SearchInput extends Component {
   state = {
@@ -19,10 +20,15 @@ class SearchInput extends Component {
       [name]: value
     });
   };
-  
-  handleFormSubmit = () => {
+
+
+    handleFormSubmit = () => {
     event.preventDefault();
-    alert("Crew Name" + this.state.crewName);
+    let jobName = this.state.jobName
+    API.getJobByName(jobName)
+      // .then(res => this.loadJobs())
+      .catch(err => console.log(err));
+    alert("job Name" + jobName);
   };
 
   render() {

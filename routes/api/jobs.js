@@ -8,11 +8,18 @@ router.route("/jobs")
   .post(jobsController.create);
 
 // Matches with "/api/jobs/:id"
+// router
+//   .route("/jobs/:id")
+//   .get(jobsController.findById)
+//   .put(jobsController.update)
+//   .delete(jobsController.remove);
+
+  // Matches with "/api/jobs/:jobName"
 router
-  .route("/jobs/:id")
-  .get(jobsController.findById)
-  .put(jobsController.update)
-  .delete(jobsController.remove);
+  .route("/jobs/:jobName")
+  .get(jobsController.findJobByName)
+  // .put(jobsController.update)
+  // .delete(jobsController.remove);
 
   // Matches with "/api/crews"
 router.route("/crews")
