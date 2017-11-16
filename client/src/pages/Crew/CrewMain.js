@@ -1,7 +1,6 @@
-
 import React, { Component } from "react";
 
-
+//should crew main only display job for the current date?
 
 class CrewMain extends Component {
 

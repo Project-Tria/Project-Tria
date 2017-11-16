@@ -1,18 +1,5 @@
 import React, { Component } from "react";
-// import { JobList, JobListItem } from "../JobList/"
-import { JobList } from "../JobList/";
 
-{
-  /* <JobList>
-// { */
-}
-//   this.props.jobs.map(job => (
-//     <li>
-//     <p>{job.jobName} {job.crewName}{job.custAddress}{job.jobDate}</p>
-//     </li>
-// ))
-// }
-// </JobList>
 
 class Results extends Component {
   renderJobs = props => {
