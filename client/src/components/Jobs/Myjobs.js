@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 
+/*
+ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?addr=[custAddress]
+
+PHONE - <a href="tel:1-408-555-5555">1-408-555-5555</a> iOS
+
+use props._id to dynamically change the id=headingOne to id=heading+{props._id}
+*/
+
 class MyJobs extends Component {
   render() {
     return (
       <div id="accordion" role="tablist" aria-multiselectable="true">
         <div className="card">
           <div className="card-header" role="tab" id="headingOne">
-            <h5 className="mb-0">
+            <h3 className="mb-0">
               <a
                 data-toggle="collapse"
                 data-parent="#accordion"
@@ -14,9 +22,10 @@ class MyJobs extends Component {
                 aria-expanded="true"
                 aria-controls="collapseOne"
               >
-                Collapsible Group Item #1
+                [JOB NAME]
               </a>
-            </h5>
+            </h3>
+            <p> [JOB ADDRESS]</p>
           </div>
 
           <div
@@ -25,34 +34,70 @@ class MyJobs extends Component {
             role="tabpanel"
             aria-labelledby="headingOne"
           >
-            <div className="card-block">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-              on it squid single-origin coffee nulla assumenda shoreditch et.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-              lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them
-              accusamus labore sustainable VHS.
+            <div className="card-block text-left">
+              <div className="row job-row">
+                <div className="col">
+                  <p>
+                    Cust. Phone: <span>[CUSTPHONE]</span>
+                  </p>
+                  <p>
+                    Notes: <span>[JOB NOTES]</span>
+                  </p>
+                </div>
+                <div className="crew-form col">
+                  <div className="crew-form-fields">
+                    <label htmlFor="job-descrip">Crew Notes:</label>
+                    <textarea
+                      className="form-control"
+                      name="jobDescription"
+                      value=""
+                      
+                      id="job-descrip"
+                      rows="3"
+                    />
+
+                    <label htmlFor="act-hours" className="col col-form-label">
+                      Job Hours
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      name="actualJobTime"
+                      value=""
+                      
+                      id="act-hours"
+                    />
+                  </div>
+                </div>
+
+                <div className="crew-form-button col text-center">
+                  <button
+                    onClick={this.handleFormSubmit}
+                    type="button"
+                    className="btn btn-lg btn-danger"
+                  >
+                    Complete Job
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="card">
           <div className="card-header" role="tab" id="headingTwo">
-            <h5 className="mb-0">
+            <h3 className="mb-0">
               <a
-                className="collapsed"
                 data-toggle="collapse"
                 data-parent="#accordion"
                 href="#collapseTwo"
-                aria-expanded="false"
+                aria-expanded="true"
                 aria-controls="collapseTwo"
               >
-                Collapsible Group Item #2
+                [JOB NAME]
               </a>
-            </h5>
+            </h3>
+            <p> [JOB ADDRESS]</p>
           </div>
           <div
             id="collapseTwo"
@@ -60,52 +105,123 @@ class MyJobs extends Component {
             role="tabpanel"
             aria-labelledby="headingTwo"
           >
-            <div className="card-block">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-              on it squid single-origin coffee nulla assumenda shoreditch et.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-              lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them
-              accusamus labore sustainable VHS.
+            <div className="card-block text-left">
+              <div className="row job-row">
+                <div className="col">
+                  <p>
+                    Cust. Phone: <span>[CUSTPHONE]</span>
+                  </p>
+                  <p>
+                    Notes: <span>[JOB NOTES]</span>
+                  </p>
+                </div>
+                <div className="crew-form col">
+                  <div className="crew-form-fields">
+                    <label htmlFor="job-descrip">Crew Notes:</label>
+                    <textarea
+                      className="form-control"
+                      name="jobDescription"
+                      value=""
+                      
+                      id="job-descrip"
+                      rows="3"
+                    />
+
+                    <label htmlFor="act-hours" className="col col-form-label">
+                      Job Hours
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      name="actualJobTime"
+                      value=""
+                      
+                      id="act-hours"
+                    />
+                  </div>
+                </div>
+
+                <div className="crew-form-button col text-center">
+                  <button
+                    onClick={this.handleFormSubmit}
+                    type="button"
+                    className="btn btn-lg btn-danger"
+                  >
+                    Complete Job
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
         <div className="card">
-          <div className="card-header" role="tab" id="headingThree">
-            <h5 className="mb-0">
+          <div className="card-header" role="tab" id="headingABCDE">
+            <h3 className="mb-0">
               <a
-                className="collapsed"
                 data-toggle="collapse"
                 data-parent="#accordion"
-                href="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
+                href="#collapseABCDE"
+                aria-expanded="true"
+                aria-controls="collapseABCDE"
               >
-                Collapsible Group Item #3
+                [JOB NAME]
               </a>
-            </h5>
+            </h3>
+            <p> [JOB ADDRESS]</p>
           </div>
           <div
-            id="collapseThree"
+            id="collapseABCDE"
             className="collapse"
             role="tabpanel"
-            aria-labelledby="headingThree"
+            aria-labelledby="headingABCDE"
           >
-            <div className="card-block">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life
-              accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-              cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-              laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-              on it squid single-origin coffee nulla assumenda shoreditch et.
-              Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-              nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-              lomo. Leggings occaecat craft beer farm-to-table, raw denim
-              aesthetic synth nesciunt you probably haven't heard of them
-              accusamus labore sustainable VHS.
+            <div className="card-block text-left">
+              <div className="row job-row">
+                <div className="col">
+                  <p>
+                    Cust. Phone: <span>[CUSTPHONE]</span>
+                  </p>
+                  <p>
+                    Notes: <span>[JOB NOTES]</span>
+                  </p>
+                </div>
+                <div className="crew-form col">
+                  <div className="crew-form-fields">
+                    <label htmlFor="job-descrip">Crew Notes:</label>
+                    <textarea
+                      className="form-control"
+                      name="jobDescription"
+                      value=""
+                      
+                      id="job-descrip"
+                      rows="3"
+                    />
+
+                    <label htmlFor="act-hours" className="col col-form-label">
+                      Job Hours
+                    </label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      name="actualJobTime"
+                      value=""
+                      
+                      id="act-hours"
+                    />
+                  </div>
+                </div>
+
+                <div className="crew-form-button col text-center">
+                  <button
+                    onClick={this.handleFormSubmit}
+                    type="button"
+                    className="btn btn-lg btn-danger"
+                  >
+                    Complete Job
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
