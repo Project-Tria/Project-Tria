@@ -52,7 +52,7 @@ class Search extends Component {
 
 //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
-    let queryCrewname = this.state.crewName;
+    // let queryCrewname = this.state.crewName;
     // event.preventDefault();
     alert("Form Submitted");
     this.loadJobs(queryCrewname);
