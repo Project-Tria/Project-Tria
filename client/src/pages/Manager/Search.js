@@ -37,7 +37,7 @@ class Search extends Component {
 
 ///should take parameters from the searchinput to use in the query
 //bind this in the constructor
-  loadJobs = () => {
+  loadJobs = (crewQuery) => {
     API.getJobs()
       // .then(res => console.log(res.data))
       .then(res => {
@@ -52,9 +52,10 @@ class Search extends Component {
 
 //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
+    let queryCrewname = this.state.crewName;
     // event.preventDefault();
     alert("Form Submitted");
-    this.loadJobs();
+    this.loadJobs(queryCrewname);
   };
 
   render() {
