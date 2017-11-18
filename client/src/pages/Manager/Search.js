@@ -54,7 +54,7 @@ class Search extends Component {
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
     // event.preventDefault();
-    alert("Form Submitted");
+    // alert("Form Submitted");
     this.loadJobs(crewQuery);
   };
 
