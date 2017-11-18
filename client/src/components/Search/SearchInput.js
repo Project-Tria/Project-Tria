@@ -1,35 +1,9 @@
 import React, { Component } from "react";
 import "./SearchInput.css";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 class SearchInput extends Component {
-  state = {
-    crewName: "",
-    startDate: "",
-    endDate: "",
-    jobName: ""
-  };
-
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const value = event.target.value;
-    const name = event.target.name;
-
-    // Updating the input's state
-    this.setState({
-      [name]: value
-    });
-  };
-
-
-    handleFormSubmit = () => {
-    event.preventDefault();
-    let jobName = this.state.jobName
-    API.getJobByName(jobName)
-      // .then(res => this.loadJobs())
-      .catch(err => console.log(err));
-    alert("job Name" + jobName);
-  };
+  //might want to wrap form in form tag
 
   render() {
     return (
@@ -48,9 +22,12 @@ class SearchInput extends Component {
                 type="list"
                 id="crew"
                 name="crewName"
-                value={this.state.crewName}
-                onChange={this.handleInputChange}
+                value={this.props.crewName}
+                onChange={event => {
+                  this.props.handleInputChange(event);
+                }}
               >
+                <option>Select a crew</option>
                 <option>Cleaning - Peter</option>
                 <option>Cleaning - Paul</option>
                 <option>Cleaning - Mary</option>
@@ -68,8 +45,10 @@ class SearchInput extends Component {
               type="date"
               id="date-input"
               name="startDate"
-              value={this.state.startDate}
-              onChange={this.handleInputChange}
+              value={this.props.startDate}
+              onChange={event => {
+                this.props.handleInputChange(event);
+              }}
             />
           </div>
           <div className="form-group row">
@@ -81,8 +60,10 @@ class SearchInput extends Component {
               type="date"
               id="date-input"
               name="endDate"
-              value={this.state.endDate}
-              onChange={this.handleInputChange}
+              value={this.props.endDate}
+              onChange={event => {
+                this.props.handleInputChange(event);
+              }}
             />
           </div>
 
@@ -95,15 +76,19 @@ class SearchInput extends Component {
               type="text"
               id="jobName"
               name="jobName"
-              value={this.state.jobName}
-              onChange={this.handleInputChange}
+              value={this.props.jobName}
+              onChange={event => {
+                this.props.handleInputChange(event);
+              }}
             />
           </div>
           <span>&nbsp;</span>
           <div>
             <button
-              onClick={this.handleFormSubmit}
-              type="button"
+              onClick={event => {
+                this.props.handleFormSubmit(event);
+              }}
+              type="submit"
               className="btn btn-lg btn-primary"
             >
               Search Crew

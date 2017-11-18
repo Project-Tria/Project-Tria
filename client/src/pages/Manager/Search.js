@@ -4,15 +4,40 @@ import Results from "../../components/Results/Results";
 import API from "../../utils/API";
 
 class Search extends Component {
-  state = {
-    jobs: []
-  };
+  //constructor
+  constructor (props) {
+    super(props)
 
-  componentDidMount() {
-    this.loadJobs();
+    this.state = {
+      crewName: "",
+      startDate: "",
+      endDate: "",
+      jobName: "",
+      jobs: []
+    };
+
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.loadJobs = this.loadJobs.bind(this);
   }
+  
+  
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const value = event.target.value;
+    const name = event.target.name;
 
-  loadJobs = () => {
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+  
+
+
+///should take parameters from the searchinput to use in the query
+//bind this in the constructor
+  loadJobs = (crewQuery) => {
     API.getJobs()
       // .then(res => console.log(res.data))
       .then(res => {
@@ -22,15 +47,16 @@ class Search extends Component {
       })
       .catch(err => console.log(err));
   };
-  // this.setState({
-  //   jobs: res.data,
-  //   crewName: "",
-  //   jobName: "",
-  //   custNumber: "",
-  //   custAddress: "",
-  //   estimatedJobTime: "",
-  //   jobDescription: ""
-  // })
+
+
+
+//this.state.{key} is set as parameters used in load jobs
+  handleFormSubmit = event => {
+    let queryCrewname = this.state.crewName;
+    // event.preventDefault();
+    alert("Form Submitted");
+    this.loadJobs(queryCrewname);
+  };
 
   render() {
     return (
@@ -41,7 +67,7 @@ class Search extends Component {
           Back
         </a>
         <br />
-        <SearchInput />
+        <SearchInput handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
         <br />
         <br />
         <Results jobs={this.state.jobs} />

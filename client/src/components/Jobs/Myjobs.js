@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 /*
-ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?addr=[custAddress]
+ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?addr=[custAddress]103+highfalls+ct+
 
 PHONE - <a href="tel:1-408-555-5555">1-408-555-5555</a> iOS
 

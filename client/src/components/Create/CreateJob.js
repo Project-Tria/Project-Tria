@@ -39,7 +39,7 @@ class CreateJob extends Component {
     //   this.state.estimatedJobTime &&
     //   this.state.jobDescription
     // )
-    {
+    // {
       let newJob = {
         jobDate: this.state.jobDate,
         crewName: this.state.crewName,
@@ -56,7 +56,7 @@ class CreateJob extends Component {
         // .then(res => this.loadJobs())
         .then(res => console.log(res))
         .catch(err => console.log(err));
-    }
+    // }
   };
 
   render() {
