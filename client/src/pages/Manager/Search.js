@@ -52,9 +52,9 @@ class Search extends Component {
 
     let newOne = jobsCopy.filter(jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true)
     console.log("This is the jobs copy after filter", newOne)
-    // this.setState({
-    //   jobs: jobsCopy
-    // })
+    this.setState({
+      jobs: newOne
+    })
   }
 
 
