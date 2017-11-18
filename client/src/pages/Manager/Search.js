@@ -5,6 +5,7 @@ import API from "../../utils/API";
 import Moment from 'moment';
 import { extendMoment } from 'moment-range';
  
+ const moment = extendMoment(Moment);
 
 
 class Search extends Component {
@@ -38,20 +39,22 @@ class Search extends Component {
   };
   
   filterDate = () => {
-    const moment = extendMoment(Moment);
     const start = this.state.startDate;
     const end   = this.state.endDate;
-    const range = moment.range(start, end);
+    const range = moment().range(start, end);
+
+
+    console.log(start)
 
     let jobsCopy = this.state.jobs
     let jobsCopyDate = this.state.jobs.jobDate
-    console.log("This is the jobs copy", jobsCopyDate)
+    console.log("This is the jobs copy", jobsCopy)
 
-    jobsCopy.filter(jobCopy => range.contains(jobCopy.jobDate) === true)
-    console.log("This is the jobs copy after filter", jobsCopy)
-    this.setState({
-      jobs: jobsCopy
-    })
+    let newOne = jobsCopy.filter(jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true)
+    console.log("This is the jobs copy after filter", newOne)
+    // this.setState({
+    //   jobs: jobsCopy
+    // })
   }
 
 
