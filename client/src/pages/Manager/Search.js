@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
+ 
+
 
 class Search extends Component {
   //constructor
@@ -33,17 +37,35 @@ class Search extends Component {
     });
   };
   
-  
+  filterDate = () => {
+    const moment = extendMoment(Moment);
+    const start = this.state.startDate;
+    const end   = this.state.endDate;
+    const range = moment.range(start, end);
+
+    let jobsCopy = this.state.jobs
+    let jobsCopyDate = this.state.jobs.jobDate
+    console.log("This is the jobs copy", jobsCopyDate)
+
+    jobsCopy.filter(jobCopy => range.contains(jobCopy.jobDate) === true)
+    console.log("This is the jobs copy after filter", jobsCopy)
+    this.setState({
+      jobs: jobsCopy
+    })
+  }
 
 
 ///should take parameters from the searchinput to use in the query
 //bind this in the constructor
   loadJobs = (crewQuery) => {
+
     API.getJobByCrewName(crewQuery)
       // .then(res => console.log(res.data))
       .then(res => {
         this.setState({ jobs: res.data }, () => {
+  
           console.log("This.state.jobs from Results.js", this.state.jobs);
+          this.filterDate();
         });
       })
       .catch(err => console.log(err));

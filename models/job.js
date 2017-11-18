@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 const jobSchema = new Schema({
   crewMembers: { type: String, required: false, },
   crewName: { type: String, required: false, },
-  jobDate: { type: Date, required: false, },
+  jobDate: { type: String, required: false, },
   jobName: { type: String, required: false },
   custPhone: { type: String, required: false },
   custAddress: { type: String, required: false },
