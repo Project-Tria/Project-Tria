@@ -16,8 +16,8 @@ router.route("/jobs")
 
   // Matches with "/api/jobs/:jobName"
 router
-  .route("/jobs/:jobName")
-  .get(jobsController.findJobByName)
+  .route("/jobs/:crewName")
+  .get(jobsController.findJobByCrewName)
   // .put(jobsController.update)
   // .delete(jobsController.remove);
 
