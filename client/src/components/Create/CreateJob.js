@@ -47,9 +47,77 @@ class CreateJob extends Component {
             </select>
           </div>
           <span>&nbsp;</span>
-          <button type="button" className="btn btn-success" id="add-crew-btn">
+
+          <button
+            type="button"
+            className="btn btn-success"
+            data-target="#add-crew-modal"
+            data-toggle="modal"
+          >
             Add Crew
           </button>
+        </div>
+
+        <div
+          className="modal fade"
+          id="add-crew-modal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalLongTitle"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLongTitle">
+                  Add a New Crew
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                </button>
+              </div>
+              <div className="modal-body">
+                <div className="form-group row">
+                  <label htmlFor="new-crew" className="col-form-label">
+                    New Crew Name:{" "}
+                  </label>
+                  <input
+                    className="col-6 form-control"
+                    type="text"
+                    placeholder="[Crew Type] - [Crew Lead] "
+                    id="new-crew"
+                    name="newCrew"
+                    value={this.props.newCrew}
+                    onChange={event => {
+                      this.props.handleInputChange(event);
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={event => {
+                    this.props.addCrew();
+                  }}
+                >
+                  Create Crew
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="form-group row">

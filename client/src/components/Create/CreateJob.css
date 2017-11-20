@@ -1,3 +1,11 @@
 #crew-dropdown {
     height: 36px;
 }
+
+#add-crew-modal {
+    margin-top:10%;
+}
+
+.modal-content{
+    margin-top: 80px;
+}
