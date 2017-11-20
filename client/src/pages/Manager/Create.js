@@ -56,12 +56,12 @@ class Create extends Component {
         crewName: this.state.crewName,
         crewMembers: this.state.crewMembers,
         jobName: this.state.jobName,
-        custNumber: this.state.custPhone,
+        custPhone: this.state.custPhone,
         custAddress: this.state.custAddress,
         estimatedJobTime: this.state.estimatedJobTime,
         jobDescription: this.state.jobDescription
       };
-    //   console.log(newJob);
+      console.log("This is the job you just created: ", newJob);
 
       API.saveJob(newJob)
         // .then(res => this.loadJobs())

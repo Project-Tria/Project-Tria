@@ -93,8 +93,8 @@ class CreateJob extends Component {
           <input
             className="form-control"
             type="tel"
-            name="custPhone"
             placeholder="123-456-7890"
+            name="custPhone"
             id="cust-phone"
             value={this.props.custPhone}
             onChange={event => {

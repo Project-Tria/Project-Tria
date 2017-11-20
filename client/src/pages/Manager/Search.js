@@ -4,14 +4,13 @@ import Results from "../../components/Results/Results";
 import API from "../../utils/API";
 // import Moment from 'moment';
 // import { extendMoment } from 'moment-range';
- 
-//  const moment = extendMoment(Moment);
 
+//  const moment = extendMoment(Moment);
 
 class Search extends Component {
   //constructor
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       crewName: "",
@@ -33,8 +32,7 @@ class Search extends Component {
   }
 
   //component did mount to load getCrews()
-  
-  
+
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
@@ -45,35 +43,34 @@ class Search extends Component {
       [name]: value
     });
   };
-  
+
   filterDate = () => {
     const start = this.state.startDate;
-    const end   = this.state.endDate;
+    const end = this.state.endDate;
     // const range = moment().range(start, end);
 
-    console.log(start)
+    console.log(start);
 
-    let jobsCopy = this.state.jobs
+    let jobsCopy = this.state.jobs;
     // let jobsCopyDate = this.state.jobs.jobDate
-    console.log("This is the jobs copy", jobsCopy)
+    console.log("This is the jobs copy", jobsCopy);
 
-    let newOne = jobsCopy.filter(jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true)
-    console.log("This is the jobs copy after filter", newOne)
+    let newOne = jobsCopy.filter(
+      jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true
+    );
+    console.log("This is the jobs copy after filter", newOne);
     this.setState({
       jobs: newOne
-    })
-  }
+    });
+  };
 
-
-///should take parameters from the searchinput to use in the query
-//bind this in the constructor
-  loadJobs = (crewQuery) => {
-
+  ///should take parameters from the searchinput to use in the query
+  //bind this in the constructor
+  loadJobs = crewQuery => {
     API.getJobByCrewName(crewQuery)
       // .then(res => console.log(res.data))
       .then(res => {
         this.setState({ jobs: res.data }, () => {
-  
           console.log("This.state.jobs from Results.js", this.state.jobs);
           this.filterDate();
         });
@@ -81,31 +78,27 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-//this funciton is going to get crews from the DB will be
-//props for the drop down.
+  //this funciton is going to get crews from the DB will be
+  //props for the drop down.
 
   loadCrews = () => {
     API.getCrews()
       // .then(res => console.log(res.data))
       .then(res => {
-        this.setState({ crews: res.data }, ()=> {
-          console.log("This.state.crews", this.state.crews)
+        this.setState({ crews: res.data }, () => {
+          console.log("This.state.crews", this.state.crews);
         });
       })
       .catch(err => console.log(err));
   };
 
-
-
-//this.state.{key} is set as parameters used in load jobs
+  //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
     // event.preventDefault();
     // alert("Form Submitted");
     this.loadJobs(crewQuery);
   };
-
-
 
   render() {
     return (
@@ -116,7 +109,11 @@ class Search extends Component {
           Back
         </a>
         <br />
-        <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
+        <SearchInput
+          crews={this.state.crews}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+        />
         <br />
         <br />
         <Results jobs={this.state.jobs} />
