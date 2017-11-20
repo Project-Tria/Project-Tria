@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import CreateJob from "../../components/Create/CreateJob"
+import CreateJob from "../../components/Create/CreateJob";
 
 import API from "../../utils/API";
 
-
-
-
 class Create extends Component {
-
-  constructor (props){
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       jobDate: "",
@@ -20,9 +16,10 @@ class Create extends Component {
       custAddress: "",
       jobDescription: "",
       estimatedJobTime: "",
-      jobs:[],
-      crews:[]
-    }
+      newCrew: "",
+      jobs: [],
+      crews: []
+    };
   }
 
   componentDidMount() {
@@ -51,38 +48,43 @@ class Create extends Component {
     //   this.state.jobDescription
     // )
     // {
-      let newJob = {
-        jobDate: this.state.jobDate,
-        crewName: this.state.crewName,
-        crewMembers: this.state.crewMembers,
-        jobName: this.state.jobName,
-        custPhone: this.state.custPhone,
-        custAddress: this.state.custAddress,
-        estimatedJobTime: this.state.estimatedJobTime,
-        jobDescription: this.state.jobDescription
-      };
-      console.log("This is the job you just created: ", newJob);
+    let newJob = {
+      jobDate: this.state.jobDate,
+      crewName: this.state.crewName,
+      crewMembers: this.state.crewMembers,
+      jobName: this.state.jobName,
+      custPhone: this.state.custPhone,
+      custAddress: this.state.custAddress,
+      estimatedJobTime: this.state.estimatedJobTime,
+      jobDescription: this.state.jobDescription
+    };
+    console.log("This is the job you just created: ", newJob);
 
-      API.saveJob(newJob)
-        // .then(res => this.loadJobs())
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+    API.saveJob(newJob)
+      // .then(res => this.loadJobs())
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
     // }
   };
-
-
 
   loadCrews = () => {
     API.getCrews()
       // .then(res => console.log(res.data))
       .then(res => {
-        this.setState({ crews: res.data }, ()=> {
-          console.log("This.state.crews", this.state.crews)
+        this.setState({ crews: res.data }, () => {
+          console.log("This.state.crews", this.state.crews);
         });
       })
       .catch(err => console.log(err));
   };
 
+  addCrew = () => {
+    console.log("this.state.newCrew" + this.state.newCrew)
+    let newCrewName = this.state.newCrew;
+    // API.saveCrew(newCrewName)
+    //   .then(res => console.log("saveCrew", res))
+    //   .catch(err => console.log(err));
+  };
 
 
 
@@ -91,10 +93,17 @@ class Create extends Component {
       <div className="container text-center">
         <h1>Welcome to Manager - Create</h1>
         <br />
-        <a href="/manager/" className="btn btn-info">Back</a>
+        <a href="/manager/" className="btn btn-info">
+          Back
+        </a>
         <br />
         <br />
-        <CreateJob crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
+        <CreateJob
+          crews={this.state.crews}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
+          addCrew={this.addCrew}
+        />
       </div>
     );
   }
