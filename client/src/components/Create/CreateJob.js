@@ -47,7 +47,6 @@ class CreateJob extends Component {
             </select>
           </div>
           <span>&nbsp;</span>
-
           <button
             type="button"
             className="btn btn-success"
