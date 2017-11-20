@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
-import Moment from 'moment';
-import { extendMoment } from 'moment-range';
+// import Moment from 'moment';
+// import { extendMoment } from 'moment-range';
  
- const moment = extendMoment(Moment);
+//  const moment = extendMoment(Moment);
 
 
 class Search extends Component {
@@ -25,11 +25,14 @@ class Search extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.loadJobs = this.loadJobs.bind(this);
-    this.loadCrews = this.loadCrews.bind(this);
+    // this.loadCrews = this.loadCrews.bind(this);
   }
+
   componentDidMount() {
     this.loadCrews();
   }
+
+  //component did mount to load getCrews()
   
   
   handleInputChange = event => {
@@ -46,13 +49,12 @@ class Search extends Component {
   filterDate = () => {
     const start = this.state.startDate;
     const end   = this.state.endDate;
-    const range = moment().range(start, end);
-
+    // const range = moment().range(start, end);
 
     console.log(start)
 
     let jobsCopy = this.state.jobs
-    let jobsCopyDate = this.state.jobs.jobDate
+    // let jobsCopyDate = this.state.jobs.jobDate
     console.log("This is the jobs copy", jobsCopy)
 
     let newOne = jobsCopy.filter(jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true)
@@ -94,13 +96,16 @@ class Search extends Component {
   };
 
 
+
 //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
     // event.preventDefault();
-    alert("Form Submitted");
+    // alert("Form Submitted");
     this.loadJobs(crewQuery);
   };
+
+
 
   render() {
     return (

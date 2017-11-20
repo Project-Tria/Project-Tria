@@ -8,33 +8,80 @@ import API from "../../utils/API";
 
 class Create extends Component {
 
-  state ={
-    jobs:[]
+  constructor (props){
+    super(props)
+
+    this.state = {
+      jobDate: "",
+      crewName: "",
+      crewMembers: "",
+      jobName: "",
+      custPhone: "",
+      custAddress: "",
+      jobDescription: "",
+      estimatedJobTime: "",
+      jobs:[]
+    }
   }
 
   componentDidMount() {
-    this.loadJobs();
+    this.loadCrews();
   }
 
-  loadJobs = () => {
-    API.getJobs()
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const value = event.target.value;
+    const name = event.target.name;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = () => {
+    event.preventDefault();
+    // if (
+    //   this.state.crewName &&
+    //   this.state.jobName &&
+    //   this.state.custPhone &&
+    //   this.state.custAddress &&
+    //   this.state.estimatedJobTime &&
+    //   this.state.jobDescription
+    // )
+    // {
+      let newJob = {
+        jobDate: this.state.jobDate,
+        crewName: this.state.crewName,
+        crewMembers: this.state.crewMembers,
+        jobName: this.state.jobName,
+        custNumber: this.state.custPhone,
+        custAddress: this.state.custAddress,
+        estimatedJobTime: this.state.estimatedJobTime,
+        jobDescription: this.state.jobDescription
+      };
+    //   console.log(newJob);
+
+      API.saveJob(newJob)
+        // .then(res => this.loadJobs())
+        .then(res => console.log(res))
+        .catch(err => console.log(err));
+    // }
+  };
+
+
+  
+  loadCrews = () => {
+    API.getCrews()
       // .then(res => console.log(res.data))
       .then(res => {
-        this.setState({ jobs: res.data }, ()=> {
-          console.log("This.state.jobs", this.state.jobs)
+        this.setState({ crews: res.data }, ()=> {
+          console.log("This.state.crews", this.state.crews)
         });
       })
       .catch(err => console.log(err));
   };
-  // this.setState({
-  //   jobs: res.data,
-  //   crewName: "",
-  //   jobName: "",
-  //   custNumber: "",
-  //   custAddress: "",
-  //   estimatedJobTime: "",
-  //   jobDescription: ""
-  // })
+
 
 
 
@@ -46,7 +93,7 @@ class Create extends Component {
         <a href="/manager/" className="btn btn-info">Back</a>
         <br />
         <br />
-        <CreateJob />
+        <CreateJob crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
       </div>
     );
   }
