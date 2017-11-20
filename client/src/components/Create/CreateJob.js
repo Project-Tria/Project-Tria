@@ -4,20 +4,10 @@ import "./CreateJob.css";
 // import FormBtn from "../../components/Form";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
 
-
-
 class CreateJob extends Component {
-  
-  
-  renderCrew = (props) => {
-    return (
-      this.props.crews.map(crew =>(
-        <option>{crew.crewNameDB}</option>
-      ))
-    )
-  }
-  
-
+  renderCrew = props => {
+    return this.props.crews.map(crew => <option>{crew.crewNameDB}</option>);
+  };
 
   render() {
     return (
@@ -52,11 +42,8 @@ class CreateJob extends Component {
                 this.props.handleInputChange(event);
               }}
             >
-              <option>Cleaning - Peter</option>
-              <option>Cleaning - Paul</option>
-              <option>Cleaning - Mary</option>
-              <option>Trimming - Bob</option>
-              <option>Trimming - Barb</option>
+              <option>Select a crew</option>
+              {this.renderCrew()}
             </select>
           </div>
           <span>&nbsp;</span>
@@ -106,8 +93,8 @@ class CreateJob extends Component {
           <input
             className="form-control"
             type="tel"
-            name="custPhone"
             placeholder="123-456-7890"
+            name="custPhone"
             id="cust-phone"
             value={this.props.custPhone}
             onChange={event => {
@@ -164,15 +151,15 @@ class CreateJob extends Component {
         </div>
 
         <button
-              onClick={event => {
-                this.props.handleFormSubmit(event);
-              }}
-              type="submit"
-              className="btn btn-lg btn-primary"
-            >
-              Create Job
-            </button>
-            {/* <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn> */}
+          onClick={event => {
+            this.props.handleFormSubmit(event);
+          }}
+          type="submit"
+          className="btn btn-lg btn-primary"
+        >
+          Create Job
+        </button>
+        {/* <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn> */}
       </div>
     ); // end return
   } // end render

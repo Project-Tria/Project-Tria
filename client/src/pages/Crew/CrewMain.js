@@ -1,8 +1,33 @@
 import React, { Component } from "react";
+import API from "../../utils/API";
 import MyJobs from "../../components/Jobs/MyJobs";
 //should crew main only display job for the current date?
 
 class CrewMain extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      jobs:[]
+    }
+  }
+
+  componentDidMount(){
+    this.getJobs()
+  }
+  
+  getJobs(){
+    API.getJobs()
+    .then(res => {
+      this.setState({ jobs: res.data }, () => {
+        console.log("This.state.jobs from CrewMain.js", this.state.jobs);
+        // this.filterDate();
+      });
+    })
+    .catch(err => console.log(err));
+  }
+
+
   getDate() {
     var today = new Date();
     var dd = today.getDate();
@@ -28,7 +53,7 @@ class CrewMain extends Component {
         </a>
         <br />
         <br />
-        <MyJobs />
+        <MyJobs jobs={this.state.jobs}/>
       </div>
     );
   }
