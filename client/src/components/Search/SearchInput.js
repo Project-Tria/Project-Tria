@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./SearchInput.css";
-import "../DropDown/DropDownOptions";
+
 // import API from "../../utils/API";
 
 class SearchInput extends Component {
@@ -30,7 +30,7 @@ class SearchInput extends Component {
               >
                 
                 <option>Select a crew</option>
-                <DropDownOptions/>
+                {/*<DropDownOptions/>*/}
                 <option>Cleaning - Peter</option>
                 <option>Cleaning - Paul</option>
                 <option>Cleaning - Mary</option>
