@@ -16,7 +16,7 @@ class Create extends Component {
       custAddress: "",
       jobDescription: "",
       estimatedJobTime: "",
-      newCrew: "",
+      crewNameDB: "",
       jobs: [],
       crews: []
     };
@@ -79,11 +79,11 @@ class Create extends Component {
   };
 
   addCrew = () => {
-    console.log("this.state.newCrew" + this.state.newCrew)
-    let newCrewName = this.state.newCrew;
-    // API.saveCrew(newCrewName)
-    //   .then(res => console.log("saveCrew", res))
-    //   .catch(err => console.log(err));
+    API.saveCrew({
+      crewNameDB: this.state.crewNameDB
+    })
+      .then(res => this.loadCrews())
+      .catch(err => console.log(err));
   };
 
 

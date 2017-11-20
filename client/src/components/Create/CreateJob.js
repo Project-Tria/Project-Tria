@@ -47,7 +47,6 @@ class CreateJob extends Component {
             </select>
           </div>
           <span>&nbsp;</span>
-
           <button
             type="button"
             className="btn btn-success"
@@ -88,10 +87,10 @@ class CreateJob extends Component {
                   <input
                     className="col-6 form-control"
                     type="text"
-                    placeholder="[Crew Type] - [Crew Lead] "
+                    placeholder="[Crew Type] - [Crew Lead]"
                     id="new-crew"
-                    name="newCrew"
-                    value={this.props.newCrew}
+                    name="crewNameDB"
+                    value={this.props.crewNameDB}
                     onChange={event => {
                       this.props.handleInputChange(event);
                     }}
