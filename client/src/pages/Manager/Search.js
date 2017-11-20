@@ -25,8 +25,9 @@ class Search extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.loadJobs = this.loadJobs.bind(this);
-    this.loadCrews = this.loadCrews.bind(this);
+    // this.loadCrews = this.loadCrews.bind(this);
   }
+
   componentDidMount() {
     this.loadCrews();
   }
@@ -94,17 +95,6 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-    //load the crews from the crew DB
-    loadCrews = () => {
-      API.getCrews()
-      .then(res => {
-        this.setState({ crews: res.data }, () => {
-  
-          console.log("This.state.crews from Search.js", this.state.crews);
-        });
-      })
-      .catch(err => console.log(err));
-    }
 
 
 //this.state.{key} is set as parameters used in load jobs

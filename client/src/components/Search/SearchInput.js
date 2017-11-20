@@ -5,6 +5,14 @@ import "./SearchInput.css";
 
 class SearchInput extends Component {
   //might want to wrap form in form tag
+  renderCrew = (props) => {
+    return (
+      this.props.crews.map(crew =>(
+        <option>{crew.crewNameDB}</option>
+      ))
+    )
+  }
+
 
   render() {
     return ( 
@@ -28,14 +36,8 @@ class SearchInput extends Component {
                   this.props.handleInputChange(event);
                 }}
               >
-                
                 <option>Select a crew</option>
-                {/*<DropDownOptions/>*/}
-                <option>Cleaning - Peter</option>
-                <option>Cleaning - Paul</option>
-                <option>Cleaning - Mary</option>
-                <option>Trimming - Bob</option>
-                <option>Trimming - Barb</option>
+                {this.renderCrew()}
                 
               </select>
             </div>
