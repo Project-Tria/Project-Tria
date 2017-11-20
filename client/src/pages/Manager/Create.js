@@ -20,7 +20,8 @@ class Create extends Component {
       custAddress: "",
       jobDescription: "",
       estimatedJobTime: "",
-      jobs:[]
+      jobs:[],
+      crews:[]
     }
   }
 
@@ -70,7 +71,7 @@ class Create extends Component {
   };
 
 
-  
+
   loadCrews = () => {
     API.getCrews()
       // .then(res => console.log(res.data))
