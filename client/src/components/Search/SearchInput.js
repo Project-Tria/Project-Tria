@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./SearchInput.css";
+
 // import API from "../../utils/API";
 
 class SearchInput extends Component {
   //might want to wrap form in form tag
 
   render() {
-    return (
+    return ( 
       <div>
         <div className="container text-center border">
           <div className="form-group row">
@@ -27,12 +28,15 @@ class SearchInput extends Component {
                   this.props.handleInputChange(event);
                 }}
               >
+                
                 <option>Select a crew</option>
+                {/*<DropDownOptions/>*/}
                 <option>Cleaning - Peter</option>
                 <option>Cleaning - Paul</option>
                 <option>Cleaning - Mary</option>
                 <option>Trimming - Bob</option>
                 <option>Trimming - Barb</option>
+                
               </select>
             </div>
           </div>

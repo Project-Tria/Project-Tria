@@ -18,12 +18,17 @@ class Search extends Component {
       startDate: "",
       endDate: "",
       jobName: "",
-      jobs: []
+      jobs: [],
+      crews: []
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.loadJobs = this.loadJobs.bind(this);
+    this.loadCrews = this.loadCrews.bind(this);
+  }
+  componentDidMount() {
+    this.loadCrews();
   }
   
   
@@ -74,6 +79,19 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
+//this funciton is going to get crews from the DB will be
+//props for the drop down.
+
+  loadCrews = () => {
+    API.getCrews()
+      // .then(res => console.log(res.data))
+      .then(res => {
+        this.setState({ crews: res.data }, ()=> {
+          console.log("This.state.crews", this.state.crews)
+        });
+      })
+      .catch(err => console.log(err));
+  };
 
 
 //this.state.{key} is set as parameters used in load jobs
@@ -93,7 +111,7 @@ class Search extends Component {
           Back
         </a>
         <br />
-        <SearchInput handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
+        <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange}/>
         <br />
         <br />
         <Results jobs={this.state.jobs} />
