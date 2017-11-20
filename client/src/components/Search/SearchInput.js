@@ -27,6 +27,7 @@ class SearchInput extends Component {
                   this.props.handleInputChange(event);
                 }}
               >
+              this.props.crews.map(crew =>())
                 <option>Select a crew</option>
                 <option>Cleaning - Peter</option>
                 <option>Cleaning - Paul</option>

@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
-import Moment from 'moment';
-import { extendMoment } from 'moment-range';
+// import Moment from 'moment';
+// import { extendMoment } from 'moment-range';
  
- const moment = extendMoment(Moment);
+//  const moment = extendMoment(Moment);
 
 
 class Search extends Component {
@@ -18,13 +18,16 @@ class Search extends Component {
       startDate: "",
       endDate: "",
       jobName: "",
-      jobs: []
+      jobs: [],
+      crews:[],
     };
 
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.loadJobs = this.loadJobs.bind(this);
   }
+
+  //component did mount to load getCrews()
   
   
   handleInputChange = event => {
@@ -41,13 +44,12 @@ class Search extends Component {
   filterDate = () => {
     const start = this.state.startDate;
     const end   = this.state.endDate;
-    const range = moment().range(start, end);
-
+    // const range = moment().range(start, end);
 
     console.log(start)
 
     let jobsCopy = this.state.jobs
-    let jobsCopyDate = this.state.jobs.jobDate
+    // let jobsCopyDate = this.state.jobs.jobDate
     console.log("This is the jobs copy", jobsCopy)
 
     let newOne = jobsCopy.filter(jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true)
@@ -75,6 +77,18 @@ class Search extends Component {
   };
 
 
+    //load the crews from the crew DB
+    loadCrews = () => {
+      API.getCrews()
+      .then(res => {
+        this.setState({ crews: res.data }, () => {
+  
+          console.log("This.state.crews from Search.js", this.state.crews);
+        });
+      })
+      .catch(err => console.log(err));
+    }
+
 
 //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
@@ -83,6 +97,8 @@ class Search extends Component {
     // alert("Form Submitted");
     this.loadJobs(crewQuery);
   };
+
+
 
   render() {
     return (
