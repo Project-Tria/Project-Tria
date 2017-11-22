@@ -46,14 +46,18 @@ class MyJobs extends Component {
               </div>
               <div className="crew-form col">
                 <div className="crew-form-fields">
-                  <label htmlFor="job-descrip">Crew Notes:</label>
+                  <label htmlFor="job-notes">Crew Notes:</label>
                   <textarea
                     className="form-control"
-                    name="jobDescription"
+                    name="jobNotes"
                     value=""
-                    
-                    id="job-descrip"
+                    id="job-notes"
                     rows="3"
+                    value={this.props.crewMembers}
+                    onChange={event => {
+                    this.props.handleInputChange(event);
+                    }}
+                    
                   />
 
                   <label htmlFor="act-hours" className="col col-form-label">
@@ -64,8 +68,13 @@ class MyJobs extends Component {
                     type="number"
                     name="actualJobTime"
                     value=""
-                    
                     id="act-hours"
+                    value={this.props.actualJobTime}
+                    onChange={event => {
+                      this.props.handleInputChange(event);
+                    }}
+                  
+                  
                   />
                 </div>
               </div>
