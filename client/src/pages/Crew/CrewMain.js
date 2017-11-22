@@ -15,6 +15,34 @@ class CrewMain extends Component {
     }
   }
 
+    handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const value = event.target.value;
+    const name = event.target.name;
+
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+
+    handleFormSubmit = () => {
+    event.preventDefault();
+
+    let crewUpdate = {
+      actualJobTime: this.state.actualJobTime,
+      jobNotes: this.state.jobNotes,
+      completed: true
+    };
+    console.log("This is the job you just completed: ", crewUpdate);
+
+    API.saveJob(newJob)
+      // .then(res => this.loadJobs())
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+    // }
+  };
+
   componentDidMount(){
     this.getJobs()
   }

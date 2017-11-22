@@ -6,6 +6,10 @@ export default {
   getJobs: function() {
     return axios.get("/api/jobs");
   },
+  //will update job by id
+  updateJob: function(id) {
+    return axios.put("/api/jobs/" + id);
+  },
   // Gets the job with the given id
   getJob: function(id) {
     return axios.get("/api/jobs/" + id);
