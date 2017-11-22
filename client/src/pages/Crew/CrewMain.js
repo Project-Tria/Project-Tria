@@ -4,26 +4,25 @@ import MyJobs from "../../components/Jobs/MyJobs";
 //should crew main only display job for the current date?
 
 class CrewMain extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
       actualJobTime: "",
       jobNotes: "",
       completed: "",
       _id: "",
-      jobs:[]
-    }
+      jobs: []
+    };
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    
   }
 
-    handleInputChange = event => {
+  handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
-    console.log("This is the name from the handleinputchange", name)
+    console.log("This is the name from the handleinputchange", name);
 
     // Updating the input's state
     this.setState({
@@ -31,43 +30,44 @@ class CrewMain extends Component {
     });
   };
 
-    handleFormSubmit = () => {
+  componentDidMount() {
+    this.getJobs();
+  }
+
+
+  handleFormSubmit = () => {
     event.preventDefault();
 
-  let jobData = {
-     actualJobTime : this.state.actualJobTime,
-      jobNotes : this.state.jobNotes,
-       completed : true
-  }
-    
+    let jobData = {
+      actualJobTime: this.state.actualJobTime,
+      jobNotes: this.state.jobNotes,
+      completed: true
+    };
+
     console.log("This is the job you just completed: ", jobData);
 
     let id = this.state._id;
-    
+
     console.log("This is the id you just completed: ", id);
 
     API.updateJob(id, jobData)
       // .then(res => this.loadJobs())
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    // }
   };
 
-  componentDidMount(){
-    this.getJobs()
-  }
-  
-  getJobs(){
-    API.getJobs()
-    .then(res => {
-      this.setState({ jobs: res.data }, () => {
-        console.log("This.state.jobs from CrewMain.js", this.state.jobs);
-        // this.filterDate();
-      });
-    })
-    .catch(err => console.log(err));
-  }
+ 
 
+  getJobs() {
+    API.getJobs()
+      .then(res => {
+        this.setState({ jobs: res.data }, () => {
+          console.log("This.state.jobs from CrewMain.js", this.state.jobs);
+
+        });
+      })
+      .catch(err => console.log(err));
+  }
 
   getDate() {
     var today = new Date();
@@ -94,10 +94,10 @@ class CrewMain extends Component {
         </a>
         <br />
         <br />
-        <MyJobs 
-        jobs={this.state.jobs}
-        handleFormSubmit={this.handleFormSubmit}
-        handleInputChange={this.handleInputChange}
+        <MyJobs
+          jobs={this.state.jobs}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange}
         />
       </div>
     );

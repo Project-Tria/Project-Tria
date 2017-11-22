@@ -5,6 +5,7 @@ const crewsController = require("../../controllers/crewsController");
 // Matches with "/api/jobs"
 router.route("/jobs")
   .get(jobsController.findAll)
+  // .get(jobsController.findOpenJobs)
   .post(jobsController.create);
 
 // Matches with "/api/jobs/:id"

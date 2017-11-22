@@ -16,6 +16,15 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+
+  // findOpenJobs: function(req, res) {
+  //   db.Job
+  //     .find({ 'completed': false })
+  //     // .sort({ date: -1 })
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
+
   findById: function(req, res) {
     db.Job
       .findById(req.params.id)
