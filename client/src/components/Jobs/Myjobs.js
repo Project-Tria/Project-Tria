@@ -81,8 +81,10 @@ class MyJobs extends Component {
 
               <div className="crew-form-button col text-center">
                 <button
-                  onClick={this.handleFormSubmit}
-                  type="button"
+                  onClick={event => {
+                  this.props.handleFormSubmit(event);
+                  }}
+                  type="submit"
                   className="btn btn-lg btn-danger"
                 >
                   Complete Job
