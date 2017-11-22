@@ -16,7 +16,7 @@ class CrewMain extends Component {
     }
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.loadJobs = this.loadJobs.bind(this);
+    
   }
 
     handleInputChange = event => {
@@ -34,16 +34,16 @@ class CrewMain extends Component {
     handleFormSubmit = () => {
     event.preventDefault();
 
-    let jobData = {
-      actualJobTime: this.state.actualJobTime,
-      jobNotes: this.state.jobNotes,
-      completed: true
-    };
-    console.log("This is the job you just completed: ", crewUpdate);
+  let jobData = {
+     actualJobTime : this.state.actualJobTime,
+      jobNotes : this.state.jobNotes,
+       completed : true
+  }
+    
+    console.log("This is the job you just completed: ", jobData);
 
-    let id = {
-      actualJobTime: this.state._id,
-    };
+    let id = this.state._id;
+    
     console.log("This is the id you just completed: ", id);
 
     API.updateJob(id, jobData)

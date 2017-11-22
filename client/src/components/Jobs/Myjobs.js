@@ -60,15 +60,7 @@ class MyJobs extends Component {
                     }}
                     
                   />
-                  <div
-                    name="_id"                   
-                    id="job-id"                    
-                    value={this.props._id}
-                    onChange={event => {
-                    this.props.handleInputChange(event);
-                    }}
-                  >
-                  </div>
+                 
 
                   <label htmlFor="act-hours" className="col col-form-label">
                     Job Hours
@@ -77,7 +69,6 @@ class MyJobs extends Component {
                     className="form-control"
                     type="number"
                     name="actualJobTime"
-                    value=""
                     id="act-hours"
                     value={this.props.actualJobTime}
                     onChange={event => {
