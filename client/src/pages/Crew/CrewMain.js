@@ -8,6 +8,9 @@ class CrewMain extends Component {
     super(props)
 
     this.state = {
+      actualJobTime: "",
+      jobNotes: "",
+      completed: "",
       jobs:[]
     }
   }
