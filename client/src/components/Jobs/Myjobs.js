@@ -34,6 +34,7 @@ class MyJobs extends Component {
           role="tabpanel"
           aria-labelledby={"heading"+job._id}
         >
+    
           <div className="card-block text-left">
             <div className="row job-row">
               <div className="col">
@@ -46,15 +47,20 @@ class MyJobs extends Component {
               </div>
               <div className="crew-form col">
                 <div className="crew-form-fields">
-                  <label htmlFor="job-descrip">Crew Notes:</label>
+                  <label htmlFor="job-notes">Crew Notes:</label>
                   <textarea
                     className="form-control"
-                    name="jobDescription"
-                    value=""
+                    name="jobNotes"
                     
-                    id="job-descrip"
+                    id="job-notes"
                     rows="3"
+                    value={this.props.jobNotes}
+                    onChange={event => {
+                    this.props.handleInputChange(event);
+                    }}
+                    
                   />
+                 
 
                   <label htmlFor="act-hours" className="col col-form-label">
                     Job Hours
@@ -63,17 +69,23 @@ class MyJobs extends Component {
                     className="form-control"
                     type="number"
                     name="actualJobTime"
-                    value=""
-                    
                     id="act-hours"
+                    value={this.props.actualJobTime}
+                    onChange={event => {
+                      this.props.handleInputChange(event);
+                    }}
+                  
+                  
                   />
                 </div>
               </div>
 
               <div className="crew-form-button col text-center">
                 <button
-                  onClick={this.handleFormSubmit}
-                  type="button"
+                  onClick={event => {
+                  this.props.handleFormSubmit(event);
+                  }}
+                  type="submit"
                   className="btn btn-lg btn-danger"
                 >
                   Complete Job
