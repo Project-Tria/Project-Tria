@@ -119,6 +119,7 @@ class Search extends Component {
         <Results jobs={this.state.jobs} />
         <br />
         <br />
+        <br />
       </div>
     );
   }

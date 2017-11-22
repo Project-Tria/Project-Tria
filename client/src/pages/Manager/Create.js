@@ -104,6 +104,8 @@ class Create extends Component {
           handleInputChange={this.handleInputChange}
           addCrew={this.addCrew}
         />
+        <br />
+        <br />
       </div>
     );
   }
