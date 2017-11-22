@@ -11,14 +11,19 @@ class CrewMain extends Component {
       actualJobTime: "",
       jobNotes: "",
       completed: "",
+      _id: "",
       jobs:[]
     }
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.loadJobs = this.loadJobs.bind(this);
   }
 
     handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
+    console.log("This is the name from the handleinputchange", name)
 
     // Updating the input's state
     this.setState({
@@ -29,14 +34,19 @@ class CrewMain extends Component {
     handleFormSubmit = () => {
     event.preventDefault();
 
-    let crewUpdate = {
+    let jobData = {
       actualJobTime: this.state.actualJobTime,
       jobNotes: this.state.jobNotes,
       completed: true
     };
     console.log("This is the job you just completed: ", crewUpdate);
 
-    API.saveJob(newJob)
+    let id = {
+      actualJobTime: this.state._id,
+    };
+    console.log("This is the id you just completed: ", id);
+
+    API.updateJob(id, jobData)
       // .then(res => this.loadJobs())
       .then(res => console.log(res))
       .catch(err => console.log(err));
@@ -84,7 +94,11 @@ class CrewMain extends Component {
         </a>
         <br />
         <br />
-        <MyJobs jobs={this.state.jobs}/>
+        <MyJobs 
+        jobs={this.state.jobs}
+        handleFormSubmit={this.handleFormSubmit}
+        handleInputChange={this.handleInputChange}
+        />
       </div>
     );
   }

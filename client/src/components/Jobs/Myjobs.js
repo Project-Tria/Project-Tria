@@ -34,6 +34,7 @@ class MyJobs extends Component {
           role="tabpanel"
           aria-labelledby={"heading"+job._id}
         >
+    
           <div className="card-block text-left">
             <div className="row job-row">
               <div className="col">
@@ -50,15 +51,24 @@ class MyJobs extends Component {
                   <textarea
                     className="form-control"
                     name="jobNotes"
-                    value=""
+                    
                     id="job-notes"
                     rows="3"
-                    value={this.props.crewMembers}
+                    value={this.props.jobNotes}
                     onChange={event => {
                     this.props.handleInputChange(event);
                     }}
                     
                   />
+                  <div
+                    name="_id"                   
+                    id="job-id"                    
+                    value={this.props._id}
+                    onChange={event => {
+                    this.props.handleInputChange(event);
+                    }}
+                  >
+                  </div>
 
                   <label htmlFor="act-hours" className="col col-form-label">
                     Job Hours

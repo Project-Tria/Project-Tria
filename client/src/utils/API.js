@@ -7,8 +7,8 @@ export default {
     return axios.get("/api/jobs");
   },
   //will update job by id
-  updateJob: function(id) {
-    return axios.put("/api/jobs/" + id);
+  updateJob: function(id, jobData) {
+    return axios.put("/api/jobs/" + id, jobData);
   },
   // Gets the job with the given id
   getJob: function(id) {
@@ -16,7 +16,7 @@ export default {
   },
   // Gets the job with the given crew name
   getJobByCrewName: function(crewName) {
-    return axios.get("/api/jobs/" + crewName);
+    return axios.get("/api/search/" + crewName);
   },
   // Deletes the job with the given id
   deleteJob: function(id) {
