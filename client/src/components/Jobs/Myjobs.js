@@ -79,14 +79,25 @@ class MyJobs extends Component {
                   />
                 </div>
               </div>
+              
+               
 
               <div className="crew-form-button col text-center">
                 <button
+                name="_id"
+              value={job._id}
+              onClickCapture={events => {
+                this.props.handleInputChange(events);
+              }
+              }
                   onClick={event => {
                   this.props.handleFormSubmit(event);
                   }}
                   type="submit"
                   className="btn btn-lg btn-danger"
+          
+                  
+              
                 >
                   Complete Job
                 </button>

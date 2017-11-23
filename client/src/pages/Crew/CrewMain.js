@@ -38,12 +38,15 @@ class CrewMain extends Component {
   handleFormSubmit = () => {
     event.preventDefault();
 
-    let jobData = {
-      actualJobTime: this.state.actualJobTime,
-      jobNotes: this.state.jobNotes,
-      completed: true
-    };
+    
+    
 
+  let jobData = {
+     actualJobTime : this.state.actualJobTime,
+      jobNotes : this.state.jobNotes,
+       completed : true
+  }
+    
     console.log("This is the job you just completed: ", jobData);
 
     let id = this.state._id;
