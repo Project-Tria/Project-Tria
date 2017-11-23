@@ -16,7 +16,7 @@ class MyJobs extends Component {
         <div className="card-header" role="tab" id={"heading"+job._id}>
           <h3 className="mb-0">
             <a
-              data-toggle="collapse"
+              data-toggle="collapsed"
               data-parent="#accordion"
               href={"#collapse"+job._id}
               aria-expanded="true"
@@ -30,7 +30,7 @@ class MyJobs extends Component {
 
         <div
           id={"collapse"+job._id}
-          className="collapse show"
+          className="collapsed show"
           role="tabpanel"
           aria-labelledby={"heading"+job._id}
         >
