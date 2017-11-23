@@ -20,6 +20,7 @@ class CrewMain extends Component {
   }
 
     handleInputChange = event => {
+      console.log("This is the event ", event )
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
@@ -31,9 +32,9 @@ class CrewMain extends Component {
     });
   };
 
-    handleFormSubmit = () => {
+    handleFormSubmit = (event) => {
     event.preventDefault();
-
+    console.log("This is the event target ",event.target.value)
     
     
 
@@ -45,7 +46,7 @@ class CrewMain extends Component {
     
     console.log("This is the job you just completed: ", jobData);
 
-    let id = this.state._id;
+    let id = event.target.value;
     
     console.log("This is the id you just completed: ", id);
 
