@@ -18,7 +18,8 @@ class CrewMain extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange = event => {
+    handleInputChange = event => {
+      console.log("This is the event ", event )
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
@@ -30,14 +31,18 @@ class CrewMain extends Component {
     });
   };
 
+<<<<<<< HEAD
   componentDidMount() {
     this.getJobs();
   }
 
 
   handleFormSubmit = () => {
+=======
+    handleFormSubmit = (event) => {
+>>>>>>> master
     event.preventDefault();
-
+    console.log("This is the event target ",event.target.value)
     
     
 
@@ -49,8 +54,13 @@ class CrewMain extends Component {
     
     console.log("This is the job you just completed: ", jobData);
 
+<<<<<<< HEAD
     let id = this.state._id;
 
+=======
+    let id = event.target.value;
+    
+>>>>>>> master
     console.log("This is the id you just completed: ", id);
 
     API.updateJob(id, jobData)

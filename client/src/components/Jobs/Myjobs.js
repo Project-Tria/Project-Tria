@@ -30,7 +30,7 @@ class MyJobs extends Component {
 
         <div
           id={"collapse"+job._id}
-          className="collapsed show"
+          className="collapse"
           role="tabpanel"
           aria-labelledby={"heading"+job._id}
         >
@@ -85,13 +85,9 @@ class MyJobs extends Component {
               <div className="crew-form-button col text-center">
                 <button
                 name="_id"
-              value={job._id}
-              onClickCapture={events => {
-                this.props.handleInputChange(events);
-              }
-              }
+                value={job._id}
                   onClick={event => {
-                  this.props.handleFormSubmit(event);
+                  this.props.handleFormSubmit(event);   
                   }}
                   type="submit"
                   className="btn btn-lg btn-danger"
