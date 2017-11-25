@@ -31,16 +31,12 @@ class CrewMain extends Component {
     });
   };
 
-<<<<<<< HEAD
   componentDidMount() {
     this.getJobs();
   }
 
 
-  handleFormSubmit = () => {
-=======
     handleFormSubmit = (event) => {
->>>>>>> master
     event.preventDefault();
     console.log("This is the event target ",event.target.value)
     
@@ -54,13 +50,8 @@ class CrewMain extends Component {
     
     console.log("This is the job you just completed: ", jobData);
 
-<<<<<<< HEAD
-    let id = this.state._id;
-
-=======
     let id = event.target.value;
     
->>>>>>> master
     console.log("This is the id you just completed: ", id);
 
     API.updateJob(id, jobData)

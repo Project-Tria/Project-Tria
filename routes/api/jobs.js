@@ -8,6 +8,13 @@ router.route("/jobs")
   // .get(jobsController.findOpenJobs)
   .post(jobsController.create);
 
+
+//all new routes/openjobs
+//update jobs controller
+//one get route API backend
+//add the front end API  ->utils/API axios call
+//
+
 // Matches with "/api/jobs/:id"
 router
   .route("/jobs/:id")
