@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import App from './App';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
@@ -9,7 +9,7 @@ import ManagerMain from "./pages/Manager/ManagerMain";
 import Create from "./pages/Manager/Create";
 import Search from "./pages/Manager/Search";
 import CrewMain from "./pages/Crew/CrewMain";
-
+import Jumbotron from "./components/Jumbotron/Jumbotron";
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {
@@ -20,6 +20,20 @@ const handleAuthentication = (nextState, replace) => {
 
 export const makeMainRoutes = () => {
   return (
+    <div>
+    <Jumbotron>
+          <img
+            src="http://www.whymonster.com/images/Logo.png"
+            alt="Company Logo"
+          />
+          <br />
+          <br />
+          <p>
+            <span style={{ fontSize: 12 }}>
+              <i>powered by </i>
+            </span>Crewify
+          </p>
+        </Jumbotron>
       <Router history={history} component={App}>
         <div>
           <Switch>
@@ -35,5 +49,6 @@ export const makeMainRoutes = () => {
           </Switch>
         </div>
       </Router>
+      </div>
   );
 }

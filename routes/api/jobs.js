@@ -14,6 +14,8 @@ router.route("/jobs")
 //one get route API backend
 //add the front end API  ->utils/API axios call
 //
+router.route("/openjobs")
+.get(jobsController.findOpenJobs)
 
 // Matches with "/api/jobs/:id"
 router

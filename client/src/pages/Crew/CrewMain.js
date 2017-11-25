@@ -21,6 +21,10 @@ class CrewMain extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+  
+  componentDidMount() {
+    this.getJobs();
+  }
 
   handleInputChange = event => {
     console.log("This is the event ", event);
@@ -54,16 +58,14 @@ class CrewMain extends Component {
 
     API.updateJob(id, jobData)
       // .then(res => this.loadJobs())
-      .then(res => console.log(res))
+      .then(res => this.getJobs())
       .catch(err => console.log(err));
   };
 
-  componentDidMount() {
-    this.getJobs();
-  }
+
 
   getJobs() {
-    API.getJobs()
+    API.findOpenJobs()
       .then(res => {
         this.setState({ jobs: res.data }, () => {
           console.log("This.state.jobs from CrewMain.js", this.state.jobs);
