@@ -4,6 +4,10 @@ import CreateJob from "../../components/Create/CreateJob";
 import API from "../../utils/API";
 
 class Create extends Component {
+  login() {
+    this.props.auth.login();
+  }
+
   constructor(props) {
     super(props);
 
@@ -86,26 +90,37 @@ class Create extends Component {
       .catch(err => console.log(err));
   };
 
-
-
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
       <div className="container text-center">
-        <h1>Welcome to Manager - Create</h1>
-        <br />
-        <a href="/manager/" className="btn btn-info">
-          Back
-        </a>
-        <br />
-        <br />
-        <CreateJob
-          crews={this.state.crews}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-          addCrew={this.addCrew}
-        />
-        <br />
-        <br />
+        {isAuthenticated() && (
+          <div>
+            <h1>Welcome to Manager - Create</h1>
+            <br />
+            <a href="/manager/" className="btn btn-info">
+              Back
+            </a>
+            <br />
+            <br />
+            <CreateJob
+              crews={this.state.crews}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+              addCrew={this.addCrew}
+            />
+          </div>
+        )}
+        {!isAuthenticated() && (
+          <h4>
+            You are not logged in! Please{" "}
+            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+              Log In
+            </a>{" "}
+            to continue.
+          </h4>
+        )}
       </div>
     );
   }

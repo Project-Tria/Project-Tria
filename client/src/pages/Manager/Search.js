@@ -8,6 +8,10 @@ import API from "../../utils/API";
 //  const moment = extendMoment(Moment);
 
 class Search extends Component {
+  login() {
+    this.props.auth.login();
+  }
+
   //constructor
   constructor(props) {
     super(props);
@@ -101,25 +105,39 @@ class Search extends Component {
   };
 
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
       <div className="container text-center">
-        <h1>Search Jobs</h1>
-        <br />
-        <a href="/manager/" className="btn btn-info">
-          Back
-        </a>
-        <br />
-        <SearchInput
-          crews={this.state.crews}
-          handleFormSubmit={this.handleFormSubmit}
-          handleInputChange={this.handleInputChange}
-        />
-        <br />
-        <br />
-        <Results jobs={this.state.jobs} />
-        <br />
-        <br />
-        <br />
+        {isAuthenticated() && (
+          <div>
+            <h1>Search Jobs</h1>
+            <br />
+            <a href="/manager/" className="btn btn-info">
+              Back
+            </a>
+            <br />
+            <SearchInput
+              crews={this.state.crews}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+            <br />
+            <br />
+            <Results jobs={this.state.jobs} />
+            <br />
+            <br />
+          </div>
+        )}
+        {!isAuthenticated() && (
+          <h4>
+            You are not logged in! Please{" "}
+            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+              Log In
+            </a>{" "}
+            to continue.
+          </h4>
+        )}
       </div>
     );
   }
