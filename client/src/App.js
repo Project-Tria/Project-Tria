@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+
+import React, { Component } from "react";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   goTo(route) {
-    this.props.history.replace(`/${route}`)
+    this.props.history.replace(`/${route}`);
   }
 
   login() {
@@ -15,33 +16,18 @@ class App extends Component {
     this.props.auth.logout();
   }
 
-    render() {
+  render() {
     const { isAuthenticated } = this.props.auth;
 
     return (
-  
-  <div>
-  <Jumbotron>
-    <img src="http://www.whymonster.com/images/Logo.png" alt="Company Logo" />
-    <br />
-    <br />
-    <p><span style={{ fontSize:12 }}><i>powered by </i></span>Crewify</p>
-        {
-              !isAuthenticated() && (
-                  <h1>Logged In</h1>
-                )
-            }
-            {
-              isAuthenticated() && (
-                 <h1>Logged Out</h1>
-                )
-            }
-  </Jumbotron>
 
-</div>
-)
-    }
+          <div>
+          {!isAuthenticated() && <h1>Logged In</h1>}
+          {isAuthenticated() && <h1>Logged Out</h1>}
+          </div>
 
+    );
+  }
 }
 
 export default App;

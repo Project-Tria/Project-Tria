@@ -226,6 +226,7 @@ class CreateJob extends Component {
         >
           Create Job
         </button>
+        
         {/* <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn> */}
       </div>
     ); // end return

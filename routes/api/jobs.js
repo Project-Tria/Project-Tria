@@ -5,7 +5,17 @@ const crewsController = require("../../controllers/crewsController");
 // Matches with "/api/jobs"
 router.route("/jobs")
   .get(jobsController.findAll)
+  // .get(jobsController.findOpenJobs)
   .post(jobsController.create);
+
+
+//all new routes/openjobs
+//update jobs controller
+//one get route API backend
+//add the front end API  ->utils/API axios call
+//
+router.route("/openjobs")
+.get(jobsController.findOpenJobs)
 
 // Matches with "/api/jobs/:id"
 router

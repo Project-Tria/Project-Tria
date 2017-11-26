@@ -14,6 +14,10 @@ export default {
   getJob: function(id) {
     return axios.get("/api/jobs/" + id);
   },
+
+  findOpenJobs: function(){
+    return axios.get("/api/openjobs");
+  },
   // Gets the job with the given crew name
   getJobByCrewName: function(crewName) {
     return axios.get("/api/search/" + crewName);

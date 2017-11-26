@@ -12,7 +12,7 @@ class MyJobs extends Component {
   renderMyJobs = (props) => {
     return(
       this.props.jobs.map(job =>(
-        <div className="card">
+        <div className="card" key={job._id}>
         <div className="card-header" role="tab" id={"heading"+job._id}>
           <h3 className="mb-0">
             <a
@@ -30,7 +30,7 @@ class MyJobs extends Component {
 
         <div
           id={"collapse"+job._id}
-          className="collapse"
+          className="collapse show"
           role="tabpanel"
           aria-labelledby={"heading"+job._id}
         >
