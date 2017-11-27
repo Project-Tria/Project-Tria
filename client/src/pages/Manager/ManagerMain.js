@@ -13,11 +13,8 @@ class ManagerMain extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <h1>Welcome to Manager - Main</h1>
+            <h1>Manager - Main Menu</h1>
             <br />
-            <a href="/" className="btn btn-info">
-              Back
-            </a>
             <br />
             <br />
             <a href="/manager/create/" className="btn btn-lg btn-primary">

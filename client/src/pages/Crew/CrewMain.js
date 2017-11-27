@@ -22,7 +22,7 @@ class CrewMain extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-  
+
   componentDidMount() {
     this.getJobs();
   }
@@ -39,7 +39,6 @@ class CrewMain extends Component {
       [name]: value
     });
   };
-
 
   handleFormSubmit = event => {
     event.preventDefault();
@@ -62,8 +61,6 @@ class CrewMain extends Component {
       .then(res => this.getJobs())
       .catch(err => console.log(err));
   };
-
-
 
   getJobs() {
     API.findOpenJobs()
@@ -98,13 +95,17 @@ class CrewMain extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <h1>My Jobs - {this.getDate()}</h1>
-            <br />
             <a href="/" className="btn btn-info">
               Back
             </a>
+            <h1>Open Jobs - {this.getDate()}</h1>
             <br />
             <br />
+            {this.state.jobs.length === 0 && (
+              <h3>
+                <i>All Jobs Complete!</i>
+              </h3>
+            )}
             <MyJobs
               jobs={this.state.jobs}
               handleFormSubmit={this.handleFormSubmit}

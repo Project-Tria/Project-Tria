@@ -6,7 +6,7 @@ import "./CreateJob.css";
 
 class CreateJob extends Component {
   renderCrew = props => {
-    return this.props.crews.map(crew => <option>{crew.crewNameDB}</option>);
+    return this.props.crews.map(crew => <option key={"header"+crew._id}>{crew.crewNameDB}</option>);
   };
 
   render() {
@@ -60,7 +60,7 @@ class CreateJob extends Component {
         <div
           className="modal fade"
           id="add-crew-modal"
-          tabindex="-1"
+          tabIndex="-1"
           role="dialog"
           aria-labelledby="exampleModalLongTitle"
           aria-hidden="true"

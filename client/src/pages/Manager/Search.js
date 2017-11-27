@@ -112,11 +112,19 @@ class Search extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
+            <div className="nav-div">
+              <a href="/manager/" className="btn btn-info">
+                Back
+              </a>
+              <a href="/manager/create/" className="btn btn-info">
+                Create Job
+              </a>
+              <a href="/" className="btn btn-info">
+                Update Job
+              </a>
+            </div>
             <h1>Search Jobs</h1>
             <br />
-            <a href="/manager/" className="btn btn-info">
-              Back
-            </a>
             <br />
             <SearchInput
               crews={this.state.crews}

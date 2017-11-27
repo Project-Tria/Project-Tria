@@ -50,7 +50,11 @@ export const makeMainRoutes = () => {
           </Switch>
         </div>
       </Router>
+<<<<<<< HEAD
           <Footer />
+=======
+      
+>>>>>>> master
       </div>
   );
 }
