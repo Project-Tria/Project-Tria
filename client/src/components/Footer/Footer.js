@@ -6,6 +6,8 @@ class Footer extends Component {
         return (
             <div className="footer text-center">
                 <p>
+                    <br></br>
+                    <br></br>
                     <span style={{ fontSize: 12 }}>
                         <i>powered by </i>
                     </span>Crewify
