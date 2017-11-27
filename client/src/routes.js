@@ -49,6 +49,7 @@ export const makeMainRoutes = () => {
           </Switch>
         </div>
       </Router>
+      
       </div>
   );
 }
