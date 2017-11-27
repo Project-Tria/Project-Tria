@@ -19,6 +19,8 @@ class Create extends Component {
       jobName: "",
       custPhone: "",
       custAddress: "",
+      custCity: "",
+      custState: "",
       jobDescription: "",
       estimatedJobTime: "",
       crewNameDB: "",
@@ -53,13 +55,24 @@ class Create extends Component {
     //   this.state.jobDescription
     // )
     // {
+
+    // create the string used in the google maps href
+    let linkStreet = this.state.custAddress.replace(/\s|\.|,|-/g, "+");
+    let linkCity = this.state.custCity.replace(/\s|\.|,|-/g, "+");
+    let linkAddress = linkStreet + "+" + linkCity + "+" + this.state.custState;
+    console.log("this is linkAddress: " + linkAddress);
+
+    ///create the string used in the to display the address
+    let displayAddress = this.state.custAddress + ", " + this.state.custCity + ", " + this.state.custState
+
     let newJob = {
       jobDate: this.state.jobDate,
       crewName: this.state.crewName,
       crewMembers: this.state.crewMembers,
       jobName: this.state.jobName,
       custPhone: this.state.custPhone,
-      custAddress: this.state.custAddress,
+      custAddress: displayAddress,
+      linkAddress: linkAddress,
       estimatedJobTime: this.state.estimatedJobTime,
       jobDescription: this.state.jobDescription
     };
@@ -69,6 +82,8 @@ class Create extends Component {
       // .then(res => this.loadJobs())
       .then(res => console.log(res))
       .catch(err => console.log(err));
+
+
     // }
   };
 

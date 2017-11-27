@@ -169,15 +169,16 @@ class CreateJob extends Component {
             }}
           />
         </div>
+        
 
         <div className="form-group row">
           <label htmlFor="cust-address" className="col-form-label">
             Job Address:{" "}
           </label>
           <input
-            className="col-3 form-control"
+            className="col-7 form-control"
             type="text"
-            placeholder="Customer Address"
+            placeholder="Street"
             id="cust-address"
             name="custAddress"
             value={this.props.custAddress}
@@ -186,7 +187,42 @@ class CreateJob extends Component {
             }}
           />
         </div>
+        
+        <div className="form-group row">
+          <label htmlFor="cust-city" className="col-form-label">
+           Job City: {" "}
+          </label>
+          <input
+            className="col-4 form-control"
+            type="text"
+            placeholder="City"
+            id="cust-city"
+            name="custCity"
+            value={this.props.custCity}
+            onChange={event => {
+              this.props.handleInputChange(event);
+            }}
+          />
+        </div>
+        
+        <div className="form-group row">
+          <label htmlFor="cust-state" className="col-form-label">
+            Job State: {" "}
+          </label>
+          <input
+            className="col-3 form-control"
+            type="text"
+            placeholder="State Abbreviation"
+            id="cust-state"
+            name="custState"
+            value={this.props.custState}
+            onChange={event => {
+              this.props.handleInputChange(event);
+            }}
+          />
+        </div>
 
+    
         <div className="form-group row">
           <label htmlFor="job-descrip">Job Notes</label>
           <textarea
