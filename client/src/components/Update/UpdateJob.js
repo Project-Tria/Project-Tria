@@ -29,7 +29,7 @@ class UpdateJob extends Component {
 
         <div
           id={"collapse" + job._id}
-          className="collapse show"
+          className="collapse"
           role="tabpanel"
           aria-labelledby={"heading" + job._id}
         >
@@ -76,8 +76,6 @@ class UpdateJob extends Component {
                   </select>
                 </div>
                 <span>&nbsp;</span>*/}
-                
-                    
 
               <div className="form-group row">
                 <label htmlFor="job-crew" className="col-form-label">
@@ -115,7 +113,7 @@ class UpdateJob extends Component {
 
               <div className="form-group row">
                 <label htmlFor="cust-phone" className="col-2 col-form-label">
-                Telephone:{""}
+                  Telephone:{""}
                 </label>
                 <input
                   className="form-control"
@@ -180,7 +178,7 @@ class UpdateJob extends Component {
               </div>
 
               <button
-              name="_id"
+                name="_id"
                 value={job._id}
                 onClick={event => {
                   this.props.handleFormSubmit(event);
