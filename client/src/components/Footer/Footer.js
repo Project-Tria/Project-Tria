@@ -1,20 +1,18 @@
 import React, { Component } from "react";
-import "./Footer.css"; 
+import "./Footer.css";
 
 class Footer extends Component {
     render() {
-    return(
-    <div className="footer">
-        <p>
-            
-            <span style={{ fontSize: 12 }}>
-                <i>powered by </i>
-            </span>Crewify
-            
-          </p>
-    </div>
-    )
-}
+        return (
+            <div className="footer text-center">
+                <p>
+                    <span style={{ fontSize: 12 }}>
+                        <i>powered by </i>
+                    </span>Crewify
+                </p>
+            </div>
+        )
+    }
 }
 
 
