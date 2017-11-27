@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import "./MyJobs.css"
 /*
 ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?addr=[custAddress]
 
@@ -10,6 +10,7 @@ use props._id to dynamically change the id=headingOne to id=heading+{props._id}
 
 class MyJobs extends Component {
   renderMyJobs = (props) => {
+
     return(
       this.props.jobs.map(job =>(
         <div className="card" key={job._id}>
@@ -25,7 +26,9 @@ class MyJobs extends Component {
               {job.jobName}
             </a>
           </h3>
+          <br />
           <p> {job.custAddress}</p>
+          <p><b>Job Crew: </b>{job.crewName}</p>
         </div>
 
         <div
@@ -39,10 +42,13 @@ class MyJobs extends Component {
             <div className="row job-row">
               <div className="col">
                 <p>
-                  Cust. Phone: <span>{job.custPhone}</span>
+                  <b>Crew Members: </b> <span>{job.crewMembers}</span>
                 </p>
                 <p>
-                  Notes: <span>{job.jobDescription}</span>
+                <b>Cust. Phone: </b><a href={"tel:"+job.custPhone}>{job.custPhone}</a>
+                </p>
+                <p>
+                <b>Notes: </b><span>{job.jobDescription}</span>
                 </p>
               </div>
               <div className="crew-form col">
@@ -79,21 +85,17 @@ class MyJobs extends Component {
                   />
                 </div>
               </div>
-              
-               
-
+          
               <div className="crew-form-button col text-center">
                 <button
+                id="complete-btn"
                 name="_id"
                 value={job._id}
                   onClick={event => {
                   this.props.handleFormSubmit(event);   
                   }}
                   type="submit"
-                  className="btn btn-lg btn-danger"
-          
-                  
-              
+                  className="btn btn-lg btn-danger align-middle"
                 >
                   Complete Job
                 </button>
