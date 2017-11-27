@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import "./MyJobs.css";
 /*
-ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?addr=[custAddress]
+ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?daddr=[custAddress]
+ex - https://www.google.com/maps?daddr=1409+N+Main+St+Fuquay+Varina+NC
 
 PHONE - <a href="tel:1-408-555-5555">1-408-555-5555</a> iOS
 
@@ -25,7 +26,7 @@ class MyJobs extends Component {
             </a>
           </h3>
           <br />
-          <p> {job.custAddress}</p>
+          <a target="_blank" href={"https://www.google.com/maps?daddr="+job.linkAddress}>{job.custAddress}</a>
           <p>
             <b>Job Crew: </b>
             {job.crewName}
