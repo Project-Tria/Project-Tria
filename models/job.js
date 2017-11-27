@@ -10,6 +10,7 @@ const jobSchema = new Schema({
   jobName: { type: String, required: false },
   custPhone: { type: String, required: false },
   custAddress: { type: String, required: false },
+  linkAddress: { type: String, required: false },
   estimatedJobTime: { type: String, required: false },
   actualJobTime: { type: String, default: "" },
   jobDescription: { type: String, required: false },
