@@ -97,11 +97,18 @@ class Create extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <h1>Welcome to Manager - Create</h1>
-            <br />
-            <a href="/manager/" className="btn btn-info">
-              Back
-            </a>
+            <div className="nav-div">
+              <a href="/manager/" className="btn btn-info">
+                Back
+              </a>
+              <a href="/manager/search/" className="btn btn-info">
+                Search Jobs
+              </a>
+              <a href="/" className="btn btn-info">
+                Update Job
+              </a>
+            </div>
+            <h1>Create Job</h1>
             <br />
             <br />
             <CreateJob
