@@ -33,7 +33,7 @@ class MyJobs extends Component {
         </div>
 
         <div
-          id={"collapse" + job._id}
+          id={"collapse"+job._id}
           className="collapse"
           role="tabpanel"
           aria-labelledby={"heading" + job._id}
