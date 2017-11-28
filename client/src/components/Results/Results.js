@@ -34,23 +34,6 @@ class Results extends Component {
     return (
       <div className="text-center container">
         <h3>Search Results</h3>
-        <div className="row job-list-header">
-          <div className="col">
-            <p>Job Name</p>
-          </div>
-          <div className="col">
-            <p>Job Crew </p>
-          </div>
-          <div className="col">
-            <p>Address</p>
-          </div>
-          <div className="col">
-            <p>Job Date</p>
-          </div>
-          <div className="col">
-            <p>Completed?</p>
-          </div>
-        </div>
         <div className="container text-center border">{this.renderJobs()}</div>
       </div>
     ); //end return

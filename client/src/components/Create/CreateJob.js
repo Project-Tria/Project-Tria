@@ -6,7 +6,9 @@ import "./CreateJob.css";
 
 class CreateJob extends Component {
   renderCrew = props => {
-    return this.props.crews.map(crew => <option key={"header"+crew._id}>{crew.crewNameDB}</option>);
+    return this.props.crews.map(crew => (
+      <option key={"header" + crew._id}>{crew.crewNameDB}</option>
+    ));
   };
 
   render() {
@@ -76,8 +78,7 @@ class CreateJob extends Component {
                   className="close"
                   data-dismiss="modal"
                   aria-label="Close"
-                >
-                </button>
+                />
               </div>
               <div className="modal-body">
                 <div className="form-group row">
@@ -169,7 +170,6 @@ class CreateJob extends Component {
             }}
           />
         </div>
-        
 
         <div className="form-group row">
           <label htmlFor="cust-address" className="col-form-label">
@@ -187,10 +187,10 @@ class CreateJob extends Component {
             }}
           />
         </div>
-        
+
         <div className="form-group row">
           <label htmlFor="cust-city" className="col-form-label">
-           Job City: {" "}
+            Job City:{" "}
           </label>
           <input
             className="col-4 form-control"
@@ -204,10 +204,10 @@ class CreateJob extends Component {
             }}
           />
         </div>
-        
+
         <div className="form-group row">
           <label htmlFor="cust-state" className="col-form-label">
-            Job State: {" "}
+            Job State:{" "}
           </label>
           <input
             className="col-3 form-control"
@@ -222,7 +222,6 @@ class CreateJob extends Component {
           />
         </div>
 
-    
         <div className="form-group row">
           <label htmlFor="job-descrip">Job Notes</label>
           <textarea
@@ -262,7 +261,7 @@ class CreateJob extends Component {
         >
           Create Job
         </button>
-        
+
         {/* <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn> */}
       </div>
     ); // end return
