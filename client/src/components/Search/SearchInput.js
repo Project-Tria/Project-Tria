@@ -5,13 +5,11 @@ import "./SearchInput.css";
 
 class SearchInput extends Component {
   //might want to wrap form in form tag
-  renderCrew = (props) => {
-    return (
-      this.props.crews.map(crew =>(
-        <option>{crew.crewNameDB}</option>
-      ))
-    )
-  }
+  renderCrew = props => {
+    return this.props.crews.map(crew => (
+      <option key={"header" + crew._id}>{crew.crewNameDB}</option>
+    ));
+  };
 
 
   render() {

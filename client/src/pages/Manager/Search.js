@@ -7,6 +7,12 @@ import API from "../../utils/API";
 
 //  const moment = extendMoment(Moment);
 
+// {this.state.jobs.length === 0 && (
+//   <h3>
+//     <i>Search to display results.</i>
+//   </h3>
+// )}
+
 class Search extends Component {
   login() {
     this.props.auth.login();
@@ -132,7 +138,9 @@ class Search extends Component {
             />
             <br />
             <br />
+
             <Results jobs={this.state.jobs} />
+
             <br />
             <br />
           </div>
