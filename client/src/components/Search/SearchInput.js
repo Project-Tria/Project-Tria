@@ -18,7 +18,7 @@ class SearchInput extends Component {
     return <div>
         <div className="container text-center border">
           <div className="form-group row">
-            <label htmlFor="crew-dropdown" className="col-form-label col-3 text-left">
+            <label htmlFor="crew-dropdown" className="col-form-label col-3 text-right">
               Select Crew:
             </label>
             <div className="form-group col-9" id="crew-drop">
@@ -31,7 +31,7 @@ class SearchInput extends Component {
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="date-input" className="col-form-label col-3 text-left">
+            <label htmlFor="date-input" className="col-form-label col-3 text-right">
               Job Start Date:
             </label>
             <input className="col-9 form-control" type="date" id="date-input" name="startDate" value={this.props.startDate} onChange={event => {
@@ -39,7 +39,7 @@ class SearchInput extends Component {
               }} />
           </div>
           <div className="form-group row">
-            <label htmlFor="date-input" className="col-form-label col-3 text-left">
+            <label htmlFor="date-input" className="col-form-label col-3 text-right">
               Job End Date:
             </label>
             <input className="col-9 form-control" type="date" id="date-input" name="endDate" value={this.props.endDate} onChange={event => {
@@ -48,7 +48,7 @@ class SearchInput extends Component {
           </div>
 
           <div className="form-group row">
-            <label htmlFor="job-name" className="col-form-label col-3 text-left">
+            <label htmlFor="job-name" className="col-form-label col-3 text-right">
               Job Name:{" "}
             </label>
             <input className="col-9 form-control" type="text" id="jobName" name="jobName" value={this.props.jobName} onChange={event => {
