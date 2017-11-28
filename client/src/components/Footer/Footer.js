@@ -3,19 +3,15 @@ import "./Footer.css";
 
 class Footer extends Component {
     render() {
-        return (
-            <div className="footer-container">
-                <div className="footer-top">
-                </div>
-                <div className="footer-bottom text-center">
-                <p>                    
-                    <span style={{ fontSize: 12 }}>
-                        <i>powered by </i>
-                    </span>Crewify
-                </p>
+        return <div className="footer-container">
+            <div className="footer-top" />
+            <div className="footer-bottom text-center">
+              <p>
+                <span>                  
+                </span>© 2015 Copyright
+              </p>
             </div>
-            </div>
-        )
+          </div>;
     }
 }
 
