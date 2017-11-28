@@ -21,7 +21,7 @@ class SearchInput extends Component {
             <label htmlFor="crew-dropdown" className="col-form-label col-3 text-left">
               Select Crew:
             </label>
-            <div className="form-group col-9">
+            <div className="form-group col-9" id="crew-drop">
               <select className="form-control" type="list" id="crew" name="crewName" value={this.props.crewName} onChange={event => {
                   this.props.handleInputChange(event);
                 }}>

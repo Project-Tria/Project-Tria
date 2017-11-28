@@ -1,5 +1,12 @@
 #crew {
     height: 36px;
+    width: 100%;
+}
+
+#crew-drop {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
 }
 
 .btn-primary {
