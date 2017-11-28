@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
+import Footer from "../../components/Footer/Footer";
 // import Moment from 'moment';
 // import { extendMoment } from 'moment-range';
 
@@ -153,7 +154,7 @@ class Search extends Component {
             </a>{" "}
             to continue.
           </h4>
-        )}
+        )}        
       </div>
     );
   }

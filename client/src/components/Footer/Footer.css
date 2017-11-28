@@ -1,0 +1,22 @@
+.footer-top {
+    height: 75%;
+    width: 100%;
+    background: #60332a;
+}
+
+.footer-bottom {
+    height: 25%;
+    width: 100%;
+    background: #a6ce30;
+}
+
+.footer-container {
+    position: relative;
+    border-top: 20px solid #60332a;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    margin-top: 100px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CreateJob from "../../components/Create/CreateJob";
 
+
 import API from "../../utils/API";
 
 class Create extends Component {
@@ -142,7 +143,7 @@ class Create extends Component {
             </a>{" "}
             to continue.
           </h4>
-        )}
+        )}        
       </div>
     );
   }
