@@ -1,3 +1,9 @@
-#crew{
+#crew {
     height: 36px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f58119;
+    border-color: #f58119;
 }
