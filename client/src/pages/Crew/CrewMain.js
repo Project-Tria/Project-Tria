@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import MyJobs from "../../components/Jobs/MyJobs";
+
 //should crew main only display job for the current date?
 
 class CrewMain extends Component {
@@ -120,7 +121,7 @@ class CrewMain extends Component {
             </a>{" "}
             to continue.
           </h4>
-        )}
+        )}        
       </div>
     );
   }

@@ -11,6 +11,7 @@ import UpdateJob from "./pages/Manager/UpdateJob";
 import Search from "./pages/Manager/Search";
 import CrewMain from "./pages/Crew/CrewMain";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
+import Footer from "./components/Footer/Footer";
 const auth = new Auth();
 
 const handleAuthentication = (nextState, replace) => {
@@ -51,7 +52,7 @@ export const makeMainRoutes = () => {
           </Switch>
         </div>
       </Router>
-      
+          <Footer />
       </div>
   );
 }

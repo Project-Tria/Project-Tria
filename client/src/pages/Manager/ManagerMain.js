@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 class ManagerMain extends Component {
   login() {
     this.props.auth.login();
@@ -34,9 +35,10 @@ class ManagerMain extends Component {
             </a>{" "}
             to continue.
           </h4>
-        )}
+        )}        
       </div>
     );
+      
   }
 } //end class
 
