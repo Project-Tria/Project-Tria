@@ -161,7 +161,7 @@ class Results extends Component {
 
   render() {
     return (
-      <div className="text-center container">
+      <div className="text-center container background-region">
         <h3>Search Results</h3>
         <div id="accordion" role="tablist" aria-multiselectable="true">
           {this.renderJobs()}

@@ -9,6 +9,10 @@
     margin-bottom: 0px;
 }
 
+.background-region {
+    color: white;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #f58119;

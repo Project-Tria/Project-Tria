@@ -1,0 +1,21 @@
+h1.page-title-text {
+    color: white;
+}
+
+.btn-brown {
+    color: #fff;
+    background-color: #60332a;
+    border-color: #60332a;
+    margin: 0px 5px 0px 5px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #eea967;
+    border-color: #eea967;
+    /*set the color you want here*/
+}

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CreateJob from "../../components/Create/CreateJob";
-
-
+import "./Create.css";
 import API from "../../utils/API";
 
 class Create extends Component {
@@ -110,7 +109,7 @@ class Create extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <div className="container text-center page">
+      <div className="container text-center">
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
@@ -124,7 +123,7 @@ class Create extends Component {
                 Update Job
               </a>
             </div>
-            <h1>Create Job</h1>
+            <h1 className="page-title-text">Create Job</h1>
             <br />
             <br />
             <CreateJob
