@@ -110,17 +110,17 @@ class Create extends Component {
     const { isAuthenticated } = this.props.auth;
 
     return (
-      <div className="container text-center">
+      <div className="container text-center page">
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
-              <a href="/manager/" className="btn btn-info">
+              <a href="/manager/" className="btn btn-brown">
                 Back
               </a>
-              <a href="/manager/search/" className="btn btn-info">
+              <a href="/manager/search/" className="btn btn-brown">
                 Search Jobs
               </a>
-              <a href="/" className="btn btn-info">
+              <a href="/" className="btn btn-brown">
                 Update Job
               </a>
             </div>

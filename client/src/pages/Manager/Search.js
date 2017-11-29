@@ -3,6 +3,7 @@ import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
 // import Footer from "../../components/Footer/Footer";
+import "./Search.css";
 // import Moment from 'moment';
 // import { extendMoment } from 'moment-range';
 
@@ -114,29 +115,23 @@ class Search extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return (
-      <div className="container text-center">
-        {isAuthenticated() && (
-          <div>
+    return <div className="container text-center page">
+        {isAuthenticated() && <div>
             <div className="nav-div">
-              <a href="/manager/" className="btn btn-info">
+              <a href="/manager/" className="btn btn-brown nav-button">
                 Back
               </a>
-              <a href="/manager/create/" className="btn btn-info">
+              <a href="/manager/create/" className="btn btn-brown nav-button">
                 Create Job
               </a>
-              <a href="/manager/update/" className="btn btn-info">
+              <a href="/manager/update/" className="btn btn-brown nav-button">
                 Update Job
               </a>
             </div>
             <h1>Search Jobs</h1>
             <br />
             <br />
-            <SearchInput
-              crews={this.state.crews}
-              handleFormSubmit={this.handleFormSubmit}
-              handleInputChange={this.handleInputChange}
-            />
+            <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
             <br />
             <br />
 
@@ -144,19 +139,13 @@ class Search extends Component {
 
             <br />
             <br />
-          </div>
-        )}
-        {!isAuthenticated() && (
-          <h4>
-            You are not logged in! Please{" "}
-            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+          </div>}
+        {!isAuthenticated() && <h4>
+            You are not logged in! Please <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
-            </a>{" "}
-            to continue.
-          </h4>
-        )}        
-      </div>
-    );
+            </a> to continue.
+          </h4>}
+      </div>;
   }
 } //end class
 
