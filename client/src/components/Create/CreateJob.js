@@ -10,7 +10,7 @@ class CreateJob extends Component {
   };
 
   render() {
-    return <div className="container text-center border page">
+    return <div className="container text-center border background-region">
         <div className="form-group row">
           <label htmlFor="date-input" className=" col-form-label col-3 text-right">
             Job Date:
