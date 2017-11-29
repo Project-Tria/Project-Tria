@@ -47,16 +47,7 @@ class CreateJob extends Component {
                 <h5 className="modal-title" id="exampleModalLongTitle">
                   Add a New Crew
                 </h5>
-<<<<<<< HEAD
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                />
-=======
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close" />
->>>>>>> master
               </div>
               <div className="modal-body">
                 <div className="form-group row">
@@ -119,11 +110,7 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-<<<<<<< HEAD
-          <label htmlFor="cust-city" className="col-form-label">
-=======
           <label htmlFor="cust-city" className="col-form-label col-3 text-right">
->>>>>>> master
             Job City:{" "}
           </label>
           <input className="col-6 form-control" type="text" placeholder="City" id="cust-city" name="custCity" value={this.props.custCity} onChange={event => {
@@ -132,11 +119,7 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-<<<<<<< HEAD
-          <label htmlFor="cust-state" className="col-form-label">
-=======
           <label htmlFor="cust-state" className="col-form-label col-3 text-right">
->>>>>>> master
             Job State:{" "}
           </label>
           <input className="col-6 form-control" type="text" placeholder="State Abbreviation" id="cust-state" name="custState" value={this.props.custState} onChange={event => {

@@ -1,25 +1,10 @@
 import React, { Component } from "react";
-
+import "./Results.css"
 class Results extends Component {
   renderJobs = props => {
-    // if (this.props.jobs.length === 0) {
-    //   return <h3> No Jobs found! </h3>;
-    // }
-    //   <div className="col">
-    //   <p>{job.crewName}</p>
-    // </div>
-    // <div className="col">
-    //   <p>{job.custAddress}</p>
-    // </div>
-    // <div className="col">
-    //   <p>{job.jobDate}</p>
-    // </div>
-    // <div className="col">
-    //   <p>{job.completed.toString()}</p>
-    // </div>
-    
+
     return this.props.jobs.map(job => (
-      <div className="container border border-warning">
+      <div className="container border border-warning" key={job._id}>
         <div className="row">
           <div className="col-10">
             <div className="row">
@@ -56,12 +41,9 @@ class Results extends Component {
             </div>
           </div>
           <div className="col-2" id="status">
-          {if (job.completed){
-            <div className="border border-rounded complete-job">
-              <p>Complete</p>
-            </div>
-          }}
-            <p>{job.completed.toString()}</p>
+            {job.completed
+            ? <div className="border border-rounded complete-job"><p>Complete</p></div>
+            : <div className="border border-rounded open-job"><p>Open</p></div>}
           </div>
         </div>
       </div>

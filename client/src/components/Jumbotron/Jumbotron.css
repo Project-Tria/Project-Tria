@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-/* http://www.colorzilla.com/gradient-editor/ */
-
-#jumbo {
-    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 34%,rgba(182,224,38,1) 100%); 
-=======
 #jumbo {
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 34%, rgba(182, 224, 38, 1) 100%);
 }
@@ -18,5 +12,4 @@
     .jumbotron {
         height: 200px;
     }
->>>>>>> master
 }
