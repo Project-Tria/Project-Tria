@@ -86,7 +86,7 @@ class SearchInput extends Component {
               }}
             />
           </div>
-          <span>&nbsp;</span>
+         
           <div>
             <button
               onClick={event => {
@@ -95,7 +95,7 @@ class SearchInput extends Component {
               type="submit"
               className="btn btn-lg btn-primary"
             >
-              Search Crew
+              Search Jobs
             </button>
           </div>
         </div>
