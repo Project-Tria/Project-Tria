@@ -4,29 +4,26 @@
         border-color: #60332a;
         margin: 0px 5px 0px 5px;
     }
-    /* .btn {
-        margin: 10px 0px 10px 0px;
-    } */
-
+    
     .btn-brown:hover,
     .btn-brown:focus,
     .btn-brown:active,
     .btn-brown.active,
     .open>.dropdown-toggle.btn-brown {
         color: #fff;
-        background-color: ##eea967;
-        border-color: #eea967;
-        /*set the color you want here*/
+        background-color: #eea967;
+        border-color: #eea967;       
     }
 
     body {
         background-color: #5b5b5b;
     }
 
-    .page {
+    h1.page-title-text {
         color: white;
     }
 
     .border {
         border: 0px solid #000000!important;
     }
+    

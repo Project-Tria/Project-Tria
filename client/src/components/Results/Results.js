@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Results.css";
 
 
 class Results extends Component {
@@ -32,7 +33,7 @@ class Results extends Component {
 
   render() {
     return (
-      <div className="text-center container">
+      <div className="text-center container background-region">
         <h3>Search Results</h3>
         <div className="row job-list-header">
           <div className="col">

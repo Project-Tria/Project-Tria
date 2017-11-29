@@ -109,7 +109,7 @@ class Search extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return <div className="container text-center page">
+    return <div className="container text-center ">
         {isAuthenticated() && <div>
             <div className="nav-div">
               <a href="/manager/" className="btn btn-brown nav-button">
@@ -122,7 +122,7 @@ class Search extends Component {
                 Update Job
               </a>
             </div>
-            <h1>Search Jobs</h1>
+            <h1 className="page-title-text">Search Jobs</h1>
             <br />
             <br />
             <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
