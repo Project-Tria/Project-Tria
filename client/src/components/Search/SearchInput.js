@@ -15,94 +15,56 @@ class SearchInput extends Component {
 
 
   render() {
-    return ( 
-      <div>
+    return <div>
         <div className="container text-center border">
           <div className="form-group row">
-            <label
-              htmlFor="crew-dropdown"
-              className=" col-form-label text-right"
-            >
+            <label htmlFor="crew-dropdown" className="col-form-label col-3 text-right">
               Select Crew:
             </label>
-            <div className="form-group">
-              <select
-                className="form-control"
-                type="list"
-                id="crew"
-                name="crewName"
-                value={this.props.crewName}
-                onChange={event => {
+            <div className="form-group col-6" id="crew-drop">
+              <select className="form-control" type="list" id="crew" name="crewName" value={this.props.crewName} onChange={event => {
                   this.props.handleInputChange(event);
-                }}
-              >
+                }}>
                 <option>Select a crew</option>
                 {this.renderCrew()}
-                
               </select>
             </div>
           </div>
           <div className="form-group row">
-            <label htmlFor="date-input" className=" col-form-label text-right">
+            <label htmlFor="date-input" className="col-form-label col-3 text-right">
               Job Start Date:
             </label>
-            <input
-              className="col-3 form-control"
-              type="date"
-              id="date-input"
-              name="startDate"
-              value={this.props.startDate}
-              onChange={event => {
+            <input className="col-6 form-control" type="date" id="date-input" name="startDate" value={this.props.startDate} onChange={event => {
                 this.props.handleInputChange(event);
-              }}
-            />
+              }} />
           </div>
           <div className="form-group row">
-            <label htmlFor="date-input" className=" col-form-label text-right">
+            <label htmlFor="date-input" className="col-form-label col-3 text-right">
               Job End Date:
             </label>
-            <input
-              className="col-3 form-control"
-              type="date"
-              id="date-input"
-              name="endDate"
-              value={this.props.endDate}
-              onChange={event => {
+            <input className="col-6 form-control" type="date" id="date-input" name="endDate" value={this.props.endDate} onChange={event => {
                 this.props.handleInputChange(event);
-              }}
-            />
+              }} />
           </div>
 
           <div className="form-group row">
-            <label htmlFor="job-name" className="col-form-label">
+            <label htmlFor="job-name" className="col-form-label col-3 text-right">
               Job Name:{" "}
             </label>
-            <input
-              className="col-3 form-control"
-              type="text"
-              id="jobName"
-              name="jobName"
-              value={this.props.jobName}
-              onChange={event => {
+            <input className="col-6 form-control" type="text" id="jobName" name="jobName" value={this.props.jobName} onChange={event => {
                 this.props.handleInputChange(event);
-              }}
-            />
+              }} />
           </div>
           <span>&nbsp;</span>
           <div>
-            <button
-              onClick={event => {
+            <button onClick={event => {
                 this.props.handleFormSubmit(event);
-              }}
-              type="submit"
-              className="btn btn-lg btn-primary"
-            >
+              }} type="submit" className="btn btn-lg btn-primary">
               Search Crew
             </button>
           </div>
         </div>
-      </div>
-    ); // end return
+      </div>; // end return
   } // end render
 } // end SearchInput
 

@@ -1,3 +1,28 @@
-#crew{
+#crew {
     height: 36px;
+    width: 100%;
+}
+
+#crew-drop {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #f58119;
+    border-color: #f58119;
+    margin: 5px, 5px, 5px, 5px;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #eea967;
+    border-color: #eea967;
+    /*set the color you want here*/
 }
