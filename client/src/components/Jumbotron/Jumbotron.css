@@ -1,4 +1,10 @@
+#jumbo {
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 34%, rgba(182, 224, 38, 1) 100%);
+}
+
+
 /* // Extra small devices (portrait phones, less than 576px) */
+
 @media (max-width: 375px) {
     img {
         max-width: 80%;

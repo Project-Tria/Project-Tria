@@ -24,7 +24,7 @@ class ManagerMain extends Component {
             <br />
             <a href="/manager/search/" className="btn btn-lg btn-primary">
               Search Jobs
-            </a>
+            </a>                            
           </div>
         )}
         {!isAuthenticated() && (
@@ -35,7 +35,7 @@ class ManagerMain extends Component {
             </a>{" "}
             to continue.
           </h4>
-        )}        
+        )}              
       </div>
     );
       
