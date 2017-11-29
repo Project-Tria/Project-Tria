@@ -1,0 +1,38 @@
+/* * {
+    border: 1px solid black;
+} */
+
+.background-region {
+    color: white;
+}
+
+.is-complete {
+    font-weight: bold;
+    color: white;
+}
+
+.cust-details {
+    margin-left: 30px;
+}
+
+.good-ratio,
+.complete-job {
+    background-color:green;
+}
+
+.bad-ratio,
+.open-job{
+    background-color: red;
+}
+
+.bad-ratio,
+.good-ratio {
+    width: 30px;
+}
+
+.job-data,
+.column-title,
+.heading {
+    color: black;
+}
+

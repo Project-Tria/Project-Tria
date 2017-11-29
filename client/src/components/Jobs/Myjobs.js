@@ -1,13 +1,6 @@
 import React, { Component } from "react";
 import "./MyJobs.css";
-/*
-ADDRESS - we can create a link to google maps by wrapping the address in a link and having the href be https://www.google.com/maps?daddr=[custAddress]
-ex - https://www.google.com/maps?daddr=1409+N+Main+St+Fuquay+Varina+NC
 
-PHONE - <a href="tel:1-408-555-5555">1-408-555-5555</a> iOS
-
-use props._id to dynamically change the id=headingOne to id=heading+{props._id}
-*/
 
 class MyJobs extends Component {
   renderMyJobs = props => {
@@ -103,7 +96,7 @@ class MyJobs extends Component {
         </div>
       </div>
     ));
-  };
+  }; //end renderMyJobs
 
   render() {
     return (

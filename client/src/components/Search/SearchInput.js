@@ -5,18 +5,16 @@ import "./SearchInput.css";
 
 class SearchInput extends Component {
   //might want to wrap form in form tag
-  renderCrew = (props) => {
-    return (
-      this.props.crews.map(crew =>(
-        <option>{crew.crewNameDB}</option>
-      ))
-    )
-  }
+  renderCrew = props => {
+    return this.props.crews.map(crew => (
+      <option key={"header" + crew._id}>{crew.crewNameDB}</option>
+    ));
+  };
 
 
   render() {
     return <div>
-        <div className="container text-center border">
+        <div className="container text-center border background-region">
           <div className="form-group row">
             <label htmlFor="crew-dropdown" className="col-form-label col-3 text-right">
               Select Crew:
@@ -55,12 +53,15 @@ class SearchInput extends Component {
                 this.props.handleInputChange(event);
               }} />
           </div>
-          <span>&nbsp;</span>
+         
           <div>
             <button onClick={event => {
                 this.props.handleFormSubmit(event);
-              }} type="submit" className="btn btn-lg btn-primary">
-              Search Crew
+              }}
+              type="submit"
+              className="btn btn-lg btn-primary"
+            >
+              Search Jobs
             </button>
           </div>
         </div>

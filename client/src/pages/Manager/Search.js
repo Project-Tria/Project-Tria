@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
-import Footer from "../../components/Footer/Footer";
+// import Footer from "../../components/Footer/Footer";
 import "./Search.css";
 // import Moment from 'moment';
 // import { extendMoment } from 'moment-range';
 
 //  const moment = extendMoment(Moment);
+
+// {this.state.jobs.length === 0 && (
+//   <h3>
+//     <i>Search to display results.</i>
+//   </h3>
+// )}
 
 class Search extends Component {
   login() {
@@ -109,7 +115,7 @@ class Search extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return <div className="container text-center page">
+    return <div className="container text-center ">
         {isAuthenticated() && <div>
             <div className="nav-div">
               <a href="/manager/" className="btn btn-brown nav-button">
@@ -118,17 +124,19 @@ class Search extends Component {
               <a href="/manager/create/" className="btn btn-brown nav-button">
                 Create Job
               </a>
-              <a href="/" className="btn btn-brown nav-button">
+              <a href="/manager/update/" className="btn btn-brown nav-button">
                 Update Job
               </a>
             </div>
-            <h1>Search Jobs</h1>
+            <h1 className="page-title-text">Search Jobs</h1>
             <br />
             <br />
             <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
             <br />
             <br />
+
             <Results jobs={this.state.jobs} />
+
             <br />
             <br />
           </div>}
