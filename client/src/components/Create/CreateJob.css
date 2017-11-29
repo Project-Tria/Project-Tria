@@ -1,42 +1,46 @@
     #crew-dropdown {
-    height: 36px;
-}
+        height: 36px;
+    }
 
-#add-crew-modal {
-    margin-top: 10%;
-}
+    div#crew-space {
+        margin-bottom: 0px;
+    }
 
-.modal-content {
-    margin-top: 80px;
-}
+    #add-crew-modal {
+        margin-top: 10%;
+    }
 
-.btn-primary {
-    color: #fff;
-    background-color: #f58119;
-    border-color: #f58119;
-}
+    .modal-content {
+        margin-top: 80px;
+    }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
-.open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #eea967;
-    border-color: #eea967;
-    /*set the color you want here*/
-}
+    .btn-primary {
+        color: #fff;
+        background-color: #f58119;
+        border-color: #f58119;
+    }
 
-.page {
-    color: white;
-}
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open>.dropdown-toggle.btn-primary {
+        color: #fff;
+        background-color: #eea967;
+        border-color: #eea967;
+        /*set the color you want here*/
+    }
 
-#select-crew {
-    padding-left: 0px;
-    padding-right: 0px;
-}
+    .page {
+        color: white;
+    }
 
-button#add-crew-btn {
-    height: 38px;
-    margin-left:5px; 
-}
+    #select-crew {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    button#add-crew-btn {
+        height: 36px;
+        /* margin-left: 90px; */
+    }

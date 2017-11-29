@@ -15,16 +15,16 @@ class CreateJob extends Component {
           <label htmlFor="date-input" className=" col-form-label col-3 text-right">
             Job Date:
           </label>
-          <input className="col-9 form-control" type="date" id="date-input" name="jobDate" value={this.props.jobDate} onChange={event => {
+          <input className="col-6 form-control" type="date" id="date-input" name="jobDate" value={this.props.jobDate} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
 
-        <div className="form-group row">
+        <div className="form-group row" id="crew-space">
           <label htmlFor="crew-dropdown" className=" col-form-label col-3 text-right">
             Select Crew:
           </label>
-          <div className="form-group col-6" id="select-crew">
+          <div className="form-group col-4" id="select-crew">
             <select className="form-control" id="crew-dropdown" name="crewName" value={this.props.crewName} onChange={event => {
                 this.props.handleInputChange(event);
               }}>
@@ -75,7 +75,7 @@ class CreateJob extends Component {
           <label htmlFor="job-crew" className="col-form-label col-3 text-right">
             Job Crew:{" "}
           </label>
-          <input className="col-9 form-control" type="text" placeholder="Enter Crew Members" id="job-crew" name="crewMembers" value={this.props.crewMembers} onChange={event => {
+          <input className="col-6 form-control" type="text" placeholder="Enter Crew Members" id="job-crew" name="crewMembers" value={this.props.crewMembers} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -84,7 +84,7 @@ class CreateJob extends Component {
           <label htmlFor="job-name" className="col-form-label col-3 text-right">
             Job Name:{" "}
           </label>
-          <input className="col-9 form-control" type="text" placeholder="[job type] - [customer-name]" id="job-name" name="jobName" value={this.props.jobName} onChange={event => {
+          <input className="col-6 form-control" type="text" placeholder="[job type] - [customer-name]" id="job-name" name="jobName" value={this.props.jobName} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -93,7 +93,7 @@ class CreateJob extends Component {
           <label htmlFor="cust-phone" className="col-form-label col-3 text-right">
             Telephone:{" "}
           </label>
-          <input className="col-9 form-control" type="tel" placeholder="123-456-7890" name="custPhone" id="cust-phone" value={this.props.custPhone} onChange={event => {
+          <input className="col-6 form-control" type="tel" placeholder="123-456-7890" name="custPhone" id="cust-phone" value={this.props.custPhone} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -102,7 +102,7 @@ class CreateJob extends Component {
           <label htmlFor="cust-address" className="col-form-label col-3 text-right">
             Job Address:{" "}
           </label>
-          <input className="col-9 form-control" type="text" placeholder="Street" id="cust-address" name="custAddress" value={this.props.custAddress} onChange={event => {
+          <input className="col-6 form-control" type="text" placeholder="Street" id="cust-address" name="custAddress" value={this.props.custAddress} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -111,7 +111,7 @@ class CreateJob extends Component {
           <label htmlFor="cust-city" className="col-form-label col-3 text-right">
             Job City:{" "}
           </label>
-          <input className="col-9 form-control" type="text" placeholder="City" id="cust-city" name="custCity" value={this.props.custCity} onChange={event => {
+          <input className="col-6 form-control" type="text" placeholder="City" id="cust-city" name="custCity" value={this.props.custCity} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -120,7 +120,7 @@ class CreateJob extends Component {
           <label htmlFor="cust-state" className="col-form-label col-3 text-right">
             Job State:{" "}
           </label>
-          <input className="col-9 form-control" type="text" placeholder="State Abbreviation" id="cust-state" name="custState" value={this.props.custState} onChange={event => {
+          <input className="col-6 form-control" type="text" placeholder="State Abbreviation" id="cust-state" name="custState" value={this.props.custState} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -129,7 +129,7 @@ class CreateJob extends Component {
           <label htmlFor="job-descrip" className="col-form-label col-3 text-right">
             Job Notes:
           </label>
-          <textarea className="col-9 form-control" name="jobDescription" id="job-descrip" rows="3" value={this.props.jobDescription} onChange={event => {
+          <textarea className="col-6 form-control" name="jobDescription" id="job-descrip" rows="3" value={this.props.jobDescription} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
@@ -138,7 +138,7 @@ class CreateJob extends Component {
           <label htmlFor="est-hours" className="col-form-label col-3 text-right">
             Est. Hours
           </label>
-          <input className="col-9 form-control" type="number" name="estimatedJobTime" id="est-hours" value={this.props.estimatedJobTime} onChange={event => {
+          <input className="col-6 form-control" type="number" name="estimatedJobTime" id="est-hours" value={this.props.estimatedJobTime} onChange={event => {
               this.props.handleInputChange(event);
             }} />
         </div>
