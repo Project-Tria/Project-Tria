@@ -6,7 +6,9 @@ import "./CreateJob.css";
 
 class CreateJob extends Component {
   renderCrew = props => {
-    return this.props.crews.map(crew => <option key={"header"+crew._id}>{crew.crewNameDB}</option>);
+    return this.props.crews.map(crew => (
+      <option key={"header" + crew._id}>{crew.crewNameDB}</option>
+    ));
   };
 
   render() {
