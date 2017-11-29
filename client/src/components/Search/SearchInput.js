@@ -16,7 +16,7 @@ class SearchInput extends Component {
 
   render() {
     return <div>
-        <div className="container text-center border">
+        <div className="container text-center border background-region">
           <div className="form-group row">
             <label htmlFor="crew-dropdown" className="col-form-label col-3 text-right">
               Select Crew:
