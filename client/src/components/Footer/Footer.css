@@ -22,3 +22,26 @@
     width: 100%;
     margin-top: 100px;
 }
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: #60332a;
+}
+
+/* selected link */
+a:active {
+    color: lightgreen;
+}
+
+.footer-text {
+    padding-top: 10px;
+}
