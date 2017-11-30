@@ -47,7 +47,7 @@ class Results extends Component {
           role="tabpanel"
           aria-labelledby={"heading" + job._id}
         >
-          <div className="card-block text-left">
+          <div className="card-block text-left card-content">
             <div className="row">
               <div className="col cust-details border border-secondary">
                 <p className="text-center column-title">Cust. Details</p>
@@ -56,7 +56,7 @@ class Results extends Component {
                     <b>Cust. Address: </b>{" "}
                   </p>
                 </div>
-                <div className="row">
+                <div className="row link-data">
                   <a
                     target="_blank"
                     href={
@@ -71,7 +71,7 @@ class Results extends Component {
                     <b>Cust. Phone: </b>{" "}
                   </p>
                 </div>
-                <div className="row">
+                <div className="row link-data">
                   <a href={"tel:" + job.custPhone}>{job.custPhone}</a>
                 </div>
                 <div className="row">
@@ -146,20 +146,20 @@ class Results extends Component {
                 </div>
                 <div className="row">
                   <p className="heading">
-                    <b>Completion Ratio: </b>{" "}
+                    <b>Completion Margin: </b>{" "}
                   </p>
                 </div>
                 {job.actualJobTime ? (
                   <div className="row">
-                    {job.estimatedJobTime - job.actualJobTime < 0 ? (
-                      <div className="bad-ratio rounded-circle">
+                    {job.estimatedJobTime - job.actualJobTime >= 0 ? (
+                      <div className="good-ratio rounded-circle text-center">
                         {" "}
                         <p className="ratio-result">
-                          {job.estimatedJobTime - job.actualJobTime}
+                          +{job.estimatedJobTime - job.actualJobTime}
                         </p>
                       </div>
                     ) : (
-                      <div className="good-ratio rounded-circle">
+                      <div className="bad-ratio rounded-circle text-center">
                         {" "}
                         <p className="ratio-result">
                           {job.estimatedJobTime - job.actualJobTime}
