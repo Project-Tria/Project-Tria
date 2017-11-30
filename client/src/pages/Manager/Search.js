@@ -90,9 +90,20 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
+
+//This will load all of the jobs of all the crews
+  loadAllCrewsJobs = () => {
+    API.getJobs()
+    .then(res => {
+        this.setState({ jobs: res.data }, () => {
+          console.log("This.state.jobs", this.state.jobs);
+        });
+      })
+      .catch(err => console.log(err));
+  }
+  
   //this funciton is going to get crews from the DB will be
   //props for the drop down.
-
   loadCrews = () => {
     API.getCrews()
       // .then(res => console.log(res.data))
@@ -107,9 +118,13 @@ class Search extends Component {
   //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
+    if (crewQuery === "Search All Crews") {
+      this.loadAllCrewsJobs();
+    } else {
     // event.preventDefault();
     // alert("Form Submitted");
     this.loadJobs(crewQuery);
+    }
   };
 
   render() {
