@@ -3,36 +3,70 @@
 } */
 
 .background-region {
-    color: white;
+  color: white;
 }
 
 .is-complete {
-    font-weight: bold;
-    color: white;
+  font-weight: bold;
+  color: white;
+}
+
+.link-data {
+    margin-bottom: 10px;
+}
+
+.cust-details,
+.crew-details,
+.crew-stats {
+  padding-left: 25px;
 }
 
 .cust-details {
-    margin-left: 30px;
+  margin-left: 14px;
+}
+
+.crew-stats {
+  margin-right: 14px;
+}
+
+.cust-details,
+.crew-stats {
+  background-color: #dfdfdf;
 }
 
 .good-ratio,
 .complete-job {
-    background-color:green;
+  background-color: green;
 }
 
 .bad-ratio,
-.open-job{
-    background-color: red;
+.open-job {
+  background-color: red;
 }
 
 .bad-ratio,
 .good-ratio {
-    width: 30px;
+  height: 50px;
+  width: 50px;
+  display: table;
+  margin-bottom: 15px;
+}
+
+.ratio-result {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
 }
 
 .job-data,
 .column-title,
 .heading {
-    color: black;
+  color: black;
 }
 
+.column-title {
+  font-weight: bold;
+  font-style: italic;
+}
