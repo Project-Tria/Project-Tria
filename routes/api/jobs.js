@@ -19,6 +19,11 @@ router.route("/openjobs")
 
 // Matches with "/api/jobs/:id"
 router
+  .route("/jobs")
+  .get(jobsController.findAll)
+
+// Matches with "/api/jobs/:id"
+router
   .route("/jobs/:id")
   .get(jobsController.findById)
   .put(jobsController.update)

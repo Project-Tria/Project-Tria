@@ -12,9 +12,15 @@ class UpdateJob extends Component {
     super(props);
 
     this.state = {
-      actualJobTime: "",
       jobNotes: "",
-      completed: "",
+      jobDate: "",
+      crewName: "",
+      crewMembers: "",
+      jobName: "",
+      custPhone: "",
+      custAddress: "",
+      linkAddress: "",
+      jobDescription: "",
       _id: "",
       jobs: [],
       crews: []
@@ -39,7 +45,7 @@ class UpdateJob extends Component {
       .catch(err => console.log(err));
   };
 
-  handleInputChange = event => {
+  handleInputChange = (event, id) => {
     console.log("This is the event ", event);
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
@@ -59,8 +65,7 @@ class UpdateJob extends Component {
 
     let jobData = {
       actualJobTime: this.state.actualJobTime,
-      jobNotes: this.state.jobNotes,
-      completed: true
+      jobNotes: this.state.jobNotes
     };
 
     console.log("This is the job you just completed: ", jobData);
