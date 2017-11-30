@@ -23,22 +23,22 @@
     margin-top: 100px;
 }
 /* unvisited link */
-a:link {
+.footer-text:link {
     color: white;
 }
 
 /* visited link */
-a:visited {
+.footer-text:visited {
     color: white;
 }
 
 /* mouse over link */
-a:hover {
+.footer-text:hover {
     color: #60332a;
 }
 
 /* selected link */
-a:active {
+.footer-text:active {
     color: lightgreen;
 }
 
