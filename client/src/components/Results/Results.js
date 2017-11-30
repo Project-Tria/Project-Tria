@@ -168,7 +168,7 @@ class Results extends Component {
                     )}
                   </div>
                 ) : (
-                  <div>
+                  <div className="row">
                     <p className="job-data">N/A</p>
                   </div>
                 )}

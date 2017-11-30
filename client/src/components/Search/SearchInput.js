@@ -76,25 +76,6 @@ class SearchInput extends Component {
             />
           </div>
 
-          <div className="form-group row">
-            <label
-              htmlFor="job-name"
-              className="col-form-label col-3 text-right"
-            >
-              Job Name:{" "}
-            </label>
-            <input
-              className="col-6 form-control"
-              type="text"
-              id="jobName"
-              name="jobName"
-              value={this.props.jobName}
-              onChange={event => {
-                this.props.handleInputChange(event);
-              }}
-            />
-          </div>
-
           <div>
             <button
               onClick={event => {

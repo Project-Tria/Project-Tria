@@ -118,7 +118,7 @@ class Search extends Component {
   //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
-    if (crewQuery = "Search All Crews") {
+    if (crewQuery === "Search All Crews") {
       this.loadAllCrewsJobs();
     } else {
     // event.preventDefault();
