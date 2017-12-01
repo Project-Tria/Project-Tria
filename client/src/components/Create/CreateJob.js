@@ -6,16 +6,6 @@ import "./CreateJob.css";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class CreateJob extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isOpen: false };
-  }
-
-  toggleModal = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
 
   renderCrew = props => {
     return this.props.crews.map(crew => (

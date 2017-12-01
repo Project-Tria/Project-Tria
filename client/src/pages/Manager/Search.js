@@ -90,18 +90,17 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-
-//This will load all of the jobs of all the crews
+  //This will load all of the jobs of all the crews
   loadAllCrewsJobs = () => {
     API.getJobs()
-    .then(res => {
+      .then(res => {
         this.setState({ jobs: res.data }, () => {
           console.log("This.state.jobs", this.state.jobs);
         });
       })
       .catch(err => console.log(err));
-  }
-  
+  };
+
   //this funciton is going to get crews from the DB will be
   //props for the drop down.
   loadCrews = () => {
@@ -121,17 +120,19 @@ class Search extends Component {
     if (crewQuery === "Search All Crews") {
       this.loadAllCrewsJobs();
     } else {
-    // event.preventDefault();
-    // alert("Form Submitted");
-    this.loadJobs(crewQuery);
+      // event.preventDefault();
+      // alert("Form Submitted");
+      this.loadJobs(crewQuery);
     }
   };
 
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return <div className="container text-center ">
-        {isAuthenticated() && <div>
+    return (
+      <div className="container text-center ">
+        {isAuthenticated() && (
+          <div>
             <div className="nav-div">
               <a href="/manager/" className="btn btn-brown nav-button">
                 Back
@@ -139,14 +140,18 @@ class Search extends Component {
               <a href="/manager/create/" className="btn btn-brown nav-button">
                 Create Job
               </a>
-              <a href="/manager/update/" className="btn btn-brown nav-button">
-                Update Job
+              <a href="/crew/" className="btn btn-brown">
+                Crew Page
               </a>
             </div>
             <h1 className="page-title-text">Search Jobs</h1>
             <br />
             <br />
-            <SearchInput crews={this.state.crews} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
+            <SearchInput
+              crews={this.state.crews}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
             <br />
             <br />
 
@@ -154,13 +159,19 @@ class Search extends Component {
 
             <br />
             <br />
-          </div>}
-        {!isAuthenticated() && <h4>
-            You are not logged in! Please <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+          </div>
+        )}
+        {!isAuthenticated() && (
+          <h4>
+            You are not logged in! Please{" "}
+            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
-            </a> to continue.
-          </h4>}
-      </div>;
+            </a>{" "}
+            to continue.
+          </h4>
+        )}
+      </div>
+    );
   }
 } //end class
 
