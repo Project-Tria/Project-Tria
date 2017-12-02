@@ -106,7 +106,7 @@ class CrewMain extends Component {
             <br />
             <br />
             {this.state.jobs.length === 0 && (
-              <h3>
+              <h3 className="page-title-text">
                 <i>All Jobs Complete!</i>
               </h3>
             )}
@@ -115,6 +115,16 @@ class CrewMain extends Component {
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
             />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         )}
         {!isAuthenticated() && (
@@ -131,6 +141,16 @@ class CrewMain extends Component {
             </button>
           </div>
         )}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
       </div>
     );
   }

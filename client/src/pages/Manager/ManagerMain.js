@@ -40,11 +40,22 @@ class ManagerMain extends Component {
               <br />                                                       
             </div>
           </div>}
-        {!isAuthenticated() && <h4>
+        {!isAuthenticated() && <h4 className="page-title-text">
             You are not logged in! Please <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
             </a> to continue.
-          </h4>}
+          </h4>}      
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+      <br /> 
+      
       </div>;
       
   }

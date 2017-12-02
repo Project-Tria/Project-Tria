@@ -1,29 +1,45 @@
-    .btn-brown {
-        color: #fff;
-        background-color: #60332a;
-        border-color: #60332a;
-        margin: 0px 5px 0px 5px;
-    }
-    
-    .btn-brown:hover,
-    .btn-brown:focus,
-    .btn-brown:active,
-    .btn-brown.active,
-    .open>.dropdown-toggle.btn-brown {
-        color: #fff;
-        background-color: #eea967;
-        border-color: #eea967;       
-    }
+.btn-brown {
+    color: #fff;
+    background-color: #60332a;
+    border-color: #60332a;
+    margin: 0px 5px 0px 5px;
+}
 
-    body {
-        background-color: #5b5b5b;
-    }
+.btn-brown:hover,
+.btn-brown:focus,
+.btn-brown:active,
+.btn-brown.active,
+.open>.dropdown-toggle.btn-brown {
+    color: #fff;
+    background-color: #eea967;
+    border-color: #eea967;       
+}
 
-    h1.page-title-text {
-        color: white;
-    }
+body {
+    background-color: #5b5b5b;
+}
 
-    .border {
-        border: 0px solid #000000!important;
-    }
+.border {
+    border: 0px solid #000000!important;
+}
+
+h1.page-title-text {
+color: white;
+}
+
+h2.page-title-text {
+    color: white;
+}
+
+h3.page-title-text {
+    color: white;
+}
+
+h4.page-title-text {
+    color: white;
+}
+
+h5.page-title-text {
+    color: white;
+}
     

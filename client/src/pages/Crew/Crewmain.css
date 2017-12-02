@@ -19,3 +19,15 @@ h1.page-title-text {
     border-color: #eea967;
     /*set the color you want here*/
 }
+h1.page-title-text {
+    color: white;
+}
+h2.page-title-text {
+    color: white;
+}
+h3.page-title-text {
+    color: white;
+}
+h4.page-title-text {
+    color: white;
+}
