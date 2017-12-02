@@ -15,8 +15,8 @@
     border-color: #eea967;       
 }
 
-body {
-    background-color: #5b5b5b;
+body {    
+    background-image: url("./fake_brick_@2X.png")
 }
 
 .border {
