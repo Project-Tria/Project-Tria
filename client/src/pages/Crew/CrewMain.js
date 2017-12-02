@@ -109,7 +109,7 @@ class CrewMain extends Component {
             <br />
             <br />
             {this.state.jobs.length === 0 && (
-              <h3>
+              <h3 className="page-title-text">
                 <i>All Jobs Complete!</i>
               </h3>
             )}
@@ -118,10 +118,20 @@ class CrewMain extends Component {
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
             />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </div>
         )}
         {!isAuthenticated() && (
-          <h4>
+          <h4 className="page-title-text">
             You are not logged in! Please{" "}
             <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
@@ -129,6 +139,16 @@ class CrewMain extends Component {
             to continue.
           </h4>
         )}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
       </div>
     );
   }

@@ -160,7 +160,7 @@ class Search extends Component {
           </div>
         )}
         {!isAuthenticated() && (
-          <h4>
+          <h4 className="page-title-text">
             You are not logged in! Please{" "}
             <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
@@ -168,6 +168,16 @@ class Search extends Component {
             to continue.
           </h4>
         )}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
       </div>
     );
   }
