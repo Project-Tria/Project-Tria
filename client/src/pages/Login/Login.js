@@ -56,29 +56,6 @@ class Login extends Component {
               <br />
               <br />
             </div>
-<<<<<<< HEAD
-          </div>}
-        {!isAuthenticated() && <h4>
-            You are not logged in! Please <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
-              Log In
-            </a> to continue.
-          </h4>}
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-           
-      </div>;
-=======
           </div>
         )}
         {!isAuthenticated() && (
@@ -97,7 +74,6 @@ class Login extends Component {
         )}
       </div>
     );
->>>>>>> master
   }
 } //end class
 

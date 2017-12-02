@@ -133,15 +133,6 @@ class Create extends Component {
           </div>
         )}
         {!isAuthenticated() && (
-<<<<<<< HEAD
-          <h4 className="page-title-text">
-            You are not logged in! Please{" "}
-            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
-              Log In
-            </a>{" "}
-            to continue.
-          </h4>
-=======
           <div className="login-div">
             <h1 id="main-title">Welcome to Crewify!</h1>
             <br />
@@ -154,7 +145,6 @@ class Create extends Component {
               Login
             </button>
           </div>
->>>>>>> master
         )}        
       </div>
     );
