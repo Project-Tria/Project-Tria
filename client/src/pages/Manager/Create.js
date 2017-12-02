@@ -119,8 +119,8 @@ class Create extends Component {
               <a href="/manager/search/" className="btn btn-brown">
                 Search Jobs
               </a>
-              <a href="/" className="btn btn-brown">
-                Update Job
+              <a href="/crew/" className="btn btn-brown">
+                Crew Page
               </a>
             </div>
             <h1 className="page-title-text">Create Job</h1>

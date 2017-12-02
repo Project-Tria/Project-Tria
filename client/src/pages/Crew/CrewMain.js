@@ -92,27 +92,45 @@ class CrewMain extends Component {
   render() {
     const { isAuthenticated } = this.props.auth;
 
-    return <div className="container text-center">
-        {isAuthenticated() && <div>
+    return (
+      <div className="container text-center">
+        {isAuthenticated() && (
+          <div>
             <a href="/" className="btn btn-brown">
               Back
             </a>
-            <h1 className="page-title-text">
-              Open Jobs - {this.getDate()}
-            </h1>
+            <a href="/manager/create/" className="btn btn-brown nav-button">
+              Create Job
+            </a>
+            <a href="/manager/search/" className="btn btn-brown nav-button">
+              Search Jobs
+            </a>
+            <h1 className="page-title-text">Open Jobs: {this.getDate()}</h1>
             <br />
             <br />
-            {this.state.jobs.length === 0 && <h3>
+            {this.state.jobs.length === 0 && (
+              <h3>
                 <i>All Jobs Complete!</i>
-              </h3>}
-            <MyJobs jobs={this.state.jobs} handleFormSubmit={this.handleFormSubmit} handleInputChange={this.handleInputChange} />
-          </div>}
-        {!isAuthenticated() && <h4>
-            You are not logged in! Please <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
+              </h3>
+            )}
+            <MyJobs
+              jobs={this.state.jobs}
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+          </div>
+        )}
+        {!isAuthenticated() && (
+          <h4>
+            You are not logged in! Please{" "}
+            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
               Log In
-            </a> to continue.
-          </h4>}
-      </div>;
+            </a>{" "}
+            to continue.
+          </h4>
+        )}
+      </div>
+    );
   }
 } //end class login
 
