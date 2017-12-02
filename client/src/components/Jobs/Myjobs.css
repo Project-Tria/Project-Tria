@@ -1,4 +1,101 @@
+/* * { border: 1px solid black} */
+
+h3 {
+    margin:0;
+}
+
+.job-details {
+  background-color: #dfdfdf;
+  margin-left: 14px;
+}
+
+.mj-heading,
+.mj-details {
+  margin-left: 30px;
+}
+
+.mj-notes {
+  margin-top: 8px;
+}
+
+.mj-heading {
+  margin-bottom: 2px;
+}
+
+.mj-details {
+  font-size: 15px;
+}
+
+.link-div {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.crew-name {
+  font-size: 20px;
+}
+
+.crew-form-button {
+  background-color: #dfdfdf;
+  margin-right: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #complete-btn {
-    height: 5em;
-    margin-top: 10%;
+  height: 5em;
+  width: 10em;
+}
+
+input[type="number"] {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+
+@media screen and (min-width: 1200px) {
+    .crew-form-button {
+      margin-left: 66px;
+    }
+  }
+
+@media screen and (max-width: 1199px) {
+  .crew-form-button {
+    margin-left: 51px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .crew-form-button {
+    margin-left: 31px;
+  }
+}
+@media screen and (max-width: 477px) {
+  .page-title-text {
+    font-size: 30px;
+  }
+
+  .job-details {
+    margin-right: 15px;
+  }
+
+  .mj-heading,
+  .mj-details {
+    margin-left: 15px;
+  }
+
+  .crew-form {
+    margin: 0 14px;
+  }
+
+  .crew-form-button {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 14px;
+  }
+  #complete-btn {
+    height: 4em;
+    width: 13em;
+  }
 }
