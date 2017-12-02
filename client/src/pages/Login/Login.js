@@ -28,17 +28,17 @@ class Login extends Component {
             <h1 className="page-title-text">Main Menu</h1>
             <br />
             <br />
-            <a href="/manager/create/" className="btn btn-lg btn-primary">
+            <a href="/manager/create/" className="btn btn-lg btn-primary menu-button">
               Create Job
             </a>
             <br />
             <br />
-            <a href="/manager/search/" className="btn btn-lg btn-primary">
+            <a href="/manager/search/" className="btn btn-lg btn-primary menu-button">
               Search Jobs
             </a>
             <br />
             <br />
-            <a href="/crew/" className="btn btn-lg btn-primary">
+            <a href="/crew/" className="btn btn-lg btn-primary menu-button">
               Crew Main
             </a>
             <div>

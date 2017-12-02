@@ -1,15 +1,19 @@
-h1{
-    color: white;
+h1 {
+  color: white;
 }
 
 #main-title {
-    margin-bottom: 40;
+  margin-bottom: 40;
+}
+
+.menu-button:active {
+  background: #d86a09;
 }
 
 .login-button {
-    width: 150px;
-    height: 75px;
-    color: #fff;
-    background-color: #f58119;
-    border-color: #d86a09;
+  width: 150px;
+  height: 75px;
+  color: #fff;
+  background-color: #f58119;
+  border-color: #d86a09;
 }
