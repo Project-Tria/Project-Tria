@@ -96,9 +96,6 @@ class CrewMain extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <a href="/" className="btn btn-brown">
-              Back
-            </a>
             <a href="/manager/create/" className="btn btn-brown nav-button">
               Create Job
             </a>
@@ -131,6 +128,7 @@ class CrewMain extends Component {
           </div>
         )}
         {!isAuthenticated() && (
+<<<<<<< HEAD
           <h4 className="page-title-text">
             You are not logged in! Please{" "}
             <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
@@ -138,6 +136,20 @@ class CrewMain extends Component {
             </a>{" "}
             to continue.
           </h4>
+=======
+          <div className="login-div">
+            <h1 id="main-title">Welcome to Crewify!</h1>
+            <br />
+            <br />
+            <button
+              className="btn btn-lg login-button"
+              style={{ cursor: "pointer" }}
+              onClick={this.login.bind(this)}
+            >
+              Login
+            </button>
+          </div>
+>>>>>>> master
         )}
           <br />
           <br />
