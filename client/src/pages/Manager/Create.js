@@ -113,9 +113,7 @@ class Create extends Component {
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
-              <a href="/manager/" className="btn btn-brown">
-                Back
-              </a>
+
               <a href="/manager/search/" className="btn btn-brown">
                 Search Jobs
               </a>
@@ -135,13 +133,18 @@ class Create extends Component {
           </div>
         )}
         {!isAuthenticated() && (
-          <h4>
-            You are not logged in! Please{" "}
-            <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
-              Log In
-            </a>{" "}
-            to continue.
-          </h4>
+          <div className="login-div">
+            <h1 id="main-title">Welcome to Crewify!</h1>
+            <br />
+            <br />
+            <button
+              className="btn btn-lg login-button"
+              style={{ cursor: "pointer" }}
+              onClick={this.login.bind(this)}
+            >
+              Login
+            </button>
+          </div>
         )}        
       </div>
     );
