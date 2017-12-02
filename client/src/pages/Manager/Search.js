@@ -154,9 +154,7 @@ class Search extends Component {
             />
             <br />
             <br />
-
             <Results jobs={this.state.jobs} />
-
             <br />
             <br />
           </div>
