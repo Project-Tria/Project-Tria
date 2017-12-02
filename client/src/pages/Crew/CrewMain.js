@@ -96,9 +96,6 @@ class CrewMain extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <a href="/" className="btn btn-brown">
-              Back
-            </a>
             <a href="/manager/create/" className="btn btn-brown nav-button">
               Create Job
             </a>

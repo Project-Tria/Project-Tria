@@ -25,9 +25,16 @@ class Login extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
-            <h1 className="page-title-text">Welcome to login</h1>
-            <a href="/manager/" className="btn btn-lg btn-primary">
-              Manager Main
+            <h1 className="page-title-text">Main Menu</h1>
+            <br />
+            <br />
+            <a href="/manager/create/" className="btn btn-lg btn-primary">
+              Create Job
+            </a>
+            <br />
+            <br />
+            <a href="/manager/search/" className="btn btn-lg btn-primary">
+              Search Jobs
             </a>
             <br />
             <br />
@@ -35,9 +42,6 @@ class Login extends Component {
               Crew Main
             </a>
             <div>
-              <br />
-              <br />
-              <br />
               <br />
               <br />
               <br />

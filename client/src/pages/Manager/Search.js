@@ -134,9 +134,6 @@ class Search extends Component {
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
-              <a href="/manager/" className="btn btn-brown nav-button">
-                Back
-              </a>
               <a href="/manager/create/" className="btn btn-brown nav-button">
                 Create Job
               </a>

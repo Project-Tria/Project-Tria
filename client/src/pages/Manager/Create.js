@@ -113,9 +113,7 @@ class Create extends Component {
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
-              <a href="/manager/" className="btn btn-brown">
-                Back
-              </a>
+
               <a href="/manager/search/" className="btn btn-brown">
                 Search Jobs
               </a>
