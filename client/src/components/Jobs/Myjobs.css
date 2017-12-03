@@ -1,9 +1,11 @@
 /* * { border: 1px solid black} */
 
 
+
 .job-details {
   background-color: #dfdfdf;
   margin-left: 14px;
+  overflow: hidden;
 }
 
 .mj-heading,
@@ -68,8 +70,8 @@ input[type="number"] {
   }
 }
 
-
-@media screen and (max-width: 477px) {
+/* 477 */
+@media screen and (max-width: 667px) {
   .page-title-text {
     font-size: 30px;
   }

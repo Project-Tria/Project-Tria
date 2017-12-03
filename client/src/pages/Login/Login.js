@@ -1,17 +1,6 @@
 import React, { Component } from "react";
 import "./Login.css";
 
-{
-  /* <div className="login-div">
-<h4>
-  You are not logged in! Please{" "}
-  <a style={{ cursor: "pointer" }} onClick={this.login.bind(this)}>
-    Log In
-  </a>{" "}
-  to continue.
-  </h4>
-</div> */
-}
 
 class Login extends Component {
   login() {
