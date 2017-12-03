@@ -5,8 +5,18 @@ import "./CreateJob.css";
 // import FormBtn from "../../components/Form";
 // import { Input, TextArea, FormBtn } from "../../components/Form";
 
-class CreateJob extends Component {
+let jobTimeField = false;
+let jobDescriptionField = false;
+let custStateField = false;
+let custCityField = false;
+let custAddressField = false;
+let custPhoneField = false;
+let jobNameField = false;
+let crewMembersField = false;
+let crewNameField = false;
+let jobDateField = false;
 
+class CreateJob extends Component {
   renderCrew = props => {
     return this.props.crews.map(crew => (
       <option key={"header" + crew._id}>{crew.crewNameDB}</option>
@@ -31,6 +41,7 @@ class CreateJob extends Component {
             value={this.props.jobDate}
             onChange={event => {
               this.props.handleInputChange(event);
+              jobDateField = true;
             }}
           />
         </div>
@@ -50,6 +61,7 @@ class CreateJob extends Component {
               value={this.props.crewName}
               onChange={event => {
                 this.props.handleInputChange(event);
+                crewNameField = true;
               }}
             >
               <option>Select a crew</option>
@@ -128,7 +140,7 @@ class CreateJob extends Component {
             </div>
           </div>
         </div>
-        
+
         <div className="form-group row">
           <label htmlFor="job-crew" className="col-form-label col-3 text-right">
             Job Crew:{" "}
@@ -142,6 +154,7 @@ class CreateJob extends Component {
             value={this.props.crewMembers}
             onChange={event => {
               this.props.handleInputChange(event);
+              crewMembersField = true;
             }}
           />
         </div>
@@ -159,6 +172,7 @@ class CreateJob extends Component {
             value={this.props.jobName}
             onChange={event => {
               this.props.handleInputChange(event);
+              jobNameField = true;
             }}
           />
         </div>
@@ -179,6 +193,7 @@ class CreateJob extends Component {
             value={this.props.custPhone}
             onChange={event => {
               this.props.handleInputChange(event);
+              custPhoneField = true;
             }}
           />
         </div>
@@ -199,6 +214,7 @@ class CreateJob extends Component {
             value={this.props.custAddress}
             onChange={event => {
               this.props.handleInputChange(event);
+              custAddressField = true;
             }}
           />
         </div>
@@ -219,6 +235,7 @@ class CreateJob extends Component {
             value={this.props.custCity}
             onChange={event => {
               this.props.handleInputChange(event);
+              custCityField = true;
             }}
           />
         </div>
@@ -239,6 +256,7 @@ class CreateJob extends Component {
             value={this.props.custState}
             onChange={event => {
               this.props.handleInputChange(event);
+              custStateField = true;
             }}
           />
         </div>
@@ -258,6 +276,7 @@ class CreateJob extends Component {
             value={this.props.jobDescription}
             onChange={event => {
               this.props.handleInputChange(event);
+              jobDescriptionField = true;
             }}
           />
         </div>
@@ -277,6 +296,7 @@ class CreateJob extends Component {
             value={this.props.estimatedJobTime}
             onChange={event => {
               this.props.handleInputChange(event);
+              jobTimeField = true;
             }}
           />
         </div>
@@ -287,6 +307,20 @@ class CreateJob extends Component {
           }}
           type="submit"
           className="btn btn-lg btn-primary"
+          disabled={
+            !(
+              jobTimeField &&
+              jobDescriptionField &&
+              custStateField &&
+              custCityField &&
+              custAddressField &&
+              custPhoneField &&
+              jobNameField &&
+              crewMembersField &&
+              crewNameField &&
+              jobDateField
+            )
+          }
         >
           Create Job
         </button>
