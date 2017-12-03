@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import "./MyJobs.css";
 
+let actualJobTimeField = false;
+let jobNotesField = false;
+
+
 class MyJobs extends Component {
   renderMyJobs = props => {
     return this.props.jobs.map(job => (
@@ -77,6 +81,7 @@ class MyJobs extends Component {
                     value={this.props.jobNotes}
                     onChange={event => {
                       this.props.handleInputChange(event);
+                      jobNotesField=true;
                     }}
                   />
 
@@ -91,6 +96,7 @@ class MyJobs extends Component {
                     value={this.props.actualJobTime}
                     onChange={event => {
                       this.props.handleInputChange(event);
+                      actualJobTimeField=true;
                     }}
                   />
                 </div>
@@ -101,6 +107,7 @@ class MyJobs extends Component {
                   id="complete-btn"
                   name="_id"
                   value={job._id}
+                  disabled={!(actualJobTimeField && jobNotesField)}
                   onClick={event => {
                     this.props.handleFormSubmit(event);
                   }}
