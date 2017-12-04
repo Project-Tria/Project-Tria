@@ -19,6 +19,9 @@ class Search extends Component {
   login() {
     this.props.auth.login();
   }
+  logout() {
+    this.props.auth.logout();
+  }
 
   //constructor
   constructor(props) {
@@ -140,6 +143,9 @@ class Search extends Component {
               <a href="/crew/" className="btn btn-brown">
                 Crew Page
               </a>
+              <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
+              Log Out
+            </a>
             </div>
             <h1 className="page-title-text">Search Jobs</h1>
             <br />

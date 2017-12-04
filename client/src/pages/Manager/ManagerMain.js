@@ -7,6 +7,10 @@ class ManagerMain extends Component {
     this.props.auth.login();
   }
 
+  logout() {
+    this.props.auth.logout();
+  }
+
   render() {
     const { isAuthenticated } = this.props.auth;
 
@@ -24,6 +28,10 @@ class ManagerMain extends Component {
             <a href="/manager/search/" className="btn btn-lg btn-primary">
               Search Jobs
             </a>
+            <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
+              Log Out
+            </a>
+            
             <div>
               <br />
               <br />
