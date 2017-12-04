@@ -138,13 +138,13 @@ class Search extends Component {
           <div>
             <div className="nav-div">
               <a href="/manager/create/" className="btn btn-brown nav-button">
-                Create Job
+                <i className="glyphicon glyphicon-pencil"></i><span className="button-text">Create Job</span>
               </a>
-              <a href="/crew/" className="btn btn-brown">
-                Crew Page
+              <a href="/crew/" className="btn btn-brown navigation"><i className="glyphicon glyphicon-inbox"></i>
+              <span className="button-text"> Crew Page</span>
               </a>
-              <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
-              Log Out
+              <a href="#" className="btn btn-brown navigation" onClick={this.login.bind(this)}><i className="glyphicon glyphicon-log-out"></i>
+              <span className="button-text"> Log Out</span>
             </a>
             </div>
             <h1 className="page-title-text">Search Jobs</h1>

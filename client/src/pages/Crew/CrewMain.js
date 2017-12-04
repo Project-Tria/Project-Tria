@@ -100,16 +100,23 @@ class CrewMain extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
+            <a href="/manager/search/" className="btn btn-brown">
+              <i className="glyphicon glyphicon-search" />
+              <span className="button-text"> Search Jobs</span>
+            </a>
             <a href="/manager/create/" className="btn btn-brown nav-button">
-              Create Job
+              <i className="glyphicon glyphicon-pencil" />
+              <span className="button-text">Create Job</span>
             </a>
-            <a href="/manager/search/" className="btn btn-brown nav-button">
-              Search Jobs
+            <a
+              href="#"
+              className="btn btn-brown"
+              onClick={this.login.bind(this)}
+            >
+              <i className="glyphicon glyphicon-log-out" />
+              <span className="button-text"> Log Out</span>
             </a>
-            <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
-              Log Out
-            </a>
-            
+
             <h1 className="page-title-text">Open Jobs: {this.getDate()}</h1>
             <br />
             <br />
@@ -149,16 +156,16 @@ class CrewMain extends Component {
             </button>
           </div>
         )}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
