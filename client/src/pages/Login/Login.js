@@ -73,6 +73,15 @@ class Login extends Component {
           </div>
         )}
       </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
     );
   }
 } //end class
