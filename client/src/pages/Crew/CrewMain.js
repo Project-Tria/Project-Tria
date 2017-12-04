@@ -10,6 +10,10 @@ class CrewMain extends Component {
     this.props.auth.login();
   }
 
+  logout() {
+    this.props.auth.logout();
+  }
+
   constructor(props) {
     super(props);
 
@@ -102,6 +106,10 @@ class CrewMain extends Component {
             <a href="/manager/search/" className="btn btn-brown nav-button">
               Search Jobs
             </a>
+            <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
+              Log Out
+            </a>
+            
             <h1 className="page-title-text">Open Jobs: {this.getDate()}</h1>
             <br />
             <br />
