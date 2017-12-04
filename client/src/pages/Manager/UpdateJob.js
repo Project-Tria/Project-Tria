@@ -7,6 +7,9 @@ class UpdateJob extends Component {
   login() {
     this.props.auth.login();
   }
+  logout() {
+    this.props.auth.logout();
+  }
 
   constructor(props) {
     super(props);
@@ -119,6 +122,9 @@ class UpdateJob extends Component {
             <br />
             <a href="/" className="btn btn-info">
               Back
+            </a>
+            <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
+              Log Out
             </a>
             <br />
             <br />
