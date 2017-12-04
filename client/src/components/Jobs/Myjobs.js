@@ -42,7 +42,7 @@ class MyJobs extends Component {
         >
           <div className="card-block text-left">
             <div className="row job-row">
-              <div className="job-details col-md-4 col-sm-12">
+              <div className="job-details col">
                 <div className="row">
                   <p className="mj-heading">
                     <b>Crew Members: </b>
@@ -70,7 +70,7 @@ class MyJobs extends Component {
                   <p className="mj-details">{job.jobDescription}</p>
                 </div>
               </div>
-              <div className="crew-form col-md-4 col-sm-12">
+              <div className="crew-form col">
                 <div className="crew-form-fields">
                   <label htmlFor="job-notes">Crew Notes:</label>
                   <textarea
@@ -102,7 +102,7 @@ class MyJobs extends Component {
                 </div>
               </div>
 
-              <div className="crew-form-button col-md-3 col-sm-12 text-center">
+              <div className="crew-form-button col text-center">
                 <button
                   id="complete-btn"
                   name="_id"
