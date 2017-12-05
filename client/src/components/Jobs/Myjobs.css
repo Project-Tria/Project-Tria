@@ -1,9 +1,11 @@
 /* * { border: 1px solid black} */
 
 
+
 .job-details {
   background-color: #dfdfdf;
   margin-left: 14px;
+  overflow: hidden;
 }
 
 .mj-heading,
@@ -49,20 +51,18 @@ input[type="number"] {
   font-size: 20px;
   margin-bottom: 20px;
 }
-/* 
-@media screen and (min-width: 1200px) {
-  .crew-form-button {
-    margin-left: 66px;
-  }
-}
 
-@media screen and (max-width: 1199px) {
-  .crew-form-button {
-    margin-left: 51px;
-  }
-} */
 
 @media screen and (max-width: 768px) {
+  .nav-div {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .navigation {
+    width: 80px;
+  }
+
   .mj-heading,
   .mj-details {
     margin-left: 10px;
@@ -82,8 +82,8 @@ input[type="number"] {
 
 }
 
-
-@media screen and (max-width: 477px) {
+/* 477 */
+@media screen and (max-width: 667px) {
   .page-title-text {
     font-size: 30px;
   }
