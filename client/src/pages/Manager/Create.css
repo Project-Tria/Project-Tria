@@ -1,37 +1,49 @@
 .btn-brown {
-    color: #fff;
-    background-color: #60332a;
-    border-color: #60332a;
-    margin: 0px 5px 0px 5px;
+  color: #fff;
+  background-color: #60332a;
+  border-color: #60332a;
+  margin: 0px 5px 0px 5px;
 }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
 .btn-primary.active,
-.open>.dropdown-toggle.btn-primary {
-    color: #fff;
-    background-color: #eea967;
-    border-color: #eea967;
-    /*set the color you want here*/
+.open > .dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #eea967;
+  border-color: #eea967;
+  /*set the color you want here*/
 }
 
 h1.page-title-text {
-    color: white;
+  color: white;
 }
 
 h2.page-title-text {
-    color: white;
+  color: white;
 }
 
 h3.page-title-text {
-    color: white;
+  color: white;
 }
 
 h4.page-title-text {
-    color: white;
+  color: white;
 }
 
 h5.page-title-text {
-    color: white;
+  color: white;
+}
+@media screen and (max-width: 667px) {
+  label {
+      font-size: 10px;
+      padding: 0px 0px;
+  }
+    .button-text {
+    display: none;
+  }
+  a.btn.btn-brown.navigation {
+      border: 0px 20px;
+  }
 }
