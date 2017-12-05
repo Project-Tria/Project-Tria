@@ -17,3 +17,16 @@ h1 {
   background-color: #f58119;
   border-color: #d86a09;
 }
+
+.button-orange {
+
+  color: #fff;
+  background-color: #f58119;
+  border-color: #d86a09; 
+}
+
+
+.button-orange:active {
+  border-color: #d86a09;
+}
+
