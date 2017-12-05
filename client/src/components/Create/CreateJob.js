@@ -76,7 +76,8 @@ class CreateJob extends Component {
             data-target="#add-crew-modal"
             data-toggle="modal"
           >
-            Add Crew
+          <i className="glyphicon glyphicon-plus"></i>
+            <span className="button-text">Add Crew</span>
           </button>
         </div>
 

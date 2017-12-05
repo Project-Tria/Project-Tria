@@ -8,7 +8,7 @@ let jobNotesField = false;
 class MyJobs extends Component {
   renderMyJobs = props => {
     return this.props.jobs.map(job => (
-      <div className="card" key={job._id}>
+      <div className="card" key={job._id} id="card-div">
         <div className="card-header" role="tab" id={"heading" + job._id}>
           <a
             data-toggle="collapse"
