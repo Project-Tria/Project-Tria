@@ -39,14 +39,7 @@ class ManagerMain extends Component {
               <br />
               <br />
               <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              <br />                            
             </div>
           </div>
         )}
@@ -59,6 +52,12 @@ class ManagerMain extends Component {
             to continue.
           </h4>
         )}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />    
       </div>
     );
   }
