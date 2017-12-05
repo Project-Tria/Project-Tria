@@ -65,7 +65,12 @@ class Create extends Component {
     console.log("this is linkAddress: " + linkAddress);
 
     ///create the string used in the to display the address
-    let displayAddress = this.state.custAddress + ", " + this.state.custCity + ", " + this.state.custState
+    let displayAddress =
+      this.state.custAddress +
+      ", " +
+      this.state.custCity +
+      ", " +
+      this.state.custState;
 
     let newJob = {
       jobDate: this.state.jobDate,
@@ -84,7 +89,6 @@ class Create extends Component {
       // .then(res => this.loadJobs())
       .then(res => console.log(res))
       .catch(err => console.log(err));
-
 
     // }
   };
@@ -116,16 +120,22 @@ class Create extends Component {
         {isAuthenticated() && (
           <div>
             <div className="nav-div">
-
-              <a href="/manager/search/" className="btn btn-brown" id="navigation"><i className="glyphicon glyphicon-search"></i>
+              <a href="/manager/search/" className="btn btn-brown navigation">
+                <i className="glyphicon glyphicon-search " />
                 <span className="button-text"> Search Jobs</span>
               </a>
-              <a href="/crew/" className="btn btn-brown navigation"><i className="glyphicon glyphicon-inbox"></i>
-              <span className="button-text"> Crew Page</span>
+              <a href="/crew/" className="btn btn-brown navigation">
+                <i className="glyphicon glyphicon-inbox" />
+                <span className="button-text"> Crew Page</span>
               </a>
-              <a href="#" className="btn btn-brown navigation" onClick={this.login.bind(this)}><i className="glyphicon glyphicon-log-out"></i>
-              <span className="button-text"> Log Out</span>
-            </a>
+              <a
+                href="#"
+                className="btn btn-brown navigation"
+                onClick={this.login.bind(this)}
+              >
+                <i className="glyphicon glyphicon-log-out" />
+                <span className="button-text"> Log Out</span>
+              </a>
             </div>
             <h1 className="page-title-text">Create Job</h1>
             <br />
@@ -151,7 +161,7 @@ class Create extends Component {
               Login
             </button>
           </div>
-        )}        
+        )}
       </div>
     );
   }
