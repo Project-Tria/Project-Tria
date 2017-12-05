@@ -82,7 +82,7 @@ class SearchInput extends Component {
                 this.props.handleFormSubmit(event);
               }}
               type="submit"
-              className="btn btn-lg btn-primary"
+              className="btn btn-lg button-orange"
             >
               Search Jobs
             </button>

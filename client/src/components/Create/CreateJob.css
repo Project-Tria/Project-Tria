@@ -14,22 +14,7 @@
         margin-top: 80px;
     }
 
-    .btn-primary {
-        color: #fff;
-        background-color: #f58119;
-        border-color: #f58119;
-    }
 
-    .btn-primary:hover,
-    .btn-primary:focus,
-    .btn-primary:active,
-    .btn-primary.active,
-    .open>.dropdown-toggle.btn-primary {
-        color: #fff;
-        background-color: #eea967;
-        border-color: #eea967;
-        /*set the color you want here*/
-    }
 
     .background-region {
         color: white;
@@ -44,3 +29,7 @@
         height: 36px;
         /* margin-left: 90px; */
     }
+
+    .button-orange:active {
+  border-color: #d86a09;
+}

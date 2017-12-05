@@ -11,8 +11,8 @@ h1.page-title-text {
 
 .btn-primary:hover,
 .btn-primary:focus,
-.btn-primary:active,
-.btn-primary.active,
+/*.btn-primary:active,
+.btn-primary.active,*/
 .open>.dropdown-toggle.btn-primary {
     color: #fff;
     background-color: #eea967;
@@ -31,3 +31,7 @@ h3.page-title-text {
 h4.page-title-text {
     color: white;
 }
+
+/*.active {
+    color: black;
+}*/
