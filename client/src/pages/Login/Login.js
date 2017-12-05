@@ -36,14 +36,7 @@ class Login extends Component {
               <br />
               <br />
               <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
+              <br />                           
             </div>
           </div>
         )}
@@ -61,7 +54,14 @@ class Login extends Component {
             </button>
           </div>
         )}
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />          
       </div>
+          
     );
   }
 } //end class

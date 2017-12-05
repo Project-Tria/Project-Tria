@@ -137,10 +137,7 @@ class CrewMain extends Component {
             <br />
             <br />
             <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <br />            
           </div>
         )}
         {!isAuthenticated() && (
@@ -163,10 +160,7 @@ class CrewMain extends Component {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br />        
       </div>
     );
   }
