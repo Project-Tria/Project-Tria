@@ -110,7 +110,6 @@ class Create extends Component {
     //   height: '200px',
     //   width: '400px',
     //   backgroundColor: 'green'
-
     // }
     API.saveCrew({
       crewNameDB: this.state.crewNameDB
