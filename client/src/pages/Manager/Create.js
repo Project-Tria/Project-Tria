@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CreateJob from "../../components/Create/CreateJob";
+import Notifications, { notify } from "react-notify-toast";
 import "./Create.css";
 import API from "../../utils/API";
 
@@ -30,6 +31,7 @@ class Create extends Component {
       crews: []
     };
   }
+
 
   componentDidMount() {
     this.loadCrews();
@@ -89,13 +91,11 @@ class Create extends Component {
       // .then(res => this.loadJobs())
       .then(res => console.log(res))
       .catch(err => console.log(err));
-
-
   };
 
   loadCrews = () => {
     API.getCrews()
-      // .then(res => console.log(res.data))
+    
       .then(res => {
         this.setState({ crews: res.data }, () => {
           console.log("This.state.crews", this.state.crews);
@@ -105,10 +105,18 @@ class Create extends Component {
   };
 
   addCrew = () => {
+
+    // let myStyle = {
+    //   height: '200px',
+    //   width: '400px',
+    //   backgroundColor: 'green'
+
+    // }
     API.saveCrew({
       crewNameDB: this.state.crewNameDB
     })
       .then(res => this.loadCrews())
+      // .then(notify.show('Toasty!', "custom", 4000, myStyle))
       .catch(err => console.log(err));
   };
 
@@ -119,6 +127,9 @@ class Create extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
+            <div className="main">
+              <Notifications />
+            </div>
             <div className="nav-div">
               <a href="/manager/search/" className="btn btn-brown navigation">
                 <i className="glyphicon glyphicon-search " />

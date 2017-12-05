@@ -20,16 +20,15 @@ class ManagerMain extends Component {
             <h1 className="page-title-text">Manager - Main Menu</h1>
             <br />
             <br />
-            <br />
-            <a href="/manager/create/" className="btn btn-lg btn-primary">
+            <a href="/manager/create/" className="btn btn-lg  main-button">
               Create Job
             </a>
             <br />
             <br />
-            <a href="/manager/search/" className="btn btn-lg btn-primary">
+            <a href="/manager/search/" className="btn btn-lg main-button">
               Search Jobs
             </a>
-            <a href="#" className="btn btn-brown nav-button" onClick={this.login.bind(this)}>
+            <a href="#" className="btn btn-lg main-button" onClick={this.login.bind(this)}>
               Log Out
             </a>
             
