@@ -7,7 +7,6 @@ import history from "./history";
 import Login from "./pages/Login/Login";
 import ManagerMain from "./pages/Manager/ManagerMain";
 import Create from "./pages/Manager/Create";
-import UpdateJob from "./pages/Manager/UpdateJob";
 import Search from "./pages/Manager/Search";
 import CrewMain from "./pages/Crew/CrewMain";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
@@ -53,11 +52,6 @@ export const makeMainRoutes = () => {
               exact
               path="/manager/create"
               render={props => <Create auth={auth} {...props} />}
-            />
-            <Route
-              exact
-              path="/manager/update"
-              render={props => <UpdateJob auth={auth} {...props} />}
             />
             <Route
               exact

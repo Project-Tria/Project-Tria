@@ -29,7 +29,7 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="date-input"
-            className=" col-form-label col-3 text-right"
+            className=" col-form-label col-3 text-right label-text"
           >
             Job Date:
           </label>
@@ -49,7 +49,7 @@ class CreateJob extends Component {
         <div className="form-group row" id="crew-space">
           <label
             htmlFor="crew-dropdown"
-            className=" col-form-label col-3 text-right"
+            className=" col-form-label col-3 text-right label-text"
           >
             Select Crew:
           </label>
@@ -104,7 +104,7 @@ class CreateJob extends Component {
               </div>
               <div className="modal-body">
                 <div className="form-group row">
-                  <label htmlFor="new-crew" className="col-form-label">
+                  <label htmlFor="new-crew" className="col-form-label label-text">
                     New Crew Name:{" "}
                   </label>
                   <input
@@ -143,7 +143,7 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-          <label htmlFor="job-crew" className="col-form-label col-3 text-right">
+          <label htmlFor="job-crew" className="col-form-label col-3 text-right label-text">
             Job Crew:{" "}
           </label>
           <input
@@ -161,7 +161,7 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-          <label htmlFor="job-name" className="col-form-label col-3 text-right">
+          <label htmlFor="job-name" className="col-form-label col-3 text-right label-text">
             Job Name:{" "}
           </label>
           <input
@@ -181,7 +181,7 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="cust-phone"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
             Telephone:{" "}
           </label>
@@ -202,7 +202,7 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="cust-address"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
             Job Address:{" "}
           </label>
@@ -223,7 +223,7 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="cust-city"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
             Job City:{" "}
           </label>
@@ -244,7 +244,7 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="cust-state"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
             Job State:{" "}
           </label>
@@ -265,9 +265,9 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="job-descrip"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
-            Job Notes:
+          Job Notes:
           </label>
           <textarea
             className="col-6 form-control"
@@ -285,9 +285,9 @@ class CreateJob extends Component {
         <div className="form-group row">
           <label
             htmlFor="est-hours"
-            className="col-form-label col-3 text-right"
+            className="col-form-label col-3 text-right label-text"
           >
-            Est. Hours
+          Est. Hours
           </label>
           <input
             className="col-6 form-control"

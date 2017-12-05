@@ -18,7 +18,7 @@ class SearchInput extends Component {
           <div className="form-group row">
             <label
               htmlFor="crew-dropdown"
-              className="col-form-label col-3 text-right"
+              className="col-form-label col-3 text-right label-text"
             >
               Select Crew:
             </label>
@@ -42,7 +42,7 @@ class SearchInput extends Component {
           <div className="form-group row">
             <label
               htmlFor="date-input"
-              className="col-form-label col-3 text-right"
+              className="col-form-label col-3 text-right label-text"
             >
               Job Start Date:
             </label>
@@ -60,7 +60,7 @@ class SearchInput extends Component {
           <div className="form-group row">
             <label
               htmlFor="date-input"
-              className="col-form-label col-3 text-right"
+              className="col-form-label col-3 text-right label-text"
             >
               Job End Date:
             </label>
