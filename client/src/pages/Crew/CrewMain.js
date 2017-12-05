@@ -107,7 +107,7 @@ class CrewMain extends Component {
               </a>
               <a href="/manager/create/" className="btn btn-brown navigation">
                 <i className="glyphicon glyphicon-pencil" />
-                <span className="button-text">Create Job</span>
+                <span className="button-text"> Create Job</span>
               </a>
               <a
                 href="#"

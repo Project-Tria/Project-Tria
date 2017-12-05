@@ -138,7 +138,7 @@ class Search extends Component {
           <div>
             <div className="nav-div">
               <a href="/manager/create/" className="btn btn-brown navigation">
-                <i className="glyphicon glyphicon-pencil"></i><span className="button-text">Create Job</span>
+                <i className="glyphicon glyphicon-pencil"></i><span className="button-text"> Create Job</span>
               </a>
               <a href="/crew/" className="btn btn-brown navigation"><i className="glyphicon glyphicon-inbox"></i>
               <span className="button-text"> Crew Page</span>
