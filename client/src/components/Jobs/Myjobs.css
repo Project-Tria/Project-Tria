@@ -84,6 +84,10 @@ input[type="number"] {
 
 /* 477 */
 @media screen and (max-width: 667px) {
+  .button-text {
+    display:none;
+  }
+  
   .page-title-text {
     font-size: 30px;
   }
@@ -94,7 +98,7 @@ input[type="number"] {
   }
 
   .crew-form {
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   .crew-form-button {
@@ -103,8 +107,9 @@ input[type="number"] {
     margin-left: 14px;
     background-color: #b8b8b8;
   }
+
   #complete-btn {
     height: 4em;
-    width: 13em;
+    width: 11em;
   }
 }

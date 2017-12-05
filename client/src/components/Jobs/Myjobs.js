@@ -85,7 +85,7 @@ class MyJobs extends Component {
                     }}
                   />
 
-                  <label htmlFor="act-hours" className="col col-form-label">
+                  <label htmlFor="act-hours">
                     Job Hours:
                   </label>
                   <input
