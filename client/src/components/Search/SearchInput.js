@@ -4,6 +4,19 @@ import "./SearchInput.css";
 // import API from "../../utils/API";
 
 class SearchInput extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+
+    }
+  }
+
+    componentWillReceiveProps(nextProps) {
+    this.setState({
+      ...nextProps
+    })
+  }
   //might want to wrap form in form tag
   renderCrew = props => {
     return this.props.crews.map(crew => (
@@ -12,6 +25,8 @@ class SearchInput extends Component {
   };
 
   render() {
+    console.log("next props", this.nextProps)
+    console.log("state", this.state)
     return (
       <div>
         <div className="container text-center border background-region">
@@ -28,7 +43,7 @@ class SearchInput extends Component {
                 type="list"
                 id="crew"
                 name="crewName"
-                value={this.props.crewName}
+                value={this.state.crewName}
                 onChange={event => {
                   this.props.handleInputChange(event);
                 }}
@@ -51,7 +66,7 @@ class SearchInput extends Component {
               type="date"
               id="date-input"
               name="startDate"
-              value={this.props.startDate}
+              value={this.state.startDate}
               onChange={event => {
                 this.props.handleInputChange(event);
               }}
@@ -69,7 +84,7 @@ class SearchInput extends Component {
               type="date"
               id="date-input"
               name="endDate"
-              value={this.props.endDate}
+              value={this.state.endDate}
               onChange={event => {
                 this.props.handleInputChange(event);
               }}

@@ -13,6 +13,8 @@ let crewMembersField = false;
 let crewNameField = false;
 let jobDateField = false;
 
+
+
 class CreateJob extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +40,18 @@ class CreateJob extends Component {
     ));
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      ...nextProps
+    })
+  }
+
+
+
+
   render() {
+    console.log("this is the state from cwrp",this.state)
+    console.log("this is the props", this.props)
     return (
       <div className="container text-center border background-region">
         <div className="form-group row">
@@ -53,7 +66,7 @@ class CreateJob extends Component {
             type="date"
             id="date-input"
             name="jobDate"
-            value={this.props.jobDate}
+            value={this.state.jobDate}
             onChange={event => {
               this.props.handleInputChange(event);
               jobDateField = true;
@@ -73,7 +86,7 @@ class CreateJob extends Component {
               className="form-control"
               id="crew-dropdown"
               name="crewName"
-              value={this.props.crewName}
+              value={this.state.crewName}
               onChange={event => {
                 this.props.handleInputChange(event);
                 crewNameField = true;
@@ -117,7 +130,7 @@ class CreateJob extends Component {
             placeholder="Enter Crew Members"
             id="job-crew"
             name="crewMembers"
-            value={this.props.crewMembers}
+            value={this.state.crewMembers}
             onChange={event => {
               this.props.handleInputChange(event);
               crewMembersField = true;
@@ -138,7 +151,7 @@ class CreateJob extends Component {
             placeholder="[job type] - [customer-name]"
             id="job-name"
             name="jobName"
-            value={this.props.jobName}
+            value={this.state.jobName}
             onChange={event => {
               this.props.handleInputChange(event);
               jobNameField = true;
@@ -159,7 +172,7 @@ class CreateJob extends Component {
             placeholder="123-456-7890"
             name="custPhone"
             id="cust-phone"
-            value={this.props.custPhone}
+            value={this.state.custPhone}
             onChange={event => {
               this.props.handleInputChange(event);
               custPhoneField = true;
@@ -180,7 +193,7 @@ class CreateJob extends Component {
             placeholder="Street"
             id="cust-address"
             name="custAddress"
-            value={this.props.custAddress}
+            value={this.state.custAddress}
             onChange={event => {
               this.props.handleInputChange(event);
               custAddressField = true;
@@ -201,7 +214,7 @@ class CreateJob extends Component {
             placeholder="City"
             id="cust-city"
             name="custCity"
-            value={this.props.custCity}
+            value={this.state.custCity}
             onChange={event => {
               this.props.handleInputChange(event);
               custCityField = true;
@@ -222,7 +235,7 @@ class CreateJob extends Component {
             placeholder="State Abbreviation"
             id="cust-state"
             name="custState"
-            value={this.props.custState}
+            value={this.state.custState}
             onChange={event => {
               this.props.handleInputChange(event);
               custStateField = true;
@@ -242,7 +255,7 @@ class CreateJob extends Component {
             name="jobDescription"
             id="job-descrip"
             rows="3"
-            value={this.props.jobDescription}
+            value={this.state.jobDescription}
             onChange={event => {
               this.props.handleInputChange(event);
               jobDescriptionField = true;
@@ -262,7 +275,7 @@ class CreateJob extends Component {
             type="number"
             name="estimatedJobTime"
             id="est-hours"
-            value={this.props.estimatedJobTime}
+            value={this.state.estimatedJobTime}
             onChange={event => {
               this.props.handleInputChange(event);
               jobTimeField = true;

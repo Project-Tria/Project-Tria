@@ -35,6 +35,22 @@ class Create extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+    clearForm() {
+    this.setState({
+      jobDate: "",
+      crewName: "",
+      crewMembers: "",
+      jobName: "",
+      custPhone: "",
+      custAddress: "",
+      custCity: "",
+      custState: "",
+      jobDescription: "",
+      estimatedJobTime: "",
+      crewNameDB: ""
+    })
+  }
+
   componentDidMount() {
     this.loadCrews();
   }
@@ -93,7 +109,8 @@ class Create extends Component {
     API.saveJob(newJob)
       .then(
         res => console.log(res),
-        notify.show("Job Created!", "custom", 4000, myColor)
+        notify.show("Job Created!", "custom", 4000, myColor),
+        this.clearForm()
       )
       .catch(err => console.log(err));
   };
@@ -155,6 +172,7 @@ class Create extends Component {
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
               addCrew={this.addCrew}
+              {...this.state}
             />
           </div>
         )}
