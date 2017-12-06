@@ -18,8 +18,6 @@ class CreateJob extends Component {
     super(props);
 
     this.state = {
-      addCrewModal: false,
-      addConfirmation: false,
       isOpen: false
     };
 

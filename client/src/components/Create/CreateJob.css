@@ -22,10 +22,7 @@ div#crew-space {
   padding-right: 0px;
 }
 
-.button-orange {
-    height: 75px;
-    width: 150px;
-}
+
 
 .button-orange:active {
   border-color: #d86a09;

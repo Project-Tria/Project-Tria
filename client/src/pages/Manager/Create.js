@@ -89,18 +89,19 @@ class Create extends Component {
       jobDescription: this.state.jobDescription
     };
     console.log("This is the job you just created: ", newJob);
-
+    let myColor = { background: "#F58119", text: "#FFFFFF" };
     API.saveJob(newJob)
-      .then(notify.show("Job Created!", "success", 4000))
-      .then(res => console.log(res))
+      .then(
+        res => console.log(res),
+        notify.show("Job Created!", "custom", 4000, myColor)
+      )
       .catch(err => console.log(err));
   };
 
   loadCrews = () => {
     API.getCrews()
-
       .then(res => {
-        this.setState({ crews: res.data, isConfirmation: true }, () => {
+        this.setState({ crews: res.data }, () => {
           console.log("This.state.crews", this.state.crews);
         });
       })
@@ -108,17 +109,14 @@ class Create extends Component {
   };
 
   addCrew = () => {
-    // let myStyle = {
-    //   height: '200px',
-    //   width: '400px',
-    //   backgroundColor: 'green'
-    // }
+    let myColor = { background: "#F58119", text: "#FFFFFF" };
     API.saveCrew({
       crewNameDB: this.state.crewNameDB
     })
-      .then(res => this.loadCrews())
-
-      .then(notify.show("Crew added!", "success", 4000))
+      .then(
+        res => this.loadCrews(),
+        notify.show("Crew added!", "custom", 4000, myColor)
+      )
       .catch(err => console.log(err));
   };
 
