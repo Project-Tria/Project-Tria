@@ -32,7 +32,6 @@ const Modal = props => {
               >
                 Close
               </button>
-
               <button
                 type="button"
                 className="btn btn-success add-button"
@@ -45,7 +44,6 @@ const Modal = props => {
               </button>
             </div>
           </div>
-
       </div>
     </div>
   );
