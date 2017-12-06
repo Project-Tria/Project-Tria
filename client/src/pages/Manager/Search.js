@@ -22,6 +22,14 @@ class Search extends Component {
   logout() {
     this.props.auth.logout();
   }
+  clearForm() {
+    this.setState({
+      crewName: "",
+      startDate: "",
+      endDate: "",
+      jobName: ""
+    });
+  }
 
   //constructor
   constructor(props) {
@@ -122,10 +130,12 @@ class Search extends Component {
     let crewQuery = this.state.crewName;
     if (crewQuery === "Search All Crews") {
       this.loadAllCrewsJobs();
+      this.clearForm();
     } else {
       // event.preventDefault();
       // alert("Form Submitted");
       this.loadJobs(crewQuery);
+      this.clearForm();
     }
   };
 
@@ -138,14 +148,21 @@ class Search extends Component {
           <div>
             <div className="nav-div">
               <a href="/manager/create/" className="btn btn-brown navigation">
-                <i className="glyphicon glyphicon-pencil"></i><span className="button-text"> Create Job</span>
+                <i className="glyphicon glyphicon-pencil" />
+                <span className="button-text"> Create Job</span>
               </a>
-              <a href="/crew/" className="btn btn-brown navigation"><i className="glyphicon glyphicon-inbox"></i>
-              <span className="button-text"> Crew Page</span>
+              <a href="/crew/" className="btn btn-brown navigation">
+                <i className="glyphicon glyphicon-inbox" />
+                <span className="button-text"> Crew Page</span>
               </a>
-              <a href="#" className="btn btn-brown navigation" onClick={this.login.bind(this)}><i className="glyphicon glyphicon-log-out"></i>
-              <span className="button-text"> Log Out</span>
-            </a>
+              <a
+                href="#"
+                className="btn btn-brown navigation"
+                onClick={this.login.bind(this)}
+              >
+                <i className="glyphicon glyphicon-log-out" />
+                <span className="button-text"> Log Out</span>
+              </a>
             </div>
             <h1 className="page-title-text">Search Jobs</h1>
             <br />
@@ -154,6 +171,7 @@ class Search extends Component {
               crews={this.state.crews}
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
+              {...this.state}
             />
             <br />
             <br />
@@ -176,13 +194,13 @@ class Search extends Component {
             </button>
           </div>
         )}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />          
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
     );
   }
