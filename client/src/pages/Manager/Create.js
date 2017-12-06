@@ -31,6 +31,22 @@ class Create extends Component {
     };
   }
 
+    clearForm() {
+    this.setState({
+      jobDate: "",
+      crewName: "",
+      crewMembers: "",
+      jobName: "",
+      custPhone: "",
+      custAddress: "",
+      custCity: "",
+      custState: "",
+      jobDescription: "",
+      estimatedJobTime: "",
+      crewNameDB: ""
+    })
+  }
+
   componentDidMount() {
     this.loadCrews();
   }
@@ -87,7 +103,10 @@ class Create extends Component {
 
     API.saveJob(newJob)
       // .then(res => this.loadJobs())
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        this.clearForm();
+      })
       .catch(err => console.log(err));
 
 
@@ -145,6 +164,7 @@ class Create extends Component {
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
               addCrew={this.addCrew}
+              {...this.state}
             />
           </div>
         )}
