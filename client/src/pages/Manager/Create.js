@@ -30,8 +30,10 @@ class Create extends Component {
       jobs: [],
       crews: []
     };
-  }
 
+    this.addCrew = this.addCrew.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
 
   componentDidMount() {
     this.loadCrews();
@@ -46,6 +48,7 @@ class Create extends Component {
     this.setState({
       [name]: value
     });
+    console.log("This is the state: ", this.state);
   };
 
   handleFormSubmit = () => {
@@ -88,16 +91,16 @@ class Create extends Component {
     console.log("This is the job you just created: ", newJob);
 
     API.saveJob(newJob)
-      // .then(res => this.loadJobs())
+      .then(notify.show("Job Created!", "success", 4000))
       .then(res => console.log(res))
       .catch(err => console.log(err));
   };
 
   loadCrews = () => {
     API.getCrews()
-    
+
       .then(res => {
-        this.setState({ crews: res.data }, () => {
+        this.setState({ crews: res.data, isConfirmation: true }, () => {
           console.log("This.state.crews", this.state.crews);
         });
       })
@@ -105,7 +108,6 @@ class Create extends Component {
   };
 
   addCrew = () => {
-
     // let myStyle = {
     //   height: '200px',
     //   width: '400px',
@@ -115,7 +117,8 @@ class Create extends Component {
       crewNameDB: this.state.crewNameDB
     })
       .then(res => this.loadCrews())
-      // .then(notify.show('Toasty!', "custom", 4000, myStyle))
+
+      .then(notify.show("Crew added!", "success", 4000))
       .catch(err => console.log(err));
   };
 
@@ -148,7 +151,6 @@ class Create extends Component {
               </a>
             </div>
             <h1 className="page-title-text">Create Job</h1>
-            <br />
             <br />
             <CreateJob
               crews={this.state.crews}

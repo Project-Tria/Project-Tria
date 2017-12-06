@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-
+import Modal from "../../components/Modal/Modal";
 import "./CreateJob.css";
-// import API from "../../utils/API";
-// import FormBtn from "../../components/Form";
-// import { Input, TextArea, FormBtn } from "../../components/Form";
 
 let jobTimeField = false;
 let jobDescriptionField = false;
@@ -17,6 +14,26 @@ let crewNameField = false;
 let jobDateField = false;
 
 class CreateJob extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      addCrewModal: false,
+      addConfirmation: false,
+      isOpen: false
+    };
+
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  toggleModal = () => {
+    console.log("Modal Toggle");
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+    console.log("isOpen", this.state.isOpen);
+  };
+
   renderCrew = props => {
     return this.props.crews.map(crew => (
       <option key={"header" + crew._id}>{crew.crewNameDB}</option>
@@ -69,81 +86,31 @@ class CreateJob extends Component {
             </select>
           </div>
           <span>&nbsp;</span>
+          <div className="add-btn-div">
           <button
-            type="button"
-            className="btn btn-success col-2"
-            id="add-crew-btn"
-            data-target="#add-crew-modal"
-            data-toggle="modal"
+            className="btn btn-success add-crew-btn"
+            onClick={this.toggleModal}
           >
-          <i className="glyphicon glyphicon-plus"></i>
-            <span className="button-text">Add Crew</span>
+            <i className="glyphicon glyphicon-plus" />
+            <span className="button-text"> Add Crew</span>
           </button>
-        </div>
-
-        <div
-          className="modal fade"
-          id="add-crew-modal"
-          tabIndex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalLongTitle"
-          aria-hidden="true"
-        >
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLongTitle">
-                  Add a New Crew
-                </h5>
-                <button
-                  type="button"
-                  className="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                />
-              </div>
-              <div className="modal-body">
-                <div className="form-group row">
-                  <label htmlFor="new-crew" className="col-form-label label-text">
-                    New Crew Name:{" "}
-                  </label>
-                  <input
-                    className="col-6 form-control"
-                    type="text"
-                    placeholder="[Crew Type] - [Crew Lead]"
-                    id="new-crew"
-                    name="crewNameDB"
-                    value={this.props.crewNameDB}
-                    onChange={event => {
-                      this.props.handleInputChange(event);
-                    }}
-                  />
-                </div>
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-success"
-                  onClick={event => {
-                    this.props.addCrew();
-                  }}
-                >
-                  Create Crew
-                </button>
-              </div>
-            </div>
+          {this.state.isOpen ? (
+            <Modal
+              handleInputChange={this.props.handleInputChange}
+              addCrew={this.props.addCrew}
+              toggleModal={this.toggleModal}
+            />
+          ) : (
+            ""
+          )}
           </div>
         </div>
 
         <div className="form-group row">
-          <label htmlFor="job-crew" className="col-form-label col-3 text-right label-text">
+          <label
+            htmlFor="job-crew"
+            className="col-form-label col-3 text-right label-text"
+          >
             Job Crew:{" "}
           </label>
           <input
@@ -161,7 +128,10 @@ class CreateJob extends Component {
         </div>
 
         <div className="form-group row">
-          <label htmlFor="job-name" className="col-form-label col-3 text-right label-text">
+          <label
+            htmlFor="job-name"
+            className="col-form-label col-3 text-right label-text"
+          >
             Job Name:{" "}
           </label>
           <input
@@ -267,7 +237,7 @@ class CreateJob extends Component {
             htmlFor="job-descrip"
             className="col-form-label col-3 text-right label-text"
           >
-          Job Notes:
+            Job Notes:
           </label>
           <textarea
             className="col-6 form-control"
@@ -287,7 +257,7 @@ class CreateJob extends Component {
             htmlFor="est-hours"
             className="col-form-label col-3 text-right label-text"
           >
-          Est. Hours
+            Est. Hours
           </label>
           <input
             className="col-6 form-control"
