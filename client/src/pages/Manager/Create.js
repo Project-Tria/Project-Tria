@@ -35,7 +35,7 @@ class Create extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-    clearForm() {
+  clearForm() {
     this.setState({
       jobDate: "",
       crewName: "",
@@ -48,7 +48,7 @@ class Create extends Component {
       jobDescription: "",
       estimatedJobTime: "",
       crewNameDB: ""
-    })
+    });
   }
 
   componentDidMount() {
@@ -64,26 +64,15 @@ class Create extends Component {
     this.setState({
       [name]: value
     });
-    console.log("This is the state: ", this.state);
   };
 
   handleFormSubmit = () => {
     event.preventDefault();
-    // if (
-    //   this.state.crewName &&
-    //   this.state.jobName &&
-    //   this.state.custPhone &&
-    //   this.state.custAddress &&
-    //   this.state.estimatedJobTime &&
-    //   this.state.jobDescription
-    // )
-    // {
 
     // create the string used in the google maps href
     let linkStreet = this.state.custAddress.replace(/\s|\.|,|-/g, "+");
     let linkCity = this.state.custCity.replace(/\s|\.|,|-/g, "+");
     let linkAddress = linkStreet + "+" + linkCity + "+" + this.state.custState;
-    console.log("this is linkAddress: " + linkAddress);
 
     ///create the string used in the to display the address
     let displayAddress =
@@ -104,7 +93,7 @@ class Create extends Component {
       estimatedJobTime: this.state.estimatedJobTime,
       jobDescription: this.state.jobDescription
     };
-    console.log("This is the job you just created: ", newJob);
+
     let myColor = { background: "#F58119", text: "#FFFFFF" };
     API.saveJob(newJob)
       .then(
@@ -118,9 +107,7 @@ class Create extends Component {
   loadCrews = () => {
     API.getCrews()
       .then(res => {
-        this.setState({ crews: res.data }, () => {
-          console.log("This.state.crews", this.state.crews);
-        });
+        this.setState({ crews: res.data });
       })
       .catch(err => console.log(err));
   };

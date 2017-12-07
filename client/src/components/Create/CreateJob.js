@@ -27,11 +27,9 @@ class CreateJob extends Component {
   }
 
   toggleModal = () => {
-    console.log("Modal Toggle");
     this.setState({
       isOpen: !this.state.isOpen
     });
-    console.log("isOpen", this.state.isOpen);
   };
 
   renderCrew = props => {
@@ -50,8 +48,6 @@ class CreateJob extends Component {
 
 
   render() {
-    console.log("this is the state from cwrp",this.state)
-    console.log("this is the props", this.props)
     return (
       <div className="container text-center border background-region">
         <div className="form-group row">
@@ -306,8 +302,6 @@ class CreateJob extends Component {
         >
           Create Job
         </button>
-
-        {/* <FormBtn onClick={this.handleFormSubmit}>Submit Job</FormBtn> */}
       </div>
     ); // end return
   } // end render

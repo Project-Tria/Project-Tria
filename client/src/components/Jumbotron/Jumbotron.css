@@ -3,8 +3,6 @@
 }
 
 
-/* // Extra small devices (portrait phones, less than 576px) */
-
 @media (max-width: 375px) {
     img {
         max-width: 80%;

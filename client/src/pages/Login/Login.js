@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./Login.css";
 
-
 class Login extends Component {
   login() {
     this.props.auth.login();
@@ -17,12 +16,18 @@ class Login extends Component {
             <h1 className="page-title-text">Main Menu</h1>
             <br />
             <br />
-            <a href="/manager/create/" className="btn btn-lg button-orange menu-button">
+            <a
+              href="/manager/create/"
+              className="btn btn-lg button-orange menu-button"
+            >
               Create Job
             </a>
             <br />
             <br />
-            <a href="/manager/search/" className="btn btn-lg button-orange menu-button">
+            <a
+              href="/manager/search/"
+              className="btn btn-lg button-orange menu-button"
+            >
               Search Jobs
             </a>
             <br />
@@ -36,7 +41,7 @@ class Login extends Component {
               <br />
               <br />
               <br />
-              <br />                           
+              <br />
             </div>
           </div>
         )}
@@ -54,14 +59,13 @@ class Login extends Component {
             </button>
           </div>
         )}
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />          
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
-          
     );
   }
 } //end class

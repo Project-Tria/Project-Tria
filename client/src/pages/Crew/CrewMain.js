@@ -3,8 +3,6 @@ import API from "../../utils/API";
 import MyJobs from "../../components/Jobs/MyJobs";
 import "./CrewMain.css";
 
-//should crew main only display job for the current date?
-
 class CrewMain extends Component {
   login() {
     this.props.auth.login();
@@ -33,11 +31,9 @@ class CrewMain extends Component {
   }
 
   handleInputChange = event => {
-    console.log("This is the event ", event);
     // Getting the value and name of the input which triggered the change
     const value = event.target.value;
     const name = event.target.name;
-    console.log("This is the name from the handleinputchange", name);
 
     // Updating the input's state
     this.setState({
@@ -47,7 +43,6 @@ class CrewMain extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("This is the event target ", event.target.value);
 
     let jobData = {
       actualJobTime: this.state.actualJobTime,
@@ -55,14 +50,9 @@ class CrewMain extends Component {
       completed: true
     };
 
-    console.log("This is the job you just completed: ", jobData);
-
     let id = event.target.value;
 
-    console.log("This is the id you just completed: ", id);
-
     API.updateJob(id, jobData)
-      // .then(res => this.loadJobs())
       .then(res => this.getJobs())
       .catch(err => console.log(err));
   };
@@ -70,10 +60,7 @@ class CrewMain extends Component {
   getJobs() {
     API.findOpenJobs()
       .then(res => {
-        this.setState({ jobs: res.data }, () => {
-          console.log("This.state.jobs from CrewMain.js", this.state.jobs);
-          // this.filterDate();
-        });
+        this.setState({ jobs: res.data });
       })
       .catch(err => console.log(err));
   }
@@ -137,7 +124,7 @@ class CrewMain extends Component {
             <br />
             <br />
             <br />
-            <br />            
+            <br />
           </div>
         )}
         {!isAuthenticated() && (
@@ -160,7 +147,7 @@ class CrewMain extends Component {
         <br />
         <br />
         <br />
-        <br />        
+        <br />
       </div>
     );
   }

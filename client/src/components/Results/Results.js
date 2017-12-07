@@ -50,7 +50,9 @@ class Results extends Component {
           <div className="card-block text-left card-content">
             <div className="row">
               <div className="col cust-details border border-secondary">
-                <p className="text-center column-title" id="cust-title">Cust. Details</p>
+                <p className="text-center column-title" id="cust-title">
+                  Cust. Details
+                </p>
                 <div className="row">
                   <p className="heading">
                     <b>Cust. Address: </b>{" "}
@@ -84,7 +86,9 @@ class Results extends Component {
                 </div>
               </div>
               <div className="col crew-details border border-secondary">
-                <p className="text-center column-title" id="crew-title">Crew Details</p>
+                <p className="text-center column-title" id="crew-title">
+                  Crew Details
+                </p>
                 <div className="row">
                   <p className="heading">
                     <b>Crew Name: </b>{" "}
