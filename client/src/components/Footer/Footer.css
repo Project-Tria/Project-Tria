@@ -11,7 +11,7 @@
 }
 /* unvisited link */
 .footer-text:link {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* visited link */
