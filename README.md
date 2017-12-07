@@ -9,19 +9,21 @@ The current culture of passing the job information to the crew is printing out a
 4. Customers often call weeks later to address issues about the job or damage to the surrounding property. In this situation we have to rely on employees memory of a job from weeks ago with no paper trail to fall back on.
 <br>
 <br>
-Java Script | Node.js | NPM | GitHub | Express | Axios | MongoDB | Mongoose | React | Auth0 | HTML 5 | Visual Code Studio | CSS 3 | Bootstrap
+JavaScript | Node.js | NPM | GitHub | Express | Axios | MongoDB | Mongoose | React | Auth0 | HTML 5 | Visual Code Studio | CSS 3 | Bootstrap
 <br>
 <br>
 <a href="https://agile-fortress-21519.herokuapp.com/" target="_blank">Crewify Web App</a>
 <br>
 <br>
-### Create jobs
+<h3>Create jobs</h3>
 <img src="https://media.giphy.com/media/l4EpfJcOkuY71X32w/giphy.gif" />
 <br>
 <br>
+h3>Search jobs</h3>
 <img src="https://media.giphy.com/media/l4Ep6ZNgIgZojwX6M/giphy.gif" />
 <br>
 <br>
+h3>Crew Portal</h3>
 <img src="https://media.giphy.com/media/26Ff2QXXDxLW3eCru/giphy.gif" />
 <br>
 <br>
