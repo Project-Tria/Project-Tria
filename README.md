@@ -3,7 +3,7 @@
 The current culture of passing the job information to the crew is printing out a detailed description of what work is to be completed and where the location of the job is. There are several efficiency problems with this. 
 <br>
 <br>
-1. If the scope of work is changed the after the crew leaves their morning meeting the Project Manager will have to try to call the crew lead on the way to the job. Since phone use is discouraged while driving this usually results in a voicemail that leads to a game of phone tag between the crew lead and project manager. Delaying the job start time until the two parties connect. 
+* 1. If the scope of work is changed the after the crew leaves their morning meeting the Project Manager will have to try to call the crew lead on the way to the job. Since phone use is discouraged while driving this usually results in a voicemail that leads to a game of phone tag between the crew lead and project manager. Delaying the job start time until the two parties connect. 
 <br>
 2. The paper is often lost and or damaged at some point during the day which brings production to a halt until the info can be redistributed. 
 <br>
