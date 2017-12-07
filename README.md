@@ -12,7 +12,7 @@ The current culture of passing the job information to the crew is printing out a
 JavaScript | Node.js | NPM | GitHub | Express | Axios | MongoDB | Mongoose | React | Auth0 | HTML 5 | Visual Code Studio | CSS 3 | Bootstrap
 <br>
 <br>
-<a href="https://agile-fortress-21519.herokuapp.com/" target="_blank">Crewify Web App</a>
+<a href="https://agile-fortress-21519.herokuapp.com/" target="_blank">View Crewify Web App</a>
 <br>
 <br>
 <h3>Create jobs</h3>
