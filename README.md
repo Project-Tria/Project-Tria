@@ -19,11 +19,11 @@ JavaScript | Node.js | NPM | GitHub | Express | Axios | MongoDB | Mongoose | Rea
 <img src="https://media.giphy.com/media/l4EpfJcOkuY71X32w/giphy.gif" />
 <br>
 <br>
-h3>Search jobs</h3>
+<h3>Search jobs</h3>
 <img src="https://media.giphy.com/media/l4Ep6ZNgIgZojwX6M/giphy.gif" />
 <br>
 <br>
-h3>Crew Portal</h3>
+<h3>Crew Portal</h3>
 <img src="https://media.giphy.com/media/26Ff2QXXDxLW3eCru/giphy.gif" />
 <br>
 <br>
