@@ -1,23 +1,18 @@
 import React, { Component } from "react";
 import "./SearchInput.css";
 
-// import API from "../../utils/API";
-
 class SearchInput extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {
-
-    }
+    this.state = {};
   }
 
-    componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.setState({
       ...nextProps
-    })
+    });
   }
-  //might want to wrap form in form tag
+
   renderCrew = props => {
     return this.props.crews.map(crew => (
       <option key={"header" + crew._id}>{crew.crewNameDB}</option>
@@ -25,8 +20,6 @@ class SearchInput extends Component {
   };
 
   render() {
-    console.log("next props", this.nextProps)
-    console.log("state", this.state)
     return (
       <div>
         <div className="container text-center border background-region">

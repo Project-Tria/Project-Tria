@@ -13,6 +13,7 @@
     "moment-range": "^3.0.3",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-notify-toast": "^0.4.0",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"
   },

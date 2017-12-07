@@ -1,0 +1,44 @@
+
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(122, 122, 122, 0.700);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  border-radius: 25px;
+  width: 300px;
+  height: 150px;
+  background-color: white;
+  color: black;
+  box-shadow: 5px 10px rgba(49, 49, 49, 0.438);
+}
+
+.modal-title {
+  margin: 10px 0;
+  font-weight: bold;
+  border-bottom: 1px solid rgb(196, 195, 195);
+}
+
+#add-crew {
+  margin: 10px 0;
+  width:80%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.close-button,
+.add-button {
+  margin: 10px 0;
+}

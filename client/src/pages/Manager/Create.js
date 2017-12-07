@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CreateJob from "../../components/Create/CreateJob";
+import Notifications, { notify } from "react-notify-toast";
 import "./Create.css";
 import API from "../../utils/API";
 
@@ -29,9 +30,12 @@ class Create extends Component {
       jobs: [],
       crews: []
     };
+
+    this.addCrew = this.addCrew.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-    clearForm() {
+  clearForm() {
     this.setState({
       jobDate: "",
       crewName: "",
@@ -44,7 +48,7 @@ class Create extends Component {
       jobDescription: "",
       estimatedJobTime: "",
       crewNameDB: ""
-    })
+    });
   }
 
   componentDidMount() {
@@ -64,21 +68,11 @@ class Create extends Component {
 
   handleFormSubmit = () => {
     event.preventDefault();
-    // if (
-    //   this.state.crewName &&
-    //   this.state.jobName &&
-    //   this.state.custPhone &&
-    //   this.state.custAddress &&
-    //   this.state.estimatedJobTime &&
-    //   this.state.jobDescription
-    // )
-    // {
 
     // create the string used in the google maps href
     let linkStreet = this.state.custAddress.replace(/\s|\.|,|-/g, "+");
     let linkCity = this.state.custCity.replace(/\s|\.|,|-/g, "+");
     let linkAddress = linkStreet + "+" + linkCity + "+" + this.state.custState;
-    console.log("this is linkAddress: " + linkAddress);
 
     ///create the string used in the to display the address
     let displayAddress =
@@ -99,35 +93,34 @@ class Create extends Component {
       estimatedJobTime: this.state.estimatedJobTime,
       jobDescription: this.state.jobDescription
     };
-    console.log("This is the job you just created: ", newJob);
 
+    let myColor = { background: "#F58119", text: "#FFFFFF" };
     API.saveJob(newJob)
-      // .then(res => this.loadJobs())
-      .then(res => {
-        console.log(res);
-        this.clearForm();
-      })
+      .then(
+        res => console.log(res),
+        notify.show("Job Created!", "custom", 4000, myColor),
+        this.clearForm()
+      )
       .catch(err => console.log(err));
-
-
   };
 
   loadCrews = () => {
     API.getCrews()
-      // .then(res => console.log(res.data))
       .then(res => {
-        this.setState({ crews: res.data }, () => {
-          console.log("This.state.crews", this.state.crews);
-        });
+        this.setState({ crews: res.data });
       })
       .catch(err => console.log(err));
   };
 
   addCrew = () => {
+    let myColor = { background: "#F58119", text: "#FFFFFF" };
     API.saveCrew({
       crewNameDB: this.state.crewNameDB
     })
-      .then(res => this.loadCrews())
+      .then(
+        res => this.loadCrews(),
+        notify.show("Crew added!", "custom", 4000, myColor)
+      )
       .catch(err => console.log(err));
   };
 
@@ -138,6 +131,9 @@ class Create extends Component {
       <div className="container text-center">
         {isAuthenticated() && (
           <div>
+            <div className="main">
+              <Notifications />
+            </div>
             <div className="nav-div">
               <a href="/manager/search/" className="btn btn-brown navigation">
                 <i className="glyphicon glyphicon-search " />
@@ -157,7 +153,6 @@ class Create extends Component {
               </a>
             </div>
             <h1 className="page-title-text">Create Job</h1>
-            <br />
             <br />
             <CreateJob
               crews={this.state.crews}

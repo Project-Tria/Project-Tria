@@ -1,6 +1,5 @@
 
 import React, { Component } from "react";
-// import Jumbotron from "./components/Jumbotron/Jumbotron";
 import "./App.css";
 
 class App extends Component {

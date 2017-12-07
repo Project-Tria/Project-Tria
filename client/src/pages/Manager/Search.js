@@ -2,18 +2,8 @@ import React, { Component } from "react";
 import SearchInput from "../../components/Search/SearchInput";
 import Results from "../../components/Results/Results";
 import API from "../../utils/API";
-// import Footer from "../../components/Footer/Footer";
 import "./Search.css";
-// import Moment from 'moment';
-// import { extendMoment } from 'moment-range';
 
-//  const moment = extendMoment(Moment);
-
-// {this.state.jobs.length === 0 && (
-//   <h3>
-//     <i>Search to display results.</i>
-//   </h3>
-// )}
 
 class Search extends Component {
   login() {
@@ -47,14 +37,12 @@ class Search extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.loadJobs = this.loadJobs.bind(this);
-    // this.loadCrews = this.loadCrews.bind(this);
   }
 
   componentDidMount() {
     this.loadCrews();
   }
 
-  //component did mount to load getCrews()
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -70,31 +58,23 @@ class Search extends Component {
   filterDate = () => {
     const start = this.state.startDate;
     const end = this.state.endDate;
-    // const range = moment().range(start, end);
-
-    console.log(start);
 
     let jobsCopy = this.state.jobs;
-    // let jobsCopyDate = this.state.jobs.jobDate
-    console.log("This is the jobs copy", jobsCopy);
 
     let newOne = jobsCopy.filter(
       jobCopy => (jobCopy.jobDate >= start && jobCopy.jobDate <= end) === true
     );
-    console.log("This is the jobs copy after filter", newOne);
     this.setState({
       jobs: newOne
     });
+    this.clearForm();
   };
 
-  ///should take parameters from the searchinput to use in the query
-  //bind this in the constructor
+
   loadJobs = crewQuery => {
     API.getJobByCrewName(crewQuery)
-      // .then(res => console.log(res.data))
       .then(res => {
         this.setState({ jobs: res.data }, () => {
-          console.log("This.state.jobs from Results.js", this.state.jobs);
           this.filterDate();
         });
       })
@@ -105,38 +85,29 @@ class Search extends Component {
   loadAllCrewsJobs = () => {
     API.getJobs()
       .then(res => {
-        this.setState({ jobs: res.data }, () => {
-          console.log("This.state.jobs", this.state.jobs);
-        });
+        this.setState({ jobs: res.data });
       })
       .catch(err => console.log(err));
   };
 
-  //this funciton is going to get crews from the DB will be
-  //props for the drop down.
   loadCrews = () => {
     API.getCrews()
-      // .then(res => console.log(res.data))
       .then(res => {
-        this.setState({ crews: res.data }, () => {
-          console.log("This.state.crews", this.state.crews);
-        });
+        this.setState({ crews: res.data });
       })
       .catch(err => console.log(err));
   };
 
-  //this.state.{key} is set as parameters used in load jobs
   handleFormSubmit = event => {
     let crewQuery = this.state.crewName;
     if (crewQuery === "Search All Crews") {
       this.loadAllCrewsJobs();
-      this.clearForm();
+      
     } else {
-      // event.preventDefault();
-      // alert("Form Submitted");
       this.loadJobs(crewQuery);
-      this.clearForm();
+      
     }
+    
   };
 
   render() {

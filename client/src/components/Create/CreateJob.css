@@ -1,35 +1,27 @@
-    #crew-dropdown {
-        height: 36px;
-    }
+#crew-dropdown {
+  height: 36px;
+}
 
-    div#crew-space {
-        margin-bottom: 0px;
-    }
+div#crew-space {
+  margin-bottom: 0px;
+}
 
-    #add-crew-modal {
-        margin-top: 10%;
-    }
+.add-crew-btn {
+  height: 36px;
+  margin-left: 5px;
+}
 
-    .modal-content {
-        margin-top: 80px;
-    }
+.background-region {
+  color: white;
+}
+
+#select-crew {
+  padding-left: 0px;
+  padding-right: 0px;
+}
 
 
 
-    .background-region {
-        color: white;
-    }
-
-    #select-crew {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    button#add-crew-btn {
-        height: 36px;
-        /* margin-left: 90px; */
-    }
-
-    .button-orange:active {
+.button-orange:active {
   border-color: #d86a09;
 }
